@@ -1,0 +1,12 @@
+overlay: 1.0.0
+x-speakeasy-jsonpath: rfc9535
+info:
+  title: Keep only accounting and vault operations
+  version: 0.0.0
+  description: This overlay removes all operations except those tagged with 'accounting' or 'vault'
+actions:
+  # Remove entire paths that are not accounting or vault
+  - target: $.paths.*.[?(@.["x-apideck-api"] != "accounting" && @.["x-apideck-api"] != "vault")]
+    remove: true
+  - target: $.paths.[?(!@['get'] && !@['post'] && !@['put'] && !@['delete'] && !@['patch'])]
+    remove: true

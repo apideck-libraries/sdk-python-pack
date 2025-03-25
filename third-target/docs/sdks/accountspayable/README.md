@@ -1,5 +1,0 @@
-# AccountsPayable
-(*accountsPayable*)
-
-### Available Operations
-

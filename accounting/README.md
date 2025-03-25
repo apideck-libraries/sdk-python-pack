@@ -1,423 +1,167 @@
-# @speakeasy-sdks/accounting
+# openapi
+
+Developer-friendly & type-safe Python SDK specifically catered to leverage *openapi* API.
 
 <div align="left">
-    <a href="https://speakeasyapi.dev/"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
-    <a href="https://github.com/speakeasy-sdks/template-sdk-monorepo.git/actions"><img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/template-sdk-monorepo/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
-    
+    <a href="https://www.speakeasy.com/?utm_source=openapi&utm_campaign=python"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
+    <a href="https://opensource.org/licenses/MIT">
+        <img src="https://img.shields.io/badge/License-MIT-blue.svg" style="width: 100px; height: 28px;" />
+    </a>
 </div>
+
+
+<br /><br />
+> [!IMPORTANT]
+> This SDK is not yet ready for production use. To complete setup please follow the steps outlined in your [workspace](https://app.speakeasy.com/org/apideck-k2o/apideck). Delete this section before > publishing to a package manager.
 
 <!-- Start Summary [summary] -->
 ## Summary
 
-Accounting API: > ### New to Codat?
->
-> Our Accounting API reference is relevant only to our existing clients.
-> Please reach out to your Codat contact so that we can find the right product for you.
+Apideck: The Apideck OpenAPI Spec: SDK Optimized
 
-A flexible API for pulling accounting data, normalized and aggregated from 20 accounting integrations.
-
-Standardize how you connect to your customers’ accounting software. View, create, update, and delete data in the same way for all the leading accounting platforms.
-
-<!-- Start Codat Tags Table -->
-## Endpoints
-
-| Endpoints | Description |
-| :- |:- |
-| Accounts | Access standardized Accounts from linked accounting platforms. |
-| Account transactions | Access standardized Account transactions from linked accounting platforms. |
-| Bank accounts | Access standardized Bank accounts from linked accounting platforms. |
-| Bank account transactions | Access standardized Bank transactions for bank accounts from linked accounting platforms. |
-| Bills | Access standardized Bills from linked accounting platforms. |
-| Bill credit notes | Access standardized Bill credit notes from linked accounting platforms. |
-| Bill payments | Access standardized Bill payments from linked accounting platforms. |
-| Credit notes | Access standardized Credit notes from linked accounting platforms. |
-| Customers | Access standardized Customers from linked accounting platforms. |
-| Direct costs | Access standardized Direct costs from linked accounting platforms. |
-| Direct incomes | Access standardized Direct incomes from linked accounting platforms. |
-| Company info | Access standardized Company info from linked accounting platforms. |
-| Invoices | Access standardized Invoices from linked accounting platforms. |
-| Item receipts | Access standardized Item receipts from linked accounting platforms. |
-| Items | Access standardized Items from linked accounting platforms. |
-| Journals | Access standardized Journals from linked accounting platforms. |
-| Journal entries | Access standardized Journal entries from linked accounting platforms. |
-| Payments | Access standardized Payments from linked accounting platforms. |
-| Payment methods | Access standardized Payment methods from linked accounting platforms. |
-| Purchase orders | Access standardized Purchase orders from linked accounting platforms. |
-| Sales orders | Access standardized Sales orders from linked accounting platforms. |
-| Suppliers | Access standardized Suppliers from linked accounting platforms. |
-| Tax rates | Access standardized Tax rates from linked accounting platforms. |
-| Tracking categories | Access standardized Tracking categories from linked accounting platforms. |
-| Transfers | Access standardized Transfers from linked accounting platforms. |
-| Reports | Access standardized Reports from linked accounting platforms. |
-<!-- End Codat Tags Table -->
-
-[Read more...](https://docs.codat.io/accounting-api/overview)
-
-[See our OpenAPI spec](https://github.com/codatio/oas)
+For more information about the API: [Apideck Developer Docs](https://developers.apideck.com)
 <!-- End Summary [summary] -->
 
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
+<!-- $toc-max-depth=2 -->
+* [openapi](#openapi)
+  * [SDK Installation](#sdk-installation)
+  * [IDE Support](#ide-support)
+  * [SDK Example Usage](#sdk-example-usage)
+  * [Authentication](#authentication)
+  * [Available Resources and Operations](#available-resources-and-operations)
+  * [Pagination](#pagination)
+  * [Retries](#retries)
+  * [Error Handling](#error-handling)
+  * [Server Selection](#server-selection)
+  * [Custom HTTP Client](#custom-http-client)
+  * [Resource Management](#resource-management)
+  * [Debugging](#debugging)
+* [Development](#development)
+  * [Maturity](#maturity)
+  * [Contributions](#contributions)
 
-* [SDK Installation](#sdk-installation)
-* [Requirements](#requirements)
-* [SDK Example Usage](#sdk-example-usage)
-* [Available Resources and Operations](#available-resources-and-operations)
-* [Standalone functions](#standalone-functions)
-* [Retries](#retries)
-* [Error Handling](#error-handling)
-* [Server Selection](#server-selection)
-* [Custom HTTP Client](#custom-http-client)
-* [Authentication](#authentication)
-* [Debugging](#debugging)
 <!-- End Table of Contents [toc] -->
 
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-The SDK can be installed with either [npm](https://www.npmjs.com/), [pnpm](https://pnpm.io/), [bun](https://bun.sh/) or [yarn](https://classic.yarnpkg.com/en/) package managers.
+> [!TIP]
+> To finish publishing your SDK to PyPI you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
 
-### NPM
 
-```bash
-npm add @speakeasy-sdks/accounting
-```
+> [!NOTE]
+> **Python version upgrade policy**
+>
+> Once a Python version reaches its [official end of life date](https://devguide.python.org/versions/), a 3-month grace period is provided for users to upgrade. Following this grace period, the minimum python version supported in the SDK will be updated.
 
-### PNPM
+The SDK can be installed with either *pip* or *poetry* package managers.
 
-```bash
-pnpm add @speakeasy-sdks/accounting
-```
+### PIP
 
-### Bun
-
-```bash
-bun add @speakeasy-sdks/accounting
-```
-
-### Yarn
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
 
 ```bash
-yarn add @speakeasy-sdks/accounting zod
-
-# Note that Yarn does not install peer dependencies automatically. You will need
-# to install zod as shown above.
+pip install git+<UNSET>.git
 ```
+
+### Poetry
+
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
+
+```bash
+poetry add git+<UNSET>.git
+```
+
+### Shell and script usage with `uv`
+
+You can use this SDK in a Python shell with [uv](https://docs.astral.sh/uv/) and the `uvx` command that comes with it like so:
+
+```shell
+uvx --from openapi python
+```
+
+It's also possible to write a standalone Python script without needing to set up a whole project like so:
+
+```python
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.9"
+# dependencies = [
+#     "openapi",
+# ]
+# ///
+
+from openapi import SDK
+
+sdk = SDK(
+  # SDK arguments
+)
+
+# Rest of script here...
+```
+
+Once that is saved to a file, you can run it with `uv run script.py` where
+`script.py` can be replaced with the actual file name.
 <!-- End SDK Installation [installation] -->
+
+<!-- Start IDE Support [idesupport] -->
+## IDE Support
+
+### PyCharm
+
+Generally, the SDK will work well with most IDEs out of the box. However, when using PyCharm, you can enjoy much better integration with Pydantic by installing an additional plugin.
+
+- [PyCharm Pydantic Plugin](https://docs.pydantic.dev/latest/integrations/pycharm/)
+<!-- End IDE Support [idesupport] -->
 
 <!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
 
 ### Example
 
-```typescript
-import { Accounting } from "@speakeasy-sdks/accounting";
+```python
+# Synchronous Example
+from openapi import SDK
 
-const accounting = new Accounting({
-  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-});
 
-async function run() {
-  const result = await accounting.accountTransactions.get(
-    "<value>",
-    "8a210b68-6988-11ed-a1eb-0242ac120002",
-    "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-  );
+with SDK(
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as sdk:
 
-  // Handle the result
-  console.log(result);
-}
+    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
 
-run();
+    # Handle response
+    print(res)
+```
 
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+from openapi import SDK
+
+async def main():
+
+    async with SDK(
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
+        consumer_id="test-consumer",
+        app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    ) as sdk:
+
+        res = await sdk.accounting.tax_rates.get_async(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+        # Handle response
+        print(res)
+
+asyncio.run(main())
 ```
 <!-- End SDK Example Usage [usage] -->
-
-<!-- Start Available Resources and Operations [operations] -->
-## Available Resources and Operations
-
-### [accountTransactions](docs/sdks/accounttransactions/README.md)
-
-* [get](docs/sdks/accounttransactions/README.md#get) - Get account transaction
-* [list](docs/sdks/accounttransactions/README.md#list) - List account transactions
-
-### [accounts](docs/sdks/accounts/README.md)
-
-* [create](docs/sdks/accounts/README.md#create) - Create account
-* [get](docs/sdks/accounts/README.md#get) - Get account
-* [getCreateModel](docs/sdks/accounts/README.md#getcreatemodel) - Get create account model
-* [list](docs/sdks/accounts/README.md#list) - List accounts
-<!-- End Available Resources and Operations [operations] -->
-
-<!-- Start Requirements [requirements] -->
-## Requirements
-
-For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
-<!-- End Requirements [requirements] -->
-
-<!-- Start Standalone functions [standalone-funcs] -->
-## Standalone functions
-
-All the methods listed above are available as standalone functions. These
-functions are ideal for use in applications running in the browser, serverless
-runtimes or other environments where application bundle size is a primary
-concern. When using a bundler to build your application, all unused
-functionality will be either excluded from the final bundle or tree-shaken away.
-
-To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
-
-<details>
-
-<summary>Available standalone functions</summary>
-
-- [accountTransactionsGet](docs/sdks/accounttransactions/README.md#get)
-- [accountTransactionsList](docs/sdks/accounttransactions/README.md#list)
-- [accountsCreate](docs/sdks/accounts/README.md#create)
-- [accountsGetCreateModel](docs/sdks/accounts/README.md#getcreatemodel)
-- [accountsGet](docs/sdks/accounts/README.md#get)
-- [accountsList](docs/sdks/accounts/README.md#list)
-
-
-</details>
-<!-- End Standalone functions [standalone-funcs] -->
-
-<!-- Start Retries [retries] -->
-## Retries
-
-Some of the endpoints in this SDK support retries.  If you use the SDK without any configuration, it will fall back to the default retry strategy provided by the API.  However, the default retry strategy can be overridden on a per-operation basis, or across the entire SDK.
-
-To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
-```typescript
-import { Accounting } from "@speakeasy-sdks/accounting";
-
-const accounting = new Accounting({
-  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-});
-
-async function run() {
-  const result = await accounting.accountTransactions.get(
-    "<value>",
-    "8a210b68-6988-11ed-a1eb-0242ac120002",
-    "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-    {
-      retries: {
-        strategy: "backoff",
-        backoff: {
-          initialInterval: 1,
-          maxInterval: 50,
-          exponent: 1.1,
-          maxElapsedTime: 100,
-        },
-        retryConnectionErrors: false,
-      },
-    },
-  );
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-
-```
-
-If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
-```typescript
-import { Accounting } from "@speakeasy-sdks/accounting";
-
-const accounting = new Accounting({
-  retryConfig: {
-    strategy: "backoff",
-    backoff: {
-      initialInterval: 1,
-      maxInterval: 50,
-      exponent: 1.1,
-      maxElapsedTime: 100,
-    },
-    retryConnectionErrors: false,
-  },
-  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-});
-
-async function run() {
-  const result = await accounting.accountTransactions.get(
-    "<value>",
-    "8a210b68-6988-11ed-a1eb-0242ac120002",
-    "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-  );
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-
-```
-<!-- End Retries [retries] -->
-
-<!-- Start Error Handling [errors] -->
-## Error Handling
-
-All SDK methods return a response object or throw an error. If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
-Validation errors can also occur when either method arguments or data returned from the server do not match the expected format. The `SDKValidationError` that is thrown as a result will capture the raw value that failed validation in an attribute called `rawValue`. Additionally, a `pretty()` method is available on this error that can be used to log a nicely formatted string since validation errors can list many issues and the plain error string may be difficult read when debugging. 
-
-
-```typescript
-import { Accounting } from "@speakeasy-sdks/accounting";
-import { SDKValidationError } from "@speakeasy-sdks/accounting/sdk/models/errors";
-
-const accounting = new Accounting({
-  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-});
-
-async function run() {
-  let result;
-  try {
-    result = await accounting.accountTransactions.get(
-      "<value>",
-      "8a210b68-6988-11ed-a1eb-0242ac120002",
-      "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-    );
-
-    // Handle the result
-    console.log(result);
-  } catch (err) {
-    switch (true) {
-      case (err instanceof SDKValidationError): {
-        // Validation errors can be pretty-printed
-        console.error(err.pretty());
-        // Raw value may also be inspected
-        console.error(err.rawValue);
-        return;
-      }
-      default: {
-        throw err;
-      }
-    }
-  }
-}
-
-run();
-
-```
-<!-- End Error Handling [errors] -->
-
-<!-- Start Server Selection [server] -->
-## Server Selection
-
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `serverIdx` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://api.codat.io` | None |
-
-```typescript
-import { Accounting } from "@speakeasy-sdks/accounting";
-
-const accounting = new Accounting({
-  serverIdx: 0,
-  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-});
-
-async function run() {
-  const result = await accounting.accountTransactions.get(
-    "<value>",
-    "8a210b68-6988-11ed-a1eb-0242ac120002",
-    "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-  );
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-
-```
-
-
-### Override Server URL Per-Client
-
-The default server can also be overridden globally by passing a URL to the `serverURL` optional parameter when initializing the SDK client instance. For example:
-
-```typescript
-import { Accounting } from "@speakeasy-sdks/accounting";
-
-const accounting = new Accounting({
-  serverURL: "https://api.codat.io",
-  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-});
-
-async function run() {
-  const result = await accounting.accountTransactions.get(
-    "<value>",
-    "8a210b68-6988-11ed-a1eb-0242ac120002",
-    "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-  );
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-
-```
-<!-- End Server Selection [server] -->
-
-<!-- Start Custom HTTP Client [http-client] -->
-## Custom HTTP Client
-
-The TypeScript SDK makes API calls using an `HTTPClient` that wraps the native
-[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). This
-client is a thin wrapper around `fetch` and provides the ability to attach hooks
-around the request lifecycle that can be used to modify the request or handle
-errors and response.
-
-The `HTTPClient` constructor takes an optional `fetcher` argument that can be
-used to integrate a third-party HTTP client or when writing tests to mock out
-the HTTP client and feed in fixtures.
-
-The following example shows how to use the `"beforeRequest"` hook to to add a
-custom header and a timeout to requests and how to use the `"requestError"` hook
-to log errors:
-
-```typescript
-import { Accounting } from "@speakeasy-sdks/accounting";
-import { HTTPClient } from "@speakeasy-sdks/accounting/lib/http";
-
-const httpClient = new HTTPClient({
-  // fetcher takes a function that has the same signature as native `fetch`.
-  fetcher: (request) => {
-    return fetch(request);
-  }
-});
-
-httpClient.addHook("beforeRequest", (request) => {
-  const nextRequest = new Request(request, {
-    signal: request.signal || AbortSignal.timeout(5000)
-  });
-
-  nextRequest.headers.set("x-custom-header", "custom value");
-
-  return nextRequest;
-});
-
-httpClient.addHook("requestError", (error, request) => {
-  console.group("Request Error");
-  console.log("Reason:", `${error}`);
-  console.log("Endpoint:", `${request.method} ${request.url}`);
-  console.groupEnd();
-});
-
-const sdk = new Accounting({ httpClient });
-```
-<!-- End Custom HTTP Client [http-client] -->
 
 <!-- Start Authentication [security] -->
 ## Authentication
@@ -426,48 +170,497 @@ const sdk = new Accounting({ httpClient });
 
 This SDK supports the following security scheme globally:
 
-| Name         | Type         | Scheme       |
-| ------------ | ------------ | ------------ |
-| `authHeader` | apiKey       | API key      |
+| Name      | Type | Scheme      |
+| --------- | ---- | ----------- |
+| `api_key` | http | HTTP Bearer |
 
-To authenticate with the API the `authHeader` parameter must be set when initializing the SDK client instance. For example:
-```typescript
-import { Accounting } from "@speakeasy-sdks/accounting";
+To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
+```python
+from openapi import SDK
 
-const accounting = new Accounting({
-  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-});
 
-async function run() {
-  const result = await accounting.accountTransactions.get(
-    "<value>",
-    "8a210b68-6988-11ed-a1eb-0242ac120002",
-    "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-  );
+with SDK(
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as sdk:
 
-  // Handle the result
-  console.log(result);
-}
+    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
 
-run();
+    # Handle response
+    print(res)
 
 ```
 <!-- End Authentication [security] -->
+
+<!-- Start Available Resources and Operations [operations] -->
+## Available Resources and Operations
+
+<details open>
+<summary>Available methods</summary>
+
+### [accounting](docs/sdks/accounting/README.md)
+
+
+#### [accounting.aged_debtors](docs/sdks/ageddebtorssdk/README.md)
+
+* [get](docs/sdks/ageddebtorssdk/README.md#get) - Get Aged Debtors
+
+#### [accounting.attachments](docs/sdks/attachments/README.md)
+
+* [list](docs/sdks/attachments/README.md#list) - List Attachments
+* [get](docs/sdks/attachments/README.md#get) - Get Attachment
+* [delete](docs/sdks/attachments/README.md#delete) - Delete Attachment
+* [download](docs/sdks/attachments/README.md#download) - Download Attachment
+
+#### [accounting.balance_sheet](docs/sdks/balancesheetsdk/README.md)
+
+* [get](docs/sdks/balancesheetsdk/README.md#get) - Get BalanceSheet
+
+#### [accounting.bill_payments](docs/sdks/billpayments/README.md)
+
+* [get](docs/sdks/billpayments/README.md#get) - Get Bill Payment
+* [update](docs/sdks/billpayments/README.md#update) - Update Bill Payment
+* [delete](docs/sdks/billpayments/README.md#delete) - Delete Bill Payment
+
+#### [accounting.bills](docs/sdks/bills/README.md)
+
+* [get](docs/sdks/bills/README.md#get) - Get Bill
+* [update](docs/sdks/bills/README.md#update) - Update Bill
+* [delete](docs/sdks/bills/README.md#delete) - Delete Bill
+
+#### [accounting.company_info](docs/sdks/companyinfosdk/README.md)
+
+* [get](docs/sdks/companyinfosdk/README.md#get) - Get company info
+
+#### [accounting.credit_notes](docs/sdks/creditnotes/README.md)
+
+* [get](docs/sdks/creditnotes/README.md#get) - Get Credit Note
+* [update](docs/sdks/creditnotes/README.md#update) - Update Credit Note
+* [delete](docs/sdks/creditnotes/README.md#delete) - Delete Credit Note
+
+#### [accounting.customers](docs/sdks/customers/README.md)
+
+* [get](docs/sdks/customers/README.md#get) - Get Customer
+* [update](docs/sdks/customers/README.md#update) - Update Customer
+* [delete](docs/sdks/customers/README.md#delete) - Delete Customer
+
+#### [accounting.departments](docs/sdks/departments/README.md)
+
+* [get](docs/sdks/departments/README.md#get) - Get Department
+* [update](docs/sdks/departments/README.md#update) - Update Department
+* [delete](docs/sdks/departments/README.md#delete) - Delete Department
+
+#### [accounting.expenses](docs/sdks/expenses/README.md)
+
+* [get](docs/sdks/expenses/README.md#get) - Get Expense
+* [update](docs/sdks/expenses/README.md#update) - Update Expense
+* [delete](docs/sdks/expenses/README.md#delete) - Delete Expense
+
+#### [accounting.invoice_items](docs/sdks/invoiceitems/README.md)
+
+* [get](docs/sdks/invoiceitems/README.md#get) - Get Invoice Item
+* [update](docs/sdks/invoiceitems/README.md#update) - Update Invoice Item
+* [delete](docs/sdks/invoiceitems/README.md#delete) - Delete Invoice Item
+
+#### [accounting.invoices](docs/sdks/invoices/README.md)
+
+* [get](docs/sdks/invoices/README.md#get) - Get Invoice
+* [update](docs/sdks/invoices/README.md#update) - Update Invoice
+* [delete](docs/sdks/invoices/README.md#delete) - Delete Invoice
+
+#### [accounting.journal_entries](docs/sdks/journalentries/README.md)
+
+* [get](docs/sdks/journalentries/README.md#get) - Get Journal Entry
+* [update](docs/sdks/journalentries/README.md#update) - Update Journal Entry
+* [delete](docs/sdks/journalentries/README.md#delete) - Delete Journal Entry
+
+#### [accounting.ledger_accounts](docs/sdks/ledgeraccounts/README.md)
+
+* [get](docs/sdks/ledgeraccounts/README.md#get) - Get Ledger Account
+* [update](docs/sdks/ledgeraccounts/README.md#update) - Update Ledger Account
+* [delete](docs/sdks/ledgeraccounts/README.md#delete) - Delete Ledger Account
+
+#### [accounting.locations](docs/sdks/locations/README.md)
+
+* [get](docs/sdks/locations/README.md#get) - Get Location
+* [update](docs/sdks/locations/README.md#update) - Update Location
+* [delete](docs/sdks/locations/README.md#delete) - Delete Location
+
+#### [accounting.payments](docs/sdks/payments/README.md)
+
+* [get](docs/sdks/payments/README.md#get) - Get Payment
+* [update](docs/sdks/payments/README.md#update) - Update Payment
+* [delete](docs/sdks/payments/README.md#delete) - Delete Payment
+
+#### [accounting.profit_and_loss](docs/sdks/profitandlosssdk/README.md)
+
+* [get](docs/sdks/profitandlosssdk/README.md#get) - Get Profit and Loss
+
+#### [accounting.purchase_orders](docs/sdks/purchaseorders/README.md)
+
+* [get](docs/sdks/purchaseorders/README.md#get) - Get Purchase Order
+* [update](docs/sdks/purchaseorders/README.md#update) - Update Purchase Order
+* [delete](docs/sdks/purchaseorders/README.md#delete) - Delete Purchase Order
+
+#### [accounting.subsidiaries](docs/sdks/subsidiaries/README.md)
+
+* [get](docs/sdks/subsidiaries/README.md#get) - Get Subsidiary
+* [update](docs/sdks/subsidiaries/README.md#update) - Update Subsidiary
+* [delete](docs/sdks/subsidiaries/README.md#delete) - Delete Subsidiary
+
+#### [accounting.suppliers](docs/sdks/suppliers/README.md)
+
+* [get](docs/sdks/suppliers/README.md#get) - Get Supplier
+* [update](docs/sdks/suppliers/README.md#update) - Update Supplier
+* [delete](docs/sdks/suppliers/README.md#delete) - Delete Supplier
+
+#### [accounting.tax_rates](docs/sdks/taxrates/README.md)
+
+* [get](docs/sdks/taxrates/README.md#get) - Get Tax Rate
+* [update](docs/sdks/taxrates/README.md#update) - Update Tax Rate
+* [delete](docs/sdks/taxrates/README.md#delete) - Delete Tax Rate
+
+#### [accounting.tracking_categories](docs/sdks/trackingcategories/README.md)
+
+* [get](docs/sdks/trackingcategories/README.md#get) - Get Tracking Category
+* [update](docs/sdks/trackingcategories/README.md#update) - Update Tracking Category
+* [delete](docs/sdks/trackingcategories/README.md#delete) - Delete Tracking Category
+
+
+### [vault](docs/sdks/vault/README.md)
+
+
+#### [vault.connection_custom_mappings](docs/sdks/connectioncustommappings/README.md)
+
+* [list](docs/sdks/connectioncustommappings/README.md#list) - List connection custom mappings
+
+#### [vault.connection_settings](docs/sdks/connectionsettings/README.md)
+
+* [list](docs/sdks/connectionsettings/README.md#list) - Get resource settings
+* [update](docs/sdks/connectionsettings/README.md#update) - Update settings
+
+#### [vault.connections](docs/sdks/connections/README.md)
+
+* [list](docs/sdks/connections/README.md#list) - Get all connections
+* [get](docs/sdks/connections/README.md#get) - Get connection
+* [update](docs/sdks/connections/README.md#update) - Update connection
+* [delete](docs/sdks/connections/README.md#delete) - Deletes a connection
+
+#### [vault.consumer_request_counts](docs/sdks/consumerrequestcounts/README.md)
+
+* [list](docs/sdks/consumerrequestcounts/README.md#list) - Consumer request counts
+
+#### [vault.consumers](docs/sdks/consumers/README.md)
+
+* [get](docs/sdks/consumers/README.md#get) - Get consumer
+* [update](docs/sdks/consumers/README.md#update) - Update consumer
+* [delete](docs/sdks/consumers/README.md#delete) - Delete consumer
+
+#### [vault.custom_fields](docs/sdks/customfields/README.md)
+
+* [list](docs/sdks/customfields/README.md#list) - Get resource custom fields
+
+#### [vault.custom_mappings](docs/sdks/custommappingssdk/README.md)
+
+* [list](docs/sdks/custommappingssdk/README.md#list) - List custom mappings
+
+#### [vault.logs](docs/sdks/logs/README.md)
+
+* [list](docs/sdks/logs/README.md#list) - Get all consumer request logs
+
+</details>
+<!-- End Available Resources and Operations [operations] -->
+
+<!-- Start Pagination [pagination] -->
+## Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `None`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+```python
+import openapi
+from openapi import SDK
+
+
+with SDK(
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as sdk:
+
+    res = sdk.accounting.attachments.list(reference_type=openapi.AttachmentReferenceType.INVOICE, reference_id="123456", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+<!-- End Pagination [pagination] -->
+
+<!-- Start Retries [retries] -->
+## Retries
+
+Some of the endpoints in this SDK support retries. If you use the SDK without any configuration, it will fall back to the default retry strategy provided by the API. However, the default retry strategy can be overridden on a per-operation basis, or across the entire SDK.
+
+To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
+```python
+from openapi import SDK
+from openapi.utils import BackoffStrategy, RetryConfig
+
+
+with SDK(
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as sdk:
+
+    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at",
+        RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
+
+    # Handle response
+    print(res)
+
+```
+
+If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
+```python
+from openapi import SDK
+from openapi.utils import BackoffStrategy, RetryConfig
+
+
+with SDK(
+    retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as sdk:
+
+    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    # Handle response
+    print(res)
+
+```
+<!-- End Retries [retries] -->
+
+<!-- Start Error Handling [errors] -->
+## Error Handling
+
+Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
+
+By default, an API error will raise a models.APIError exception, which has the following properties:
+
+| Property        | Type             | Description           |
+|-----------------|------------------|-----------------------|
+| `.status_code`  | *int*            | The HTTP status code  |
+| `.message`      | *str*            | The error message     |
+| `.raw_response` | *httpx.Response* | The raw HTTP response |
+| `.body`         | *str*            | The response content  |
+
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `get_async` method may raise the following exceptions:
+
+| Error Type                     | Status Code | Content Type     |
+| ------------------------------ | ----------- | ---------------- |
+| models.BadRequestResponse      | 400         | application/json |
+| models.UnauthorizedResponse    | 401         | application/json |
+| models.PaymentRequiredResponse | 402         | application/json |
+| models.NotFoundResponse        | 404         | application/json |
+| models.UnprocessableResponse   | 422         | application/json |
+| models.APIError                | 4XX, 5XX    | \*/\*            |
+
+### Example
+
+```python
+from openapi import SDK, models
+
+
+with SDK(
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as sdk:
+    res = None
+    try:
+
+        res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+        # Handle response
+        print(res)
+
+    except models.BadRequestResponse as e:
+        # handle e.data: models.BadRequestResponseData
+        raise(e)
+    except models.UnauthorizedResponse as e:
+        # handle e.data: models.UnauthorizedResponseData
+        raise(e)
+    except models.PaymentRequiredResponse as e:
+        # handle e.data: models.PaymentRequiredResponseData
+        raise(e)
+    except models.NotFoundResponse as e:
+        # handle e.data: models.NotFoundResponseData
+        raise(e)
+    except models.UnprocessableResponse as e:
+        # handle e.data: models.UnprocessableResponseData
+        raise(e)
+    except models.APIError as e:
+        # handle exception
+        raise(e)
+```
+<!-- End Error Handling [errors] -->
+
+<!-- Start Server Selection [server] -->
+## Server Selection
+
+### Override Server URL Per-Client
+
+The default server can be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+```python
+from openapi import SDK
+
+
+with SDK(
+    server_url="https://unify.apideck.com",
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as sdk:
+
+    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    # Handle response
+    print(res)
+
+```
+<!-- End Server Selection [server] -->
+
+<!-- Start Custom HTTP Client [http-client] -->
+## Custom HTTP Client
+
+The Python SDK makes API calls using the [httpx](https://www.python-httpx.org/) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with your own HTTP client instance.
+Depending on whether you are using the sync or async version of the SDK, you can pass an instance of `HttpClient` or `AsyncHttpClient` respectively, which are Protocol's ensuring that the client has the necessary methods to make API calls.
+This allows you to wrap the client with your own custom logic, such as adding custom headers, logging, or error handling, or you can just pass an instance of `httpx.Client` or `httpx.AsyncClient` directly.
+
+For example, you could specify a header for every request that this sdk makes as follows:
+```python
+from openapi import SDK
+import httpx
+
+http_client = httpx.Client(headers={"x-custom-header": "someValue"})
+s = SDK(client=http_client)
+```
+
+or you could wrap the client with your own custom logic:
+```python
+from openapi import SDK
+from openapi.httpclient import AsyncHttpClient
+import httpx
+
+class CustomClient(AsyncHttpClient):
+    client: AsyncHttpClient
+
+    def __init__(self, client: AsyncHttpClient):
+        self.client = client
+
+    async def send(
+        self,
+        request: httpx.Request,
+        *,
+        stream: bool = False,
+        auth: Union[
+            httpx._types.AuthTypes, httpx._client.UseClientDefault, None
+        ] = httpx.USE_CLIENT_DEFAULT,
+        follow_redirects: Union[
+            bool, httpx._client.UseClientDefault
+        ] = httpx.USE_CLIENT_DEFAULT,
+    ) -> httpx.Response:
+        request.headers["Client-Level-Header"] = "added by client"
+
+        return await self.client.send(
+            request, stream=stream, auth=auth, follow_redirects=follow_redirects
+        )
+
+    def build_request(
+        self,
+        method: str,
+        url: httpx._types.URLTypes,
+        *,
+        content: Optional[httpx._types.RequestContent] = None,
+        data: Optional[httpx._types.RequestData] = None,
+        files: Optional[httpx._types.RequestFiles] = None,
+        json: Optional[Any] = None,
+        params: Optional[httpx._types.QueryParamTypes] = None,
+        headers: Optional[httpx._types.HeaderTypes] = None,
+        cookies: Optional[httpx._types.CookieTypes] = None,
+        timeout: Union[
+            httpx._types.TimeoutTypes, httpx._client.UseClientDefault
+        ] = httpx.USE_CLIENT_DEFAULT,
+        extensions: Optional[httpx._types.RequestExtensions] = None,
+    ) -> httpx.Request:
+        return self.client.build_request(
+            method,
+            url,
+            content=content,
+            data=data,
+            files=files,
+            json=json,
+            params=params,
+            headers=headers,
+            cookies=cookies,
+            timeout=timeout,
+            extensions=extensions,
+        )
+
+s = SDK(async_client=CustomClient(httpx.AsyncClient()))
+```
+<!-- End Custom HTTP Client [http-client] -->
+
+<!-- Start Resource Management [resource-management] -->
+## Resource Management
+
+The `SDK` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
+
+[context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
+
+```python
+from openapi import SDK
+def main():
+
+    with SDK(
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
+        consumer_id="test-consumer",
+        app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    ) as sdk:
+        # Rest of application here...
+
+
+# Or when using async:
+async def amain():
+
+    async with SDK(
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
+        consumer_id="test-consumer",
+        app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    ) as sdk:
+        # Rest of application here...
+```
+<!-- End Resource Management [resource-management] -->
 
 <!-- Start Debugging [debug] -->
 ## Debugging
 
 You can setup your SDK to emit debug logs for SDK requests and responses.
 
-You can pass a logger that matches `console`'s interface as an SDK option.
+You can pass your own logger class directly into your SDK.
+```python
+from openapi import SDK
+import logging
 
-> [!WARNING]
-> Beware that debug logging will reveal secrets, like API tokens in headers, in log messages printed to a console or files. It's recommended to use this feature only during local development and not in production.
-
-```typescript
-import { Accounting } from "@speakeasy-sdks/accounting";
-
-const sdk = new Accounting({ debugLogger: console });
+logging.basicConfig(level=logging.DEBUG)
+s = SDK(debug_logger=logging.getLogger("openapi"))
 ```
 <!-- End Debugging [debug] -->
 
@@ -483,7 +676,7 @@ looking for the latest version.
 
 ## Contributions
 
-While we value open-source contributions to this SDK, this library is generated programmatically.
-Feel free to open a PR or a Github issue as a proof of concept and we'll do our best to include it in a future release!
+While we value open-source contributions to this SDK, this library is generated programmatically. Any manual changes added to internal files will be overwritten on the next generation. 
+We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release. 
 
-### SDK Created by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)
+### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=openapi&utm_campaign=python)

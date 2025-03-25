@@ -1,5 +1,0 @@
-# Banking
-(*banking*)
-
-### Available Operations
-

@@ -1,9 +1,0 @@
-# GetCategorizedBankStatementResponse
-
-
-## Fields
-
-| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `httpMeta`                                                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |
-| `enhancedCashFlowTransactions`                                                                     | [components.EnhancedCashFlowTransactions](../../models/components/enhancedcashflowtransactions.md) | :heavy_minus_sign:                                                                                 | OK                                                                                                 |

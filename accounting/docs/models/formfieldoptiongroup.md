@@ -1,0 +1,11 @@
+# FormFieldOptionGroup
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `label`                                                                  | *str*                                                                    | :heavy_check_mark:                                                       | N/A                                                                      | General Channel                                                          |
+| `options`                                                                | List[[models.SimpleFormFieldOption](../models/simpleformfieldoption.md)] | :heavy_check_mark:                                                       | N/A                                                                      |                                                                          |
+| `id`                                                                     | *Optional[str]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      | 1234                                                                     |
+| `option_type`                                                            | *Literal["group"]*                                                       | :heavy_check_mark:                                                       | N/A                                                                      |                                                                          |

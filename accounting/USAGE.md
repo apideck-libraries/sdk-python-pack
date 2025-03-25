@@ -1,23 +1,42 @@
 <!-- Start SDK Example Usage [usage] -->
-```typescript
-import { Accounting } from "@speakeasy-sdks/accounting";
+```python
+# Synchronous Example
+from openapi import SDK
 
-const accounting = new Accounting({
-  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-});
 
-async function run() {
-  const result = await accounting.accountTransactions.get(
-    "<value>",
-    "8a210b68-6988-11ed-a1eb-0242ac120002",
-    "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-  );
+with SDK(
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as sdk:
 
-  // Handle the result
-  console.log(result);
-}
+    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
 
-run();
+    # Handle response
+    print(res)
+```
 
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+from openapi import SDK
+
+async def main():
+
+    async with SDK(
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
+        consumer_id="test-consumer",
+        app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    ) as sdk:
+
+        res = await sdk.accounting.tax_rates.get_async(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+        # Handle response
+        print(res)
+
+asyncio.run(main())
 ```
 <!-- End SDK Example Usage [usage] -->

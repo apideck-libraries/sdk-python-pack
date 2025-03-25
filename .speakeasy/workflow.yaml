@@ -3,20 +3,22 @@ speakeasyVersion: latest
 sources:
     accounting:
         inputs:
-            - location: accounting.yaml
+            - location: https://ci-spec-unify.s3.eu-central-1.amazonaws.com/speakeasy-spec.yml
+        overlays:
+            - location: ./overlays/accounting-vault-overlay.yml
+        transformations:
+            - removeUnused: true
+            - cleanup: true
         registry:
-            location: registry.speakeasyapi.dev/sagar-demo/sagar-demo/accounting
-    lending:
-        inputs:
-            - location: lending.yaml
-        registry:
-            location: registry.speakeasyapi.dev/sagar-demo/sagar-demo/lending
+            location: registry.speakeasyapi.dev/apideck-k2o/apideck/apideck-accounting-only-oas
 targets:
-    accounting-ts:
-        target: typescript
+    accounting-py:
+        target: python
         source: accounting
         output: ./accounting
-    lending-ts:
-        target: typescript
-        source: lending
-        output: ./lending
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/apideck-k2o/apideck/apideck-accounting-only-oas-python-code-samples
+            labelOverride:
+                fixedValue: Python (SDK)
+            blocking: false

@@ -44,10 +44,4 @@ Each API module has its own documentation in its respective directory. For detai
 For example:
 - Accounting API documentation: [accounting/README.md](./accounting/README.md)
 
-## Support
-
-For any questions or issues:
-- Visit [Apideck Documentation](https://developers.apideck.com)
-- Join our [Discord Community](https://developers.apideck.com/discord)
-- Contact [Apideck Support](https://www.apideck.com/support)
 

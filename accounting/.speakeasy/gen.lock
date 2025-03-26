@@ -5,8 +5,11 @@ management:
   docVersion: 10.12.4
   speakeasyVersion: 1.523.2
   generationVersion: 2.560.1
-  releaseVersion: 0.9.2
-  configChecksum: f59c302bb5bf8d03a4536a5a1478a37b
+  releaseVersion: 0.9.3
+  configChecksum: 0e7b549b186bf3a5fb600571014acf42
+  repoURL: https://github.com/apideck-libraries/sdk-python-pack.git
+  repoSubDirectory: accounting
+  installationURL: https://github.com/apideck-libraries/sdk-python-pack.git#subdirectory=accounting
   published: true
 features:
   python:

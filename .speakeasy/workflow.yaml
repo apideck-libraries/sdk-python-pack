@@ -16,6 +16,9 @@ targets:
         target: python
         source: accounting
         output: ./accounting
+        publish:
+            pypi:
+                token: $pypi_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/apideck-k2o/apideck/apideck-accounting-only-oas-python-code-samples

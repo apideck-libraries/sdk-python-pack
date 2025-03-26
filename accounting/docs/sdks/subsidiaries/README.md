@@ -16,19 +16,22 @@ Get Subsidiary
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.subsidiaries.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.subsidiaries.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_subsidiary_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_subsidiary_response)
 
 ```
 
@@ -66,17 +69,18 @@ Update Subsidiary
 ### Example Usage
 
 ```python
-import openapi
-from openapi import SDK
+import apideck_unify
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.subsidiaries.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", parent_id="12345", name="SpaceX", status=openapi.SubsidiaryStatus.ACTIVE, row_version="1-12345", pass_through=[
+    res = apideck.accounting.subsidiaries.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", parent_id="12345", name="SpaceX", status=apideck_unify.SubsidiaryStatus.ACTIVE, row_version="1-12345", pass_through=[
         {
             "service_id": "<id>",
             "extend_paths": [
@@ -150,8 +154,10 @@ with SDK(
         },
     ])
 
+    assert res.update_subsidiary_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_subsidiary_response)
 
 ```
 
@@ -193,19 +199,22 @@ Delete Subsidiary
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.subsidiaries.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.subsidiaries.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_subsidiary_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_subsidiary_response)
 
 ```
 

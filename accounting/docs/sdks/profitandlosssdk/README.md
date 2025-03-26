@@ -14,16 +14,17 @@ Get Profit and Loss
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.profit_and_loss.get(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+    res = apideck.accounting.profit_and_loss.get(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
         "customer_id": "123abc",
         "start_date": "2021-01-01",
         "end_date": "2021-12-31",
@@ -31,8 +32,10 @@ with SDK(
         "search": "San Francisco",
     }, fields="id,updated_at")
 
+    assert res.get_profit_and_loss_response is not None
+
     # Handle response
-    print(res)
+    print(res.get_profit_and_loss_response)
 
 ```
 

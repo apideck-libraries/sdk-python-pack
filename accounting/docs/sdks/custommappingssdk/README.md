@@ -14,19 +14,22 @@ This endpoint returns a list of custom mappings.
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.vault.custom_mappings.list(unified_api="crm", service_id="pipedrive", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX")
+    res = apideck.vault.custom_mappings.list(unified_api="crm", service_id="pipedrive", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX")
+
+    assert res.get_custom_mappings_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_custom_mappings_response)
 
 ```
 

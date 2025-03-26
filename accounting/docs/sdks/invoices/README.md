@@ -16,19 +16,22 @@ Get Invoice
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.invoices.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.invoices.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_invoice_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_invoice_response)
 
 ```
 
@@ -66,22 +69,23 @@ Update Invoice
 ### Example Usage
 
 ```python
+import apideck_unify
+from apideck_unify import Apideck
 import dateutil.parser
-import openapi
-from openapi import SDK
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.invoices.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", type_=openapi.InvoiceType.SERVICE, number="OIT00546", customer={
+    res = apideck.accounting.invoices.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", type_=apideck_unify.InvoiceType.SERVICE, number="OIT00546", customer={
         "id": "12345",
         "display_name": "Windsurf Shop",
         "email": "boring@boring.com",
-    }, company_id="12345", invoice_date=dateutil.parser.parse("2020-09-30").date(), due_date=dateutil.parser.parse("2020-09-30").date(), terms="Net 30 days", po_number="90000117", reference="123456", status=openapi.InvoiceStatus.DRAFT, invoice_sent=True, currency=openapi.Currency.USD, currency_rate=0.69, tax_inclusive=True, sub_total=27500, total_tax=2500, tax_code="1234", discount_percentage=5.5, discount_amount=25, total=27500, balance=27500, deposit=0, customer_memo="Thank you for your business and have a great day!", tracking_categories=[
+    }, company_id="12345", invoice_date=dateutil.parser.parse("2020-09-30").date(), due_date=dateutil.parser.parse("2020-09-30").date(), terms="Net 30 days", po_number="90000117", reference="123456", status=apideck_unify.InvoiceStatus.DRAFT, invoice_sent=True, currency=apideck_unify.Currency.USD, currency_rate=0.69, tax_inclusive=True, sub_total=27500, total_tax=2500, tax_code="1234", discount_percentage=5.5, discount_amount=25, total=27500, balance=27500, deposit=0, customer_memo="Thank you for your business and have a great day!", tracking_categories=[
         {
             "id": "123456",
             "name": "New York",
@@ -101,7 +105,7 @@ with SDK(
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": openapi.InvoiceLineItemType.SALES_ITEM,
+            "type": apideck_unify.InvoiceLineItemType.SALES_ITEM,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -163,7 +167,7 @@ with SDK(
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": openapi.InvoiceLineItemType.SALES_ITEM,
+            "type": apideck_unify.InvoiceLineItemType.SALES_ITEM,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -219,7 +223,7 @@ with SDK(
         },
     ], billing_address={
         "id": "123",
-        "type": openapi.Type.PRIMARY,
+        "type": apideck_unify.Type.PRIMARY,
         "string": "25 Spring Street, Blackburn, VIC 3130",
         "name": "HQ US",
         "line1": "Main street",
@@ -244,7 +248,7 @@ with SDK(
         "row_version": "1-12345",
     }, shipping_address={
         "id": "123",
-        "type": openapi.Type.PRIMARY,
+        "type": apideck_unify.Type.PRIMARY,
         "string": "25 Spring Street, Blackburn, VIC 3130",
         "name": "HQ US",
         "line1": "Main street",
@@ -271,14 +275,14 @@ with SDK(
         "bank_name": "Monzo",
         "account_number": "123465",
         "account_name": "SPACEX LLC",
-        "account_type": openapi.AccountType.CREDIT_CARD,
+        "account_type": apideck_unify.AccountType.CREDIT_CARD,
         "iban": "CH2989144532982975332",
         "bic": "AUDSCHGGXXX",
         "routing_number": "012345678",
         "bsb_number": "062-001",
         "branch_identifier": "001",
         "bank_code": "BNH",
-        "currency": openapi.Currency.USD,
+        "currency": apideck_unify.Currency.USD,
     }, ledger_account={
         "id": "123456",
         "nominal_code": "N091",
@@ -318,8 +322,10 @@ with SDK(
         },
     ])
 
+    assert res.update_invoice_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_invoice_response)
 
 ```
 
@@ -395,19 +401,22 @@ Delete Invoice
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.invoices.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.invoices.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_invoice_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_invoice_response)
 
 ```
 

@@ -16,19 +16,22 @@ Get Bill Payment
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.bill_payments.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.bill_payments.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_bill_payment_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_bill_payment_response)
 
 ```
 
@@ -66,18 +69,19 @@ Update Bill Payment
 ### Example Usage
 
 ```python
+import apideck_unify
+from apideck_unify import Apideck
 import dateutil.parser
-import openapi
-from openapi import SDK
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.bill_payments.update(id="<id>", total_amount=49.99, transaction_date=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", currency=openapi.Currency.USD, currency_rate=0.69, reference="123456", payment_method="cash", payment_method_reference="123456", payment_method_id="12345", account={
+    res = apideck.accounting.bill_payments.update(id="<id>", total_amount=49.99, transaction_date=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", currency=apideck_unify.Currency.USD, currency_rate=0.69, reference="123456", payment_method="cash", payment_method_reference="123456", payment_method_id="12345", account={
         "id": "123456",
         "nominal_code": "N091",
         "code": "453",
@@ -86,7 +90,7 @@ with SDK(
         "display_name": "Windsurf Shop",
         "address": {
             "id": "123",
-            "type": openapi.Type.PRIMARY,
+            "type": apideck_unify.Type.PRIMARY,
             "string": "25 Spring Street, Blackburn, VIC 3130",
             "name": "HQ US",
             "line1": "Main street",
@@ -110,22 +114,22 @@ with SDK(
             "notes": "Address notes or delivery instructions.",
             "row_version": "1-12345",
         },
-    }, company_id="12345", reconciled=True, status=openapi.PaymentStatus.AUTHORISED, type_=openapi.BillPaymentType.ACCOUNTS_PAYABLE, allocations=[
+    }, company_id="12345", reconciled=True, status=apideck_unify.PaymentStatus.AUTHORISED, type_=apideck_unify.BillPaymentType.ACCOUNTS_PAYABLE, allocations=[
         {
             "id": "12345",
-            "type": openapi.BillPaymentAllocationType.BILL,
+            "type": apideck_unify.BillPaymentAllocationType.BILL,
             "amount": 49.99,
             "allocation_id": "123456",
         },
         {
             "id": "12345",
-            "type": openapi.BillPaymentAllocationType.BILL,
+            "type": apideck_unify.BillPaymentAllocationType.BILL,
             "amount": 49.99,
             "allocation_id": "123456",
         },
         {
             "id": "12345",
-            "type": openapi.BillPaymentAllocationType.BILL,
+            "type": apideck_unify.BillPaymentAllocationType.BILL,
             "amount": 49.99,
             "allocation_id": "123456",
         },
@@ -220,8 +224,10 @@ with SDK(
         },
     ])
 
+    assert res.update_bill_payment_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_bill_payment_response)
 
 ```
 
@@ -280,19 +286,22 @@ Delete Bill Payment
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.bill_payments.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.bill_payments.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_bill_payment_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_bill_payment_response)
 
 ```
 

@@ -16,19 +16,22 @@ Get Customer
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.customers.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.customers.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_customer_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_customer_response)
 
 ```
 
@@ -66,20 +69,21 @@ Update Customer
 ### Example Usage
 
 ```python
-import openapi
-from openapi import SDK
+import apideck_unify
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.customers.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", display_id="EMP00101", display_name="Windsurf Shop", company_name="SpaceX", company_id="12345", title="CEO", first_name="Elon", middle_name="D.", last_name="Musk", suffix="Jr.", individual=True, project=False, addresses=[
+    res = apideck.accounting.customers.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", display_id="EMP00101", display_name="Windsurf Shop", company_name="SpaceX", company_id="12345", title="CEO", first_name="Elon", middle_name="D.", last_name="Musk", suffix="Jr.", individual=True, project=False, addresses=[
         {
             "id": "123",
-            "type": openapi.Type.PRIMARY,
+            "type": apideck_unify.Type.PRIMARY,
             "string": "25 Spring Street, Blackburn, VIC 3130",
             "name": "HQ US",
             "line1": "Main street",
@@ -105,7 +109,7 @@ with SDK(
         },
         {
             "id": "123",
-            "type": openapi.Type.PRIMARY,
+            "type": apideck_unify.Type.PRIMARY,
             "string": "25 Spring Street, Blackburn, VIC 3130",
             "name": "HQ US",
             "line1": "Main street",
@@ -131,7 +135,7 @@ with SDK(
         },
         {
             "id": "123",
-            "type": openapi.Type.PRIMARY,
+            "type": apideck_unify.Type.PRIMARY,
             "string": "25 Spring Street, Blackburn, VIC 3130",
             "name": "HQ US",
             "line1": "Main street",
@@ -162,7 +166,7 @@ with SDK(
             "country_code": "1",
             "area_code": "323",
             "extension": "105",
-            "type": openapi.PhoneNumberType.PRIMARY,
+            "type": apideck_unify.PhoneNumberType.PRIMARY,
         },
         {
             "number": "111-111-1111",
@@ -170,73 +174,73 @@ with SDK(
             "country_code": "1",
             "area_code": "323",
             "extension": "105",
-            "type": openapi.PhoneNumberType.PRIMARY,
+            "type": apideck_unify.PhoneNumberType.PRIMARY,
         },
     ], emails=[
         {
             "email": "elon@musk.com",
             "id": "123",
-            "type": openapi.EmailType.PRIMARY,
+            "type": apideck_unify.EmailType.PRIMARY,
         },
         {
             "email": "elon@musk.com",
             "id": "123",
-            "type": openapi.EmailType.PRIMARY,
+            "type": apideck_unify.EmailType.PRIMARY,
         },
     ], websites=[
         {
             "url": "http://example.com",
             "id": "12345",
-            "type": openapi.WebsiteType.PRIMARY,
+            "type": apideck_unify.WebsiteType.PRIMARY,
         },
         {
             "url": "http://example.com",
             "id": "12345",
-            "type": openapi.WebsiteType.PRIMARY,
+            "type": apideck_unify.WebsiteType.PRIMARY,
         },
         {
             "url": "http://example.com",
             "id": "12345",
-            "type": openapi.WebsiteType.PRIMARY,
+            "type": apideck_unify.WebsiteType.PRIMARY,
         },
     ], bank_accounts=[
         {
             "bank_name": "Monzo",
             "account_number": "123465",
             "account_name": "SPACEX LLC",
-            "account_type": openapi.AccountType.CREDIT_CARD,
+            "account_type": apideck_unify.AccountType.CREDIT_CARD,
             "iban": "CH2989144532982975332",
             "bic": "AUDSCHGGXXX",
             "routing_number": "012345678",
             "bsb_number": "062-001",
             "branch_identifier": "001",
             "bank_code": "BNH",
-            "currency": openapi.Currency.USD,
+            "currency": apideck_unify.Currency.USD,
         },
         {
             "bank_name": "Monzo",
             "account_number": "123465",
             "account_name": "SPACEX LLC",
-            "account_type": openapi.AccountType.CREDIT_CARD,
+            "account_type": apideck_unify.AccountType.CREDIT_CARD,
             "iban": "CH2989144532982975332",
             "bic": "AUDSCHGGXXX",
             "routing_number": "012345678",
             "bsb_number": "062-001",
             "branch_identifier": "001",
             "bank_code": "BNH",
-            "currency": openapi.Currency.USD,
+            "currency": apideck_unify.Currency.USD,
         },
     ], notes="Some notes about this customer", tax_rate={
         "id": "123456",
         "rate": 10,
-    }, tax_number="US123945459", currency=openapi.Currency.USD, account={
+    }, tax_number="US123945459", currency=apideck_unify.Currency.USD, account={
         "id": "123456",
         "nominal_code": "N091",
         "code": "453",
     }, parent={
         "id": "12345",
         "name": "Windsurf Shop",
-    }, status=openapi.CustomerStatus.ACTIVE, payment_method="cash", channel="email", custom_fields=[
+    }, status=apideck_unify.CustomerStatus.ACTIVE, payment_method="cash", channel="email", custom_fields=[
         {
             "id": "2389328923893298",
             "name": "employee_level",
@@ -267,8 +271,10 @@ with SDK(
         },
     ])
 
+    assert res.update_customer_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_customer_response)
 
 ```
 
@@ -333,19 +339,22 @@ Delete Customer
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.customers.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.customers.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_customer_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_customer_response)
 
 ```
 

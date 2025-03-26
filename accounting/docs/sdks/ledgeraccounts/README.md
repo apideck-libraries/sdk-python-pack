@@ -16,19 +16,22 @@ Get Ledger Account
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.ledger_accounts.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.ledger_accounts.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_ledger_account_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_ledger_account_response)
 
 ```
 
@@ -66,32 +69,33 @@ Update Ledger Account
 ### Example Usage
 
 ```python
+import apideck_unify
+from apideck_unify import Apideck
 import dateutil.parser
-import openapi
-from openapi import SDK
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.ledger_accounts.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", display_id="1-12345", code="453", classification=openapi.Classification.ASSET, type_=openapi.LedgerAccountType.BANK, sub_type="CHECKING_ACCOUNT", name="Bank account", fully_qualified_name="Asset.Bank.Checking_Account", description="Main checking account", opening_balance=75000, current_balance=20000, currency=openapi.Currency.USD, tax_type="NONE", tax_rate={
+    res = apideck.accounting.ledger_accounts.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", display_id="1-12345", code="453", classification=apideck_unify.Classification.ASSET, type_=apideck_unify.LedgerAccountType.BANK, sub_type="CHECKING_ACCOUNT", name="Bank account", fully_qualified_name="Asset.Bank.Checking_Account", description="Main checking account", opening_balance=75000, current_balance=20000, currency=apideck_unify.Currency.USD, tax_type="NONE", tax_rate={
         "id": "123456",
         "rate": 10,
-    }, level=1, active=True, status=openapi.AccountStatus.ACTIVE, header=True, bank_account={
+    }, level=1, active=True, status=apideck_unify.AccountStatus.ACTIVE, header=True, bank_account={
         "bank_name": "Monzo",
         "account_number": "123465",
         "account_name": "SPACEX LLC",
-        "account_type": openapi.AccountType.CREDIT_CARD,
+        "account_type": apideck_unify.AccountType.CREDIT_CARD,
         "iban": "CH2989144532982975332",
         "bic": "AUDSCHGGXXX",
         "routing_number": "012345678",
         "bsb_number": "062-001",
         "branch_identifier": "001",
         "bank_code": "BNH",
-        "currency": openapi.Currency.USD,
+        "currency": apideck_unify.Currency.USD,
     }, parent_account={
         "id": "12345",
         "name": "Bank Accounts",
@@ -163,8 +167,10 @@ with SDK(
         },
     ])
 
+    assert res.update_ledger_account_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_ledger_account_response)
 
 ```
 
@@ -227,19 +233,22 @@ Delete Ledger Account
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.ledger_accounts.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.ledger_accounts.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_ledger_account_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_ledger_account_response)
 
 ```
 

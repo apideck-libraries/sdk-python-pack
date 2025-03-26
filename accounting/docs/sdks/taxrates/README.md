@@ -17,19 +17,22 @@ Get Tax Rate. Note: Not all connectors return the actual rate/percentage value. 
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_tax_rate_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_tax_rate_response)
 
 ```
 
@@ -67,17 +70,18 @@ Update Tax Rate
 ### Example Usage
 
 ```python
-import openapi
-from openapi import SDK
+import apideck_unify
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.tax_rates.update(id_param="<value>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", id="1234", name="GST on Purchases", code="ABN", description="Reduced rate GST Purchases", effective_tax_rate=10, total_tax_rate=10, tax_payable_account_id="123456", tax_remitted_account_id="123456", components=[
+    res = apideck.accounting.tax_rates.update(id_param="<value>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", id="1234", name="GST on Purchases", code="ABN", description="Reduced rate GST Purchases", effective_tax_rate=10, total_tax_rate=10, tax_payable_account_id="123456", tax_remitted_account_id="123456", components=[
         {
             "id": "10",
             "name": "GST",
@@ -96,7 +100,7 @@ with SDK(
             "rate": 10,
             "compound": True,
         },
-    ], type_="NONE", report_tax_type="NONE", original_tax_rate_id="12345", status=openapi.TaxRateStatus.ACTIVE, row_version="1-12345", pass_through=[
+    ], type_="NONE", report_tax_type="NONE", original_tax_rate_id="12345", status=apideck_unify.TaxRateStatus.ACTIVE, row_version="1-12345", pass_through=[
         {
             "service_id": "<id>",
             "extend_paths": [
@@ -162,8 +166,10 @@ with SDK(
         },
     ])
 
+    assert res.update_tax_rate_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_tax_rate_response)
 
 ```
 
@@ -217,19 +223,22 @@ Delete Tax Rate
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.tax_rates.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.tax_rates.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_tax_rate_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_tax_rate_response)
 
 ```
 

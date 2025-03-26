@@ -16,19 +16,22 @@ Get Tracking Category
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.tracking_categories.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tracking_categories.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_tracking_category_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_tracking_category_response)
 
 ```
 
@@ -66,17 +69,18 @@ Update Tracking Category
 ### Example Usage
 
 ```python
-import openapi
-from openapi import SDK
+import apideck_unify
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.tracking_categories.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", parent_id="12345", name="Department", code="100", status=openapi.TrackingCategoryStatus.ACTIVE, row_version="1-12345", pass_through=[
+    res = apideck.accounting.tracking_categories.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", parent_id="12345", name="Department", code="100", status=apideck_unify.TrackingCategoryStatus.ACTIVE, row_version="1-12345", pass_through=[
         {
             "service_id": "<id>",
             "extend_paths": [
@@ -150,8 +154,10 @@ with SDK(
         },
     ])
 
+    assert res.update_tracking_category_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_tracking_category_response)
 
 ```
 
@@ -195,19 +201,22 @@ Delete Tracking Category
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.tracking_categories.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.tracking_categories.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_tracking_category_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_tracking_category_response)
 
 ```
 

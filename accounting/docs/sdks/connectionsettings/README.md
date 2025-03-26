@@ -16,19 +16,22 @@ This endpoint returns custom settings and their defaults required by connection 
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.vault.connection_settings.list(unified_api="crm", service_id="pipedrive", resource="leads", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX")
+    res = apideck.vault.connection_settings.list(unified_api="crm", service_id="pipedrive", resource="leads", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX")
+
+    assert res.get_connection_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_connection_response)
 
 ```
 
@@ -65,16 +68,18 @@ Update default values for a connection's resource settings
 ### Example Usage
 
 ```python
-from openapi import SDK
+import apideck_unify
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.vault.connection_settings.update(service_id="pipedrive", unified_api="crm", resource="leads", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", enabled=True, settings={
+    res = apideck.vault.connection_settings.update(service_id="pipedrive", unified_api="crm", resource="leads", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", enabled=True, settings={
         "instance_url": "https://eu28.salesforce.com",
         "api_key": "12345xxxxxx",
     }, metadata={
@@ -95,20 +100,35 @@ with SDK(
                             "options": [
                                 {
                                     "label": "General Channel",
-                                    "value": 12.5,
-                                    "option_type": "simple",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": 123,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": [
+                                        "team",
+                                        "general",
+                                    ],
                                 },
                             ],
+                            "option_type": apideck_unify.FormFieldOptionGroupOptionType.GROUP,
                             "id": "1234",
-                            "option_type": "group",
                         },
                         {
                             "label": "General Channel",
-                            "value": [
-                                "team",
-                                "general",
+                            "options": [
+                                {
+                                    "label": "General Channel",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": [
+                                        "team",
+                                        "general",
+                                    ],
+                                },
                             ],
-                            "option_type": "simple",
+                            "option_type": apideck_unify.FormFieldOptionGroupOptionType.GROUP,
+                            "id": "1234",
                         },
                     ],
                     "value": 10.5,
@@ -118,15 +138,11 @@ with SDK(
                     "options": [
                         {
                             "label": "General Channel",
-                            "options": [
-                                {
-                                    "label": "General Channel",
-                                    "value": 12.5,
-                                    "option_type": "simple",
-                                },
+                            "option_type": apideck_unify.OptionType.SIMPLE,
+                            "value": [
+                                "team",
+                                "general",
                             ],
-                            "id": "1234",
-                            "option_type": "group",
                         },
                     ],
                     "value": True,
@@ -141,15 +157,8 @@ with SDK(
                     "options": [
                         {
                             "label": "General Channel",
-                            "options": [
-                                {
-                                    "label": "General Channel",
-                                    "value": "general",
-                                    "option_type": "simple",
-                                },
-                            ],
-                            "id": "1234",
-                            "option_type": "group",
+                            "option_type": apideck_unify.OptionType.SIMPLE,
+                            "value": 123,
                         },
                     ],
                     "value": True,
@@ -159,20 +168,30 @@ with SDK(
                     "options": [
                         {
                             "label": "General Channel",
-                            "options": [
-                                {
-                                    "label": "General Channel",
-                                    "value": 12.5,
-                                    "option_type": "simple",
-                                },
-                            ],
-                            "id": "1234",
-                            "option_type": "group",
+                            "option_type": apideck_unify.OptionType.SIMPLE,
+                            "value": "general",
                         },
                         {
                             "label": "General Channel",
-                            "value": 123,
-                            "option_type": "simple",
+                            "options": [
+                                {
+                                    "label": "General Channel",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": 123,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": 12.5,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": True,
+                                },
+                            ],
+                            "option_type": apideck_unify.FormFieldOptionGroupOptionType.GROUP,
+                            "id": "1234",
                         },
                     ],
                     "value": "GC5000 series",
@@ -182,8 +201,15 @@ with SDK(
                     "options": [
                         {
                             "label": "General Channel",
-                            "value": True,
-                            "option_type": "simple",
+                            "options": [
+                                {
+                                    "label": "General Channel",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": "general",
+                                },
+                            ],
+                            "option_type": apideck_unify.FormFieldOptionGroupOptionType.GROUP,
+                            "id": "1234",
                         },
                     ],
                     "value": [
@@ -205,17 +231,27 @@ with SDK(
                             "options": [
                                 {
                                     "label": "General Channel",
-                                    "value": 123,
-                                    "option_type": "simple",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": 12.5,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": 12.5,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": "general",
                                 },
                             ],
+                            "option_type": apideck_unify.FormFieldOptionGroupOptionType.GROUP,
                             "id": "1234",
-                            "option_type": "group",
                         },
                         {
                             "label": "General Channel",
-                            "value": True,
-                            "option_type": "simple",
+                            "option_type": apideck_unify.OptionType.SIMPLE,
+                            "value": 123,
                         },
                     ],
                     "value": True,
@@ -228,12 +264,25 @@ with SDK(
                             "options": [
                                 {
                                     "label": "General Channel",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": [
+                                        "team",
+                                        "general",
+                                    ],
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
+                                    "value": True,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": apideck_unify.OptionType.SIMPLE,
                                     "value": 12.5,
-                                    "option_type": "simple",
                                 },
                             ],
+                            "option_type": apideck_unify.FormFieldOptionGroupOptionType.GROUP,
                             "id": "1234",
-                            "option_type": "group",
                         },
                     ],
                     "value": True,
@@ -249,8 +298,10 @@ with SDK(
         },
     ])
 
+    assert res.update_connection_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_connection_response)
 
 ```
 

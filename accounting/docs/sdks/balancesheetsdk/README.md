@@ -14,27 +14,30 @@ Get BalanceSheet
 ### Example Usage
 
 ```python
-import openapi
-from openapi import SDK
+import apideck_unify
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.balance_sheet.get(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", pass_through={
+    res = apideck.accounting.balance_sheet.get(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", pass_through={
         "search": "San Francisco",
     }, filter_={
         "start_date": "2021-01-01",
         "end_date": "2021-12-31",
         "period_count": 3,
-        "period_type": openapi.PeriodType.MONTH,
+        "period_type": apideck_unify.PeriodType.MONTH,
     })
 
+    assert res.get_balance_sheet_response is not None
+
     # Handle response
-    print(res)
+    print(res.get_balance_sheet_response)
 
 ```
 

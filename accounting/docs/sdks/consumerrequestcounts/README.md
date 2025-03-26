@@ -15,19 +15,22 @@ Get consumer request counts within a given datetime range.
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.vault.consumer_request_counts.list(consumer_id="test_user_id", start_datetime="2021-05-01T12:00:00.000Z", end_datetime="2021-05-30T12:00:00.000Z", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX")
+    res = apideck.vault.consumer_request_counts.list(consumer_id="test_user_id", start_datetime="2021-05-01T12:00:00.000Z", end_datetime="2021-05-30T12:00:00.000Z", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX")
+
+    assert res.consumer_request_counts_in_date_range_response is not None
 
     # Handle response
-    print(res)
+    print(res.consumer_request_counts_in_date_range_response)
 
 ```
 

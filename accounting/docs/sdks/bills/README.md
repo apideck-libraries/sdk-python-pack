@@ -16,19 +16,22 @@ Get Bill
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.bills.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.bills.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_bill_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_bill_response)
 
 ```
 
@@ -66,23 +69,24 @@ Update Bill
 ### Example Usage
 
 ```python
+import apideck_unify
+from apideck_unify import Apideck
 import dateutil.parser
-import openapi
-from openapi import SDK
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.bills.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", bill_number="10001", supplier={
+    res = apideck.accounting.bills.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", bill_number="10001", supplier={
         "id": "12345",
         "display_name": "Windsurf Shop",
         "address": {
             "id": "123",
-            "type": openapi.Type.PRIMARY,
+            "type": apideck_unify.Type.PRIMARY,
             "string": "25 Spring Street, Blackburn, VIC 3130",
             "name": "HQ US",
             "line1": "Main street",
@@ -106,13 +110,13 @@ with SDK(
             "notes": "Address notes or delivery instructions.",
             "row_version": "1-12345",
         },
-    }, company_id="12345", currency=openapi.Currency.USD, currency_rate=0.69, tax_inclusive=True, bill_date=dateutil.parser.parse("2020-09-30").date(), due_date=dateutil.parser.parse("2020-10-30").date(), paid_date=dateutil.parser.parse("2020-10-30").date(), po_number="90000117", reference="123456", line_items=[
+    }, company_id="12345", currency=apideck_unify.Currency.USD, currency_rate=0.69, tax_inclusive=True, bill_date=dateutil.parser.parse("2020-09-30").date(), due_date=dateutil.parser.parse("2020-10-30").date(), paid_date=dateutil.parser.parse("2020-10-30").date(), po_number="90000117", reference="123456", line_items=[
         {
             "row_id": "12345",
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": openapi.BillLineItemType.EXPENSE_ACCOUNT,
+            "type": apideck_unify.BillLineItemType.EXPENSE_ACCOUNT,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -153,7 +157,7 @@ with SDK(
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": openapi.BillLineItemType.EXPENSE_ACCOUNT,
+            "type": apideck_unify.BillLineItemType.EXPENSE_ACCOUNT,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -194,7 +198,7 @@ with SDK(
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": openapi.BillLineItemType.EXPENSE_ACCOUNT,
+            "type": apideck_unify.BillLineItemType.EXPENSE_ACCOUNT,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -234,7 +238,7 @@ with SDK(
             ],
             "row_version": "1-12345",
         },
-    ], terms="Net 30 days", balance=27500, deposit=0, sub_total=27500, total_tax=2500, total=27500, tax_code="1234", notes="Some notes about this bill.", status=openapi.BillStatus.DRAFT, ledger_account={
+    ], terms="Net 30 days", balance=27500, deposit=0, sub_total=27500, total_tax=2500, total=27500, tax_code="1234", notes="Some notes about this bill.", status=apideck_unify.BillStatus.DRAFT, ledger_account={
         "id": "123456",
         "nominal_code": "N091",
         "code": "453",
@@ -242,14 +246,14 @@ with SDK(
         "bank_name": "Monzo",
         "account_number": "123465",
         "account_name": "SPACEX LLC",
-        "account_type": openapi.AccountType.CREDIT_CARD,
+        "account_type": apideck_unify.AccountType.CREDIT_CARD,
         "iban": "CH2989144532982975332",
         "bic": "AUDSCHGGXXX",
         "routing_number": "012345678",
         "bsb_number": "062-001",
         "branch_identifier": "001",
         "bank_code": "BNH",
-        "currency": openapi.Currency.USD,
+        "currency": apideck_unify.Currency.USD,
     }, discount_percentage=5.5, source_document_url="https://www.invoicesolution.com/bill/123456", tracking_categories=[
         {
             "id": "123456",
@@ -290,8 +294,10 @@ with SDK(
         },
     ], accounting_period="01-24")
 
+    assert res.update_bill_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_bill_response)
 
 ```
 
@@ -362,19 +368,22 @@ Delete Bill
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.bills.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.bills.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_bill_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_bill_response)
 
 ```
 

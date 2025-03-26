@@ -16,19 +16,22 @@ Get Purchase Order
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.purchase_orders.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.purchase_orders.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.get_purchase_order_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_purchase_order_response)
 
 ```
 
@@ -65,23 +68,24 @@ Update Purchase Order
 ### Example Usage
 
 ```python
+import apideck_unify
+from apideck_unify import Apideck
 import dateutil.parser
-import openapi
-from openapi import SDK
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.purchase_orders.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", po_number="90000117", reference="123456", supplier={
+    res = apideck.accounting.purchase_orders.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", po_number="90000117", reference="123456", supplier={
         "id": "12345",
         "display_name": "Windsurf Shop",
         "address": {
             "id": "123",
-            "type": openapi.Type.PRIMARY,
+            "type": apideck_unify.Type.PRIMARY,
             "string": "25 Spring Street, Blackburn, VIC 3130",
             "name": "HQ US",
             "line1": "Main street",
@@ -105,14 +109,14 @@ with SDK(
             "notes": "Address notes or delivery instructions.",
             "row_version": "1-12345",
         },
-    }, company_id="12345", status=openapi.PurchaseOrderStatus.OPEN, issued_date=dateutil.parser.parse("2020-09-30").date(), delivery_date=dateutil.parser.parse("2020-09-30").date(), expected_arrival_date=dateutil.parser.parse("2020-09-30").date(), currency=openapi.Currency.USD, currency_rate=0.69, sub_total=27500, total_tax=2500, total=27500, tax_inclusive=True, line_items=[
+    }, company_id="12345", status=apideck_unify.PurchaseOrderStatus.OPEN, issued_date=dateutil.parser.parse("2020-09-30").date(), delivery_date=dateutil.parser.parse("2020-09-30").date(), expected_arrival_date=dateutil.parser.parse("2020-09-30").date(), currency=apideck_unify.Currency.USD, currency_rate=0.69, sub_total=27500, total_tax=2500, total=27500, tax_inclusive=True, line_items=[
         {
             "id": "12345",
             "row_id": "12345",
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": openapi.InvoiceLineItemType.SALES_ITEM,
+            "type": apideck_unify.InvoiceLineItemType.SALES_ITEM,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -171,7 +175,7 @@ with SDK(
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": openapi.InvoiceLineItemType.SALES_ITEM,
+            "type": apideck_unify.InvoiceLineItemType.SALES_ITEM,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -227,7 +231,7 @@ with SDK(
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": openapi.InvoiceLineItemType.SALES_ITEM,
+            "type": apideck_unify.InvoiceLineItemType.SALES_ITEM,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -269,7 +273,7 @@ with SDK(
         },
     ], shipping_address={
         "id": "123",
-        "type": openapi.Type.PRIMARY,
+        "type": apideck_unify.Type.PRIMARY,
         "string": "25 Spring Street, Blackburn, VIC 3130",
         "name": "HQ US",
         "line1": "Main street",
@@ -300,14 +304,14 @@ with SDK(
         "bank_name": "Monzo",
         "account_number": "123465",
         "account_name": "SPACEX LLC",
-        "account_type": openapi.AccountType.CREDIT_CARD,
+        "account_type": apideck_unify.AccountType.CREDIT_CARD,
         "iban": "CH2989144532982975332",
         "bic": "AUDSCHGGXXX",
         "routing_number": "012345678",
         "bsb_number": "062-001",
         "branch_identifier": "001",
         "bank_code": "BNH",
-        "currency": openapi.Currency.USD,
+        "currency": apideck_unify.Currency.USD,
     }, accounting_by_row=False, due_date=dateutil.parser.parse("2020-10-30").date(), payment_method="cash", tax_code="1234", channel="email", memo="Thank you for the partnership and have a great day!", tracking_categories=[
         {
             "id": "123456",
@@ -387,8 +391,10 @@ with SDK(
         },
     ])
 
+    assert res.update_purchase_order_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_purchase_order_response)
 
 ```
 
@@ -454,19 +460,22 @@ Delete Purchase Order
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.purchase_orders.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.purchase_orders.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_purchase_order_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_purchase_order_response)
 
 ```
 

@@ -16,22 +16,25 @@ Get Invoice Item
 ### Example Usage
 
 ```python
-import openapi
-from openapi import SDK
+import apideck_unify
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.invoice_items.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at", filter_={
-        "type": openapi.InvoiceItemType.SERVICE,
+    res = apideck.accounting.invoice_items.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at", filter_={
+        "type": apideck_unify.InvoiceItemType.SERVICE,
     })
 
+    assert res.get_invoice_item_response is not None
+
     # Handle response
-    print(res)
+    print(res.get_invoice_item_response)
 
 ```
 
@@ -70,18 +73,19 @@ Update Invoice Item
 ### Example Usage
 
 ```python
+import apideck_unify
+from apideck_unify import Apideck
 import dateutil.parser
-import openapi
-from openapi import SDK
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.invoice_items.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", name="Model Y", description="Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.", code="120-C", sold=True, purchased=True, tracked=True, taxable=True, inventory_date=dateutil.parser.parse("2020-10-30").date(), type_=openapi.InvoiceItemTypeType.INVENTORY, sales_details={
+    res = apideck.accounting.invoice_items.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", name="Model Y", description="Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.", code="120-C", sold=True, purchased=True, tracked=True, taxable=True, inventory_date=dateutil.parser.parse("2020-10-30").date(), type_=apideck_unify.InvoiceItemTypeType.INVENTORY, sales_details={
         "unit_price": 27500.5,
         "unit_of_measure": "pc.",
         "tax_inclusive": True,
@@ -175,8 +179,10 @@ with SDK(
         },
     ])
 
+    assert res.update_invoice_items_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_invoice_items_response)
 
 ```
 
@@ -234,19 +240,22 @@ Delete Invoice Item
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.invoice_items.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.invoice_items.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_tax_rate_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_tax_rate_response)
 
 ```
 

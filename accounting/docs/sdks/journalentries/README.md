@@ -16,19 +16,22 @@ Get Journal Entry
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.journal_entries.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.journal_entries.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_journal_entry_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_journal_entry_response)
 
 ```
 
@@ -66,20 +69,21 @@ Update Journal Entry
 ### Example Usage
 
 ```python
+import apideck_unify
+from apideck_unify import Apideck
 import dateutil.parser
-import openapi
-from openapi import SDK
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.journal_entries.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", title="Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry", currency_rate=0.69, currency=openapi.Currency.USD, company_id="12345", line_items=[
+    res = apideck.accounting.journal_entries.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", title="Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry", currency_rate=0.69, currency=apideck_unify.Currency.USD, company_id="12345", line_items=[
         {
-            "type": openapi.JournalEntryLineItemType.DEBIT,
+            "type": apideck_unify.JournalEntryLineItemType.DEBIT,
             "ledger_account": {
                 "id": "123456",
                 "nominal_code": "N091",
@@ -113,7 +117,7 @@ with SDK(
                 "display_name": "Windsurf Shop",
                 "address": {
                     "id": "123",
-                    "type": openapi.Type.PRIMARY,
+                    "type": apideck_unify.Type.PRIMARY,
                     "string": "25 Spring Street, Blackburn, VIC 3130",
                     "name": "HQ US",
                     "line1": "Main street",
@@ -141,7 +145,7 @@ with SDK(
             "line_number": 1,
         },
         {
-            "type": openapi.JournalEntryLineItemType.DEBIT,
+            "type": apideck_unify.JournalEntryLineItemType.DEBIT,
             "ledger_account": {
                 "id": "123456",
                 "nominal_code": "N091",
@@ -175,7 +179,7 @@ with SDK(
                 "display_name": "Windsurf Shop",
                 "address": {
                     "id": "123",
-                    "type": openapi.Type.PRIMARY,
+                    "type": apideck_unify.Type.PRIMARY,
                     "string": "25 Spring Street, Blackburn, VIC 3130",
                     "name": "HQ US",
                     "line1": "Main street",
@@ -203,7 +207,7 @@ with SDK(
             "line_number": 1,
         },
         {
-            "type": openapi.JournalEntryLineItemType.DEBIT,
+            "type": apideck_unify.JournalEntryLineItemType.DEBIT,
             "ledger_account": {
                 "id": "123456",
                 "nominal_code": "N091",
@@ -241,7 +245,7 @@ with SDK(
                 "display_name": "Windsurf Shop",
                 "address": {
                     "id": "123",
-                    "type": openapi.Type.PRIMARY,
+                    "type": apideck_unify.Type.PRIMARY,
                     "string": "25 Spring Street, Blackburn, VIC 3130",
                     "name": "HQ US",
                     "line1": "Main street",
@@ -308,8 +312,10 @@ with SDK(
         },
     ])
 
+    assert res.update_journal_entry_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_journal_entry_response)
 
 ```
 
@@ -362,19 +368,22 @@ Delete Journal Entry
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.journal_entries.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.journal_entries.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_journal_entry_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_journal_entry_response)
 
 ```
 

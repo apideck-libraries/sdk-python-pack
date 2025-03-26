@@ -17,19 +17,22 @@ Consumer detail including their aggregated counts with the connections they have
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.vault.consumers.get(consumer_id="test_user_id", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX")
+    res = apideck.vault.consumers.get(consumer_id="test_user_id", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX")
+
+    assert res.get_consumer_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_consumer_response)
 
 ```
 
@@ -63,24 +66,27 @@ Update consumer metadata such as name and email.
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.vault.consumers.update(consumer_id="test_user_id", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", metadata={
+    res = apideck.vault.consumers.update(consumer_id="test_user_id", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", metadata={
         "account_name": "SpaceX",
         "user_name": "Elon Musk",
         "email": "elon@musk.com",
         "image": "https://www.spacex.com/static/images/share.jpg",
     })
 
+    assert res.update_consumer_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_consumer_response)
 
 ```
 
@@ -115,19 +121,22 @@ Delete consumer and all their connections, including credentials.
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.vault.consumers.delete(consumer_id="test_user_id", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX")
+    res = apideck.vault.consumers.delete(consumer_id="test_user_id", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX")
+
+    assert res.delete_consumer_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_consumer_response)
 
 ```
 

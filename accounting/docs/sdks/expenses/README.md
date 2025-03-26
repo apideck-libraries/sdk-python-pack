@@ -16,19 +16,22 @@ Get Expense
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.expenses.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.expenses.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.get_expense_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_expense_response)
 
 ```
 
@@ -65,18 +68,19 @@ Update Expense
 ### Example Usage
 
 ```python
+import apideck_unify
+from apideck_unify import Apideck
 import dateutil.parser
-import openapi
-from openapi import SDK
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.expenses.update(id="<id>", transaction_date=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), account_id="123456", line_items=[
+    res = apideck.accounting.expenses.update(id="<id>", transaction_date=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), account_id="123456", line_items=[
         {
             "total_amount": 275,
             "tracking_categories": [
@@ -150,7 +154,7 @@ with SDK(
             "description": "Travel US.",
             "billable": True,
         },
-    ], consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", number="OIT00546", customer_id="12345", supplier_id="12345", company_id="12345", department_id="12345", payment_type=openapi.ExpensePaymentType.CASH, currency=openapi.Currency.USD, currency_rate=0.69, type_=openapi.ExpenseType.EXPENSE, memo="For travel expenses incurred on 2024-05-15", tax_rate={
+    ], consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", number="OIT00546", customer_id="12345", supplier_id="12345", company_id="12345", department_id="12345", payment_type=apideck_unify.ExpensePaymentType.CASH, currency=apideck_unify.Currency.USD, currency_rate=0.69, type_=apideck_unify.ExpenseType.EXPENSE, memo="For travel expenses incurred on 2024-05-15", tax_rate={
         "id": "123456",
         "rate": 10,
     }, total_amount=275, custom_fields=[
@@ -216,8 +220,10 @@ with SDK(
         },
     ])
 
+    assert res.update_expense_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_expense_response)
 
 ```
 
@@ -272,19 +278,22 @@ Delete Expense
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.expenses.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.expenses.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_expense_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_expense_response)
 
 ```
 

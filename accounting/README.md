@@ -79,7 +79,7 @@ poetry add git+<UNSET>.git
 You can use this SDK in a Python shell with [uv](https://docs.astral.sh/uv/) and the `uvx` command that comes with it like so:
 
 ```shell
-uvx --from openapi python
+uvx --from apideck-unify python
 ```
 
 It's also possible to write a standalone Python script without needing to set up a whole project like so:
@@ -89,13 +89,13 @@ It's also possible to write a standalone Python script without needing to set up
 # /// script
 # requires-python = ">=3.9"
 # dependencies = [
-#     "openapi",
+#     "apideck-unify",
 # ]
 # ///
 
-from openapi import SDK
+from apideck_unify import Apideck
 
-sdk = SDK(
+sdk = Apideck(
   # SDK arguments
 )
 
@@ -123,19 +123,22 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 
 ```python
 # Synchronous Example
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_tax_rate_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_tax_rate_response)
 ```
 
 </br>
@@ -143,21 +146,24 @@ with SDK(
 The same SDK client can also be used to make asychronous requests by importing asyncio.
 ```python
 # Asynchronous Example
+from apideck_unify import Apideck
 import asyncio
-from openapi import SDK
+import os
 
 async def main():
 
-    async with SDK(
-        api_key="<YOUR_BEARER_TOKEN_HERE>",
+    async with Apideck(
+        api_key=os.getenv("APIDECK_API_KEY", ""),
         consumer_id="test-consumer",
         app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-    ) as sdk:
+    ) as apideck:
 
-        res = await sdk.accounting.tax_rates.get_async(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+        res = await apideck.accounting.tax_rates.get_async(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+        assert res.get_tax_rate_response is not None
 
         # Handle response
-        print(res)
+        print(res.get_tax_rate_response)
 
 asyncio.run(main())
 ```
@@ -170,25 +176,28 @@ asyncio.run(main())
 
 This SDK supports the following security scheme globally:
 
-| Name      | Type | Scheme      |
-| --------- | ---- | ----------- |
-| `api_key` | http | HTTP Bearer |
+| Name      | Type | Scheme      | Environment Variable |
+| --------- | ---- | ----------- | -------------------- |
+| `api_key` | http | HTTP Bearer | `APIDECK_API_KEY`    |
 
 To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_tax_rate_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_tax_rate_response)
 
 ```
 <!-- End Authentication [security] -->
@@ -381,17 +390,18 @@ return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
 ```python
-import openapi
-from openapi import SDK
+import apideck_unify
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.attachments.list(reference_type=openapi.AttachmentReferenceType.INVOICE, reference_id="123456", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.attachments.list(reference_type=apideck_unify.AttachmentReferenceType.INVOICE, reference_id="123456", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
 
     while res is not None:
         # Handle items
@@ -408,41 +418,47 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from openapi import SDK
-from openapi.utils import BackoffStrategy, RetryConfig
+from apideck_unify import Apideck
+from apideck_unify.utils import BackoffStrategy, RetryConfig
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at",
+    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at",
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
+    assert res.get_tax_rate_response is not None
+
     # Handle response
-    print(res)
+    print(res.get_tax_rate_response)
 
 ```
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from openapi import SDK
-from openapi.utils import BackoffStrategy, RetryConfig
+from apideck_unify import Apideck
+from apideck_unify.utils import BackoffStrategy, RetryConfig
+import os
 
 
-with SDK(
+with Apideck(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_tax_rate_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_tax_rate_response)
 
 ```
 <!-- End Retries [retries] -->
@@ -475,21 +491,24 @@ When custom error responses are specified for an operation, the SDK may also rai
 ### Example
 
 ```python
-from openapi import SDK, models
+from apideck_unify import Apideck, models
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
     res = None
     try:
 
-        res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+        res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+        assert res.get_tax_rate_response is not None
 
         # Handle response
-        print(res)
+        print(res.get_tax_rate_response)
 
     except models.BadRequestResponse as e:
         # handle e.data: models.BadRequestResponseData
@@ -519,20 +538,23 @@ with SDK(
 
 The default server can be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
+with Apideck(
     server_url="https://unify.apideck.com",
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_tax_rate_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_tax_rate_response)
 
 ```
 <!-- End Server Selection [server] -->
@@ -546,17 +568,17 @@ This allows you to wrap the client with your own custom logic, such as adding cu
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
 import httpx
 
 http_client = httpx.Client(headers={"x-custom-header": "someValue"})
-s = SDK(client=http_client)
+s = Apideck(client=http_client)
 ```
 
 or you could wrap the client with your own custom logic:
 ```python
-from openapi import SDK
-from openapi.httpclient import AsyncHttpClient
+from apideck_unify import Apideck
+from apideck_unify.httpclient import AsyncHttpClient
 import httpx
 
 class CustomClient(AsyncHttpClient):
@@ -614,37 +636,38 @@ class CustomClient(AsyncHttpClient):
             extensions=extensions,
         )
 
-s = SDK(async_client=CustomClient(httpx.AsyncClient()))
+s = Apideck(async_client=CustomClient(httpx.AsyncClient()))
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
 <!-- Start Resource Management [resource-management] -->
 ## Resource Management
 
-The `SDK` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
+The `Apideck` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
 
 [context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 def main():
 
-    with SDK(
-        api_key="<YOUR_BEARER_TOKEN_HERE>",
+    with Apideck(
+        api_key=os.getenv("APIDECK_API_KEY", ""),
         consumer_id="test-consumer",
         app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-    ) as sdk:
+    ) as apideck:
         # Rest of application here...
 
 
 # Or when using async:
 async def amain():
 
-    async with SDK(
-        api_key="<YOUR_BEARER_TOKEN_HERE>",
+    async with Apideck(
+        api_key=os.getenv("APIDECK_API_KEY", ""),
         consumer_id="test-consumer",
         app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-    ) as sdk:
+    ) as apideck:
         # Rest of application here...
 ```
 <!-- End Resource Management [resource-management] -->
@@ -656,12 +679,14 @@ You can setup your SDK to emit debug logs for SDK requests and responses.
 
 You can pass your own logger class directly into your SDK.
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-s = SDK(debug_logger=logging.getLogger("openapi"))
+s = Apideck(debug_logger=logging.getLogger("apideck_unify"))
 ```
+
+You can also enable a default debug logger by setting an environment variable `APIDECK_DEBUG` to true.
 <!-- End Debugging [debug] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

@@ -16,19 +16,22 @@ Get Credit Note
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.credit_notes.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.credit_notes.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+
+    assert res.get_credit_note_response is not None
 
     # Handle response
-    print(res)
+    print(res.get_credit_note_response)
 
 ```
 
@@ -66,22 +69,23 @@ Update Credit Note
 ### Example Usage
 
 ```python
+import apideck_unify
+from apideck_unify import Apideck
 import dateutil.parser
-import openapi
-from openapi import SDK
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.credit_notes.update(id="<id>", total_amount=49.99, consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", number="OIT00546", customer={
+    res = apideck.accounting.credit_notes.update(id="<id>", total_amount=49.99, consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", number="OIT00546", customer={
         "id": "12345",
         "display_name": "Windsurf Shop",
         "email": "boring@boring.com",
-    }, company_id="12345", currency=openapi.Currency.USD, currency_rate=0.69, tax_inclusive=True, sub_total=27500, total_tax=2500, tax_code="1234", balance=27500, remaining_credit=27500, status=openapi.CreditNoteStatus.AUTHORISED, reference="123456", date_issued=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), date_paid=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), type_=openapi.CreditNoteType.ACCOUNTS_RECEIVABLE_CREDIT, account={
+    }, company_id="12345", currency=apideck_unify.Currency.USD, currency_rate=0.69, tax_inclusive=True, sub_total=27500, total_tax=2500, tax_code="1234", balance=27500, remaining_credit=27500, status=apideck_unify.CreditNoteStatus.AUTHORISED, reference="123456", date_issued=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), date_paid=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), type_=apideck_unify.CreditNoteType.ACCOUNTS_RECEIVABLE_CREDIT, account={
         "id": "123456",
         "nominal_code": "N091",
         "code": "453",
@@ -92,7 +96,7 @@ with SDK(
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": openapi.InvoiceLineItemType.SALES_ITEM,
+            "type": apideck_unify.InvoiceLineItemType.SALES_ITEM,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -151,7 +155,7 @@ with SDK(
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": openapi.InvoiceLineItemType.SALES_ITEM,
+            "type": apideck_unify.InvoiceLineItemType.SALES_ITEM,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -207,7 +211,7 @@ with SDK(
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": openapi.InvoiceLineItemType.SALES_ITEM,
+            "type": apideck_unify.InvoiceLineItemType.SALES_ITEM,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -265,7 +269,7 @@ with SDK(
         },
     ], note="Some notes about this credit note", terms="Some terms about this credit note", billing_address={
         "id": "123",
-        "type": openapi.Type.PRIMARY,
+        "type": apideck_unify.Type.PRIMARY,
         "string": "25 Spring Street, Blackburn, VIC 3130",
         "name": "HQ US",
         "line1": "Main street",
@@ -290,7 +294,7 @@ with SDK(
         "row_version": "1-12345",
     }, shipping_address={
         "id": "123",
-        "type": openapi.Type.PRIMARY,
+        "type": apideck_unify.Type.PRIMARY,
         "string": "25 Spring Street, Blackburn, VIC 3130",
         "name": "HQ US",
         "line1": "Main street",
@@ -399,8 +403,10 @@ with SDK(
         },
     ])
 
+    assert res.update_credit_note_response is not None
+
     # Handle response
-    print(res)
+    print(res.update_credit_note_response)
 
 ```
 
@@ -465,19 +471,22 @@ Delete Credit Note
 ### Example Usage
 
 ```python
-from openapi import SDK
+from apideck_unify import Apideck
+import os
 
 
-with SDK(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
-) as sdk:
+) as apideck:
 
-    res = sdk.accounting.credit_notes.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.credit_notes.delete(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.delete_credit_note_response is not None
 
     # Handle response
-    print(res)
+    print(res.delete_credit_note_response)
 
 ```
 

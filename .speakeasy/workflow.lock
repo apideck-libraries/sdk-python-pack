@@ -2,11 +2,12 @@ speakeasyVersion: 1.523.2
 sources:
     accounting:
         sourceNamespace: apideck-accounting-only-oas
-        sourceRevisionDigest: sha256:790921df4b4c07660c58472aa72241461226c87b4aa48bdc0221acb599155c4e
-        sourceBlobDigest: sha256:fb628addea53bafff1ec0b2cc6c97b98982fcb845d6957859a3b1614bbf7fcae
+        sourceRevisionDigest: sha256:90d075b4de4323fc8e1c8b2b2404ac8b48a366b7457fe2adff7a52199afd4c25
+        sourceBlobDigest: sha256:6d730e4fc04f1f82cc3401f99edab1f888d699a469e32a9ad951a53be8913b0e
         tags:
             - latest
-            - 10.13.0
+            - speakeasy-sdk-regen-1742947517
+            - 10.12.4
     lending:
         sourceNamespace: lending
         sourceRevisionDigest: sha256:178885971cf1c04155e742359cad4b10d0eba3a8d7de8e7a64d2e33a0678995d
@@ -18,10 +19,10 @@ targets:
     accounting-py:
         source: accounting
         sourceNamespace: apideck-accounting-only-oas
-        sourceRevisionDigest: sha256:790921df4b4c07660c58472aa72241461226c87b4aa48bdc0221acb599155c4e
-        sourceBlobDigest: sha256:fb628addea53bafff1ec0b2cc6c97b98982fcb845d6957859a3b1614bbf7fcae
+        sourceRevisionDigest: sha256:90d075b4de4323fc8e1c8b2b2404ac8b48a366b7457fe2adff7a52199afd4c25
+        sourceBlobDigest: sha256:6d730e4fc04f1f82cc3401f99edab1f888d699a469e32a9ad951a53be8913b0e
         codeSamplesNamespace: apideck-accounting-only-oas-python-code-samples
-        codeSamplesRevisionDigest: sha256:31107f89c8ef3dede5152d335480f4ef53d7d72cdea52ae03984a2268946a692
+        codeSamplesRevisionDigest: sha256:f17f158b4aeed985d9a680475b2ab1ad1f48679c4d10d66586c1a707df7fdaf6
     accounting-ts:
         source: accounting
         sourceNamespace: accounting
@@ -38,7 +39,7 @@ workflow:
     sources:
         accounting:
             inputs:
-                - location: speakeasy-spec.yml
+                - location: https://ci-spec-unify.s3.eu-central-1.amazonaws.com/speakeasy-spec.yml
             overlays:
                 - location: ./overlays/accounting-vault-overlay.yml
             transformations:

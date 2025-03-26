@@ -704,7 +704,11 @@ from .expenselineitem import ExpenseLineItem, ExpenseLineItemTypedDict
 from .expenselineitem_input import ExpenseLineItemInput, ExpenseLineItemInputTypedDict
 from .formfield import FormField, FormFieldType, FormFieldTypedDict
 from .formfieldoption import FormFieldOption, FormFieldOptionTypedDict
-from .formfieldoptiongroup import FormFieldOptionGroup, FormFieldOptionGroupTypedDict
+from .formfieldoptiongroup import (
+    FormFieldOptionGroup,
+    FormFieldOptionGroupOptionType,
+    FormFieldOptionGroupTypedDict,
+)
 from .getaccountingdepartmentresponse import (
     GetAccountingDepartmentResponse,
     GetAccountingDepartmentResponseTypedDict,
@@ -940,6 +944,7 @@ from .security import Security, SecurityTypedDict
 from .simpleformfieldoption import (
     Five,
     FiveTypedDict,
+    OptionType,
     SimpleFormFieldOption,
     SimpleFormFieldOptionTypedDict,
     SimpleFormFieldOptionValue,
@@ -1733,6 +1738,7 @@ __all__ = [
     "FormField",
     "FormFieldOption",
     "FormFieldOptionGroup",
+    "FormFieldOptionGroupOptionType",
     "FormFieldOptionGroupTypedDict",
     "FormFieldOptionTypedDict",
     "FormFieldType",
@@ -1878,6 +1884,7 @@ __all__ = [
     "OAuthGrantType",
     "Operation",
     "OperationTypedDict",
+    "OptionType",
     "OtherExpenses",
     "OtherExpensesTypedDict",
     "OtherIncome",

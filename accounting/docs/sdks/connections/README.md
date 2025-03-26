@@ -116,6 +116,7 @@ Update a connection
 ### Example Usage
 
 ```python
+import openapi
 from openapi import SDK
 
 
@@ -146,20 +147,35 @@ with SDK(
                             "options": [
                                 {
                                     "label": "General Channel",
-                                    "value": 12.5,
-                                    "option_type": "simple",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": 123,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": [
+                                        "team",
+                                        "general",
+                                    ],
                                 },
                             ],
+                            "option_type": openapi.FormFieldOptionGroupOptionType.GROUP,
                             "id": "1234",
-                            "option_type": "group",
                         },
                         {
                             "label": "General Channel",
-                            "value": [
-                                "team",
-                                "general",
+                            "options": [
+                                {
+                                    "label": "General Channel",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": [
+                                        "team",
+                                        "general",
+                                    ],
+                                },
                             ],
-                            "option_type": "simple",
+                            "option_type": openapi.FormFieldOptionGroupOptionType.GROUP,
+                            "id": "1234",
                         },
                     ],
                     "value": 10.5,
@@ -169,15 +185,11 @@ with SDK(
                     "options": [
                         {
                             "label": "General Channel",
-                            "options": [
-                                {
-                                    "label": "General Channel",
-                                    "value": 12.5,
-                                    "option_type": "simple",
-                                },
+                            "option_type": openapi.OptionType.SIMPLE,
+                            "value": [
+                                "team",
+                                "general",
                             ],
-                            "id": "1234",
-                            "option_type": "group",
                         },
                     ],
                     "value": True,
@@ -192,15 +204,8 @@ with SDK(
                     "options": [
                         {
                             "label": "General Channel",
-                            "options": [
-                                {
-                                    "label": "General Channel",
-                                    "value": "general",
-                                    "option_type": "simple",
-                                },
-                            ],
-                            "id": "1234",
-                            "option_type": "group",
+                            "option_type": openapi.OptionType.SIMPLE,
+                            "value": 123,
                         },
                     ],
                     "value": True,
@@ -210,20 +215,30 @@ with SDK(
                     "options": [
                         {
                             "label": "General Channel",
-                            "options": [
-                                {
-                                    "label": "General Channel",
-                                    "value": 12.5,
-                                    "option_type": "simple",
-                                },
-                            ],
-                            "id": "1234",
-                            "option_type": "group",
+                            "option_type": openapi.OptionType.SIMPLE,
+                            "value": "general",
                         },
                         {
                             "label": "General Channel",
-                            "value": 123,
-                            "option_type": "simple",
+                            "options": [
+                                {
+                                    "label": "General Channel",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": 123,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": 12.5,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": True,
+                                },
+                            ],
+                            "option_type": openapi.FormFieldOptionGroupOptionType.GROUP,
+                            "id": "1234",
                         },
                     ],
                     "value": "GC5000 series",
@@ -233,8 +248,15 @@ with SDK(
                     "options": [
                         {
                             "label": "General Channel",
-                            "value": True,
-                            "option_type": "simple",
+                            "options": [
+                                {
+                                    "label": "General Channel",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": "general",
+                                },
+                            ],
+                            "option_type": openapi.FormFieldOptionGroupOptionType.GROUP,
+                            "id": "1234",
                         },
                     ],
                     "value": [
@@ -256,17 +278,27 @@ with SDK(
                             "options": [
                                 {
                                     "label": "General Channel",
-                                    "value": 123,
-                                    "option_type": "simple",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": 12.5,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": 12.5,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": "general",
                                 },
                             ],
+                            "option_type": openapi.FormFieldOptionGroupOptionType.GROUP,
                             "id": "1234",
-                            "option_type": "group",
                         },
                         {
                             "label": "General Channel",
-                            "value": True,
-                            "option_type": "simple",
+                            "option_type": openapi.OptionType.SIMPLE,
+                            "value": 123,
                         },
                     ],
                     "value": True,
@@ -279,12 +311,25 @@ with SDK(
                             "options": [
                                 {
                                     "label": "General Channel",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": [
+                                        "team",
+                                        "general",
+                                    ],
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": openapi.OptionType.SIMPLE,
+                                    "value": True,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "option_type": openapi.OptionType.SIMPLE,
                                     "value": 12.5,
-                                    "option_type": "simple",
                                 },
                             ],
+                            "option_type": openapi.FormFieldOptionGroupOptionType.GROUP,
                             "id": "1234",
-                            "option_type": "group",
                         },
                     ],
                     "value": True,

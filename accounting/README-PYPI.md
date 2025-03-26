@@ -25,22 +25,22 @@ For more information about the API: [Apideck Developer Docs](https://developers.
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [openapi](#openapi)
-  * [SDK Installation](#sdk-installation)
-  * [IDE Support](#ide-support)
-  * [SDK Example Usage](#sdk-example-usage)
-  * [Authentication](#authentication)
-  * [Available Resources and Operations](#available-resources-and-operations)
-  * [Pagination](#pagination)
-  * [Retries](#retries)
-  * [Error Handling](#error-handling)
-  * [Server Selection](#server-selection)
-  * [Custom HTTP Client](#custom-http-client)
-  * [Resource Management](#resource-management)
-  * [Debugging](#debugging)
-* [Development](#development)
-  * [Maturity](#maturity)
-  * [Contributions](#contributions)
+* [openapi](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#openapi)
+  * [SDK Installation](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#sdk-installation)
+  * [IDE Support](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#ide-support)
+  * [SDK Example Usage](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#sdk-example-usage)
+  * [Authentication](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#authentication)
+  * [Available Resources and Operations](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#available-resources-and-operations)
+  * [Pagination](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#pagination)
+  * [Retries](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#retries)
+  * [Error Handling](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#error-handling)
+  * [Server Selection](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#server-selection)
+  * [Custom HTTP Client](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#custom-http-client)
+  * [Resource Management](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#resource-management)
+  * [Debugging](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#debugging)
+* [Development](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#development)
+  * [Maturity](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#maturity)
+  * [Contributions](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#contributions)
 
 <!-- End Table of Contents [toc] -->
 
@@ -199,175 +199,175 @@ with SDK(
 <details open>
 <summary>Available methods</summary>
 
-### [accounting](docs/sdks/accounting/README.md)
+### [accounting](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/accounting/README.md)
 
 
-#### [accounting.aged_debtors](docs/sdks/ageddebtorssdk/README.md)
+#### [accounting.aged_debtors](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ageddebtorssdk/README.md)
 
-* [get](docs/sdks/ageddebtorssdk/README.md#get) - Get Aged Debtors
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ageddebtorssdk/README.md#get) - Get Aged Debtors
 
-#### [accounting.attachments](docs/sdks/attachments/README.md)
+#### [accounting.attachments](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/attachments/README.md)
 
-* [list](docs/sdks/attachments/README.md#list) - List Attachments
-* [get](docs/sdks/attachments/README.md#get) - Get Attachment
-* [delete](docs/sdks/attachments/README.md#delete) - Delete Attachment
-* [download](docs/sdks/attachments/README.md#download) - Download Attachment
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/attachments/README.md#list) - List Attachments
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/attachments/README.md#get) - Get Attachment
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/attachments/README.md#delete) - Delete Attachment
+* [download](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/attachments/README.md#download) - Download Attachment
 
-#### [accounting.balance_sheet](docs/sdks/balancesheetsdk/README.md)
+#### [accounting.balance_sheet](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/balancesheetsdk/README.md)
 
-* [get](docs/sdks/balancesheetsdk/README.md#get) - Get BalanceSheet
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/balancesheetsdk/README.md#get) - Get BalanceSheet
 
-#### [accounting.bill_payments](docs/sdks/billpayments/README.md)
+#### [accounting.bill_payments](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md)
 
-* [get](docs/sdks/billpayments/README.md#get) - Get Bill Payment
-* [update](docs/sdks/billpayments/README.md#update) - Update Bill Payment
-* [delete](docs/sdks/billpayments/README.md#delete) - Delete Bill Payment
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md#get) - Get Bill Payment
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md#update) - Update Bill Payment
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md#delete) - Delete Bill Payment
 
-#### [accounting.bills](docs/sdks/bills/README.md)
+#### [accounting.bills](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bills/README.md)
 
-* [get](docs/sdks/bills/README.md#get) - Get Bill
-* [update](docs/sdks/bills/README.md#update) - Update Bill
-* [delete](docs/sdks/bills/README.md#delete) - Delete Bill
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bills/README.md#get) - Get Bill
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bills/README.md#update) - Update Bill
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bills/README.md#delete) - Delete Bill
 
-#### [accounting.company_info](docs/sdks/companyinfosdk/README.md)
+#### [accounting.company_info](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/companyinfosdk/README.md)
 
-* [get](docs/sdks/companyinfosdk/README.md#get) - Get company info
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/companyinfosdk/README.md#get) - Get company info
 
-#### [accounting.credit_notes](docs/sdks/creditnotes/README.md)
+#### [accounting.credit_notes](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/creditnotes/README.md)
 
-* [get](docs/sdks/creditnotes/README.md#get) - Get Credit Note
-* [update](docs/sdks/creditnotes/README.md#update) - Update Credit Note
-* [delete](docs/sdks/creditnotes/README.md#delete) - Delete Credit Note
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/creditnotes/README.md#get) - Get Credit Note
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/creditnotes/README.md#update) - Update Credit Note
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/creditnotes/README.md#delete) - Delete Credit Note
 
-#### [accounting.customers](docs/sdks/customers/README.md)
+#### [accounting.customers](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customers/README.md)
 
-* [get](docs/sdks/customers/README.md#get) - Get Customer
-* [update](docs/sdks/customers/README.md#update) - Update Customer
-* [delete](docs/sdks/customers/README.md#delete) - Delete Customer
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customers/README.md#get) - Get Customer
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customers/README.md#update) - Update Customer
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customers/README.md#delete) - Delete Customer
 
-#### [accounting.departments](docs/sdks/departments/README.md)
+#### [accounting.departments](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/departments/README.md)
 
-* [get](docs/sdks/departments/README.md#get) - Get Department
-* [update](docs/sdks/departments/README.md#update) - Update Department
-* [delete](docs/sdks/departments/README.md#delete) - Delete Department
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/departments/README.md#get) - Get Department
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/departments/README.md#update) - Update Department
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/departments/README.md#delete) - Delete Department
 
-#### [accounting.expenses](docs/sdks/expenses/README.md)
+#### [accounting.expenses](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/expenses/README.md)
 
-* [get](docs/sdks/expenses/README.md#get) - Get Expense
-* [update](docs/sdks/expenses/README.md#update) - Update Expense
-* [delete](docs/sdks/expenses/README.md#delete) - Delete Expense
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/expenses/README.md#get) - Get Expense
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/expenses/README.md#update) - Update Expense
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/expenses/README.md#delete) - Delete Expense
 
-#### [accounting.invoice_items](docs/sdks/invoiceitems/README.md)
+#### [accounting.invoice_items](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoiceitems/README.md)
 
-* [get](docs/sdks/invoiceitems/README.md#get) - Get Invoice Item
-* [update](docs/sdks/invoiceitems/README.md#update) - Update Invoice Item
-* [delete](docs/sdks/invoiceitems/README.md#delete) - Delete Invoice Item
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoiceitems/README.md#get) - Get Invoice Item
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoiceitems/README.md#update) - Update Invoice Item
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoiceitems/README.md#delete) - Delete Invoice Item
 
-#### [accounting.invoices](docs/sdks/invoices/README.md)
+#### [accounting.invoices](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoices/README.md)
 
-* [get](docs/sdks/invoices/README.md#get) - Get Invoice
-* [update](docs/sdks/invoices/README.md#update) - Update Invoice
-* [delete](docs/sdks/invoices/README.md#delete) - Delete Invoice
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoices/README.md#get) - Get Invoice
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoices/README.md#update) - Update Invoice
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoices/README.md#delete) - Delete Invoice
 
-#### [accounting.journal_entries](docs/sdks/journalentries/README.md)
+#### [accounting.journal_entries](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/journalentries/README.md)
 
-* [get](docs/sdks/journalentries/README.md#get) - Get Journal Entry
-* [update](docs/sdks/journalentries/README.md#update) - Update Journal Entry
-* [delete](docs/sdks/journalentries/README.md#delete) - Delete Journal Entry
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/journalentries/README.md#get) - Get Journal Entry
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/journalentries/README.md#update) - Update Journal Entry
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/journalentries/README.md#delete) - Delete Journal Entry
 
-#### [accounting.ledger_accounts](docs/sdks/ledgeraccounts/README.md)
+#### [accounting.ledger_accounts](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ledgeraccounts/README.md)
 
-* [get](docs/sdks/ledgeraccounts/README.md#get) - Get Ledger Account
-* [update](docs/sdks/ledgeraccounts/README.md#update) - Update Ledger Account
-* [delete](docs/sdks/ledgeraccounts/README.md#delete) - Delete Ledger Account
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ledgeraccounts/README.md#get) - Get Ledger Account
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ledgeraccounts/README.md#update) - Update Ledger Account
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ledgeraccounts/README.md#delete) - Delete Ledger Account
 
-#### [accounting.locations](docs/sdks/locations/README.md)
+#### [accounting.locations](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/locations/README.md)
 
-* [get](docs/sdks/locations/README.md#get) - Get Location
-* [update](docs/sdks/locations/README.md#update) - Update Location
-* [delete](docs/sdks/locations/README.md#delete) - Delete Location
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/locations/README.md#get) - Get Location
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/locations/README.md#update) - Update Location
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/locations/README.md#delete) - Delete Location
 
-#### [accounting.payments](docs/sdks/payments/README.md)
+#### [accounting.payments](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/payments/README.md)
 
-* [get](docs/sdks/payments/README.md#get) - Get Payment
-* [update](docs/sdks/payments/README.md#update) - Update Payment
-* [delete](docs/sdks/payments/README.md#delete) - Delete Payment
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/payments/README.md#get) - Get Payment
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/payments/README.md#update) - Update Payment
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/payments/README.md#delete) - Delete Payment
 
-#### [accounting.profit_and_loss](docs/sdks/profitandlosssdk/README.md)
+#### [accounting.profit_and_loss](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/profitandlosssdk/README.md)
 
-* [get](docs/sdks/profitandlosssdk/README.md#get) - Get Profit and Loss
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/profitandlosssdk/README.md#get) - Get Profit and Loss
 
-#### [accounting.purchase_orders](docs/sdks/purchaseorders/README.md)
+#### [accounting.purchase_orders](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/purchaseorders/README.md)
 
-* [get](docs/sdks/purchaseorders/README.md#get) - Get Purchase Order
-* [update](docs/sdks/purchaseorders/README.md#update) - Update Purchase Order
-* [delete](docs/sdks/purchaseorders/README.md#delete) - Delete Purchase Order
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/purchaseorders/README.md#get) - Get Purchase Order
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/purchaseorders/README.md#update) - Update Purchase Order
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/purchaseorders/README.md#delete) - Delete Purchase Order
 
-#### [accounting.subsidiaries](docs/sdks/subsidiaries/README.md)
+#### [accounting.subsidiaries](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/subsidiaries/README.md)
 
-* [get](docs/sdks/subsidiaries/README.md#get) - Get Subsidiary
-* [update](docs/sdks/subsidiaries/README.md#update) - Update Subsidiary
-* [delete](docs/sdks/subsidiaries/README.md#delete) - Delete Subsidiary
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/subsidiaries/README.md#get) - Get Subsidiary
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/subsidiaries/README.md#update) - Update Subsidiary
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/subsidiaries/README.md#delete) - Delete Subsidiary
 
-#### [accounting.suppliers](docs/sdks/suppliers/README.md)
+#### [accounting.suppliers](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/suppliers/README.md)
 
-* [get](docs/sdks/suppliers/README.md#get) - Get Supplier
-* [update](docs/sdks/suppliers/README.md#update) - Update Supplier
-* [delete](docs/sdks/suppliers/README.md#delete) - Delete Supplier
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/suppliers/README.md#get) - Get Supplier
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/suppliers/README.md#update) - Update Supplier
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/suppliers/README.md#delete) - Delete Supplier
 
-#### [accounting.tax_rates](docs/sdks/taxrates/README.md)
+#### [accounting.tax_rates](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/taxrates/README.md)
 
-* [get](docs/sdks/taxrates/README.md#get) - Get Tax Rate
-* [update](docs/sdks/taxrates/README.md#update) - Update Tax Rate
-* [delete](docs/sdks/taxrates/README.md#delete) - Delete Tax Rate
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/taxrates/README.md#get) - Get Tax Rate
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/taxrates/README.md#update) - Update Tax Rate
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/taxrates/README.md#delete) - Delete Tax Rate
 
-#### [accounting.tracking_categories](docs/sdks/trackingcategories/README.md)
+#### [accounting.tracking_categories](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/trackingcategories/README.md)
 
-* [get](docs/sdks/trackingcategories/README.md#get) - Get Tracking Category
-* [update](docs/sdks/trackingcategories/README.md#update) - Update Tracking Category
-* [delete](docs/sdks/trackingcategories/README.md#delete) - Delete Tracking Category
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/trackingcategories/README.md#get) - Get Tracking Category
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/trackingcategories/README.md#update) - Update Tracking Category
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/trackingcategories/README.md#delete) - Delete Tracking Category
 
 
-### [vault](docs/sdks/vault/README.md)
+### [vault](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/vault/README.md)
 
 
-#### [vault.connection_custom_mappings](docs/sdks/connectioncustommappings/README.md)
+#### [vault.connection_custom_mappings](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connectioncustommappings/README.md)
 
-* [list](docs/sdks/connectioncustommappings/README.md#list) - List connection custom mappings
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connectioncustommappings/README.md#list) - List connection custom mappings
 
-#### [vault.connection_settings](docs/sdks/connectionsettings/README.md)
+#### [vault.connection_settings](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connectionsettings/README.md)
 
-* [list](docs/sdks/connectionsettings/README.md#list) - Get resource settings
-* [update](docs/sdks/connectionsettings/README.md#update) - Update settings
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connectionsettings/README.md#list) - Get resource settings
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connectionsettings/README.md#update) - Update settings
 
-#### [vault.connections](docs/sdks/connections/README.md)
+#### [vault.connections](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connections/README.md)
 
-* [list](docs/sdks/connections/README.md#list) - Get all connections
-* [get](docs/sdks/connections/README.md#get) - Get connection
-* [update](docs/sdks/connections/README.md#update) - Update connection
-* [delete](docs/sdks/connections/README.md#delete) - Deletes a connection
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connections/README.md#list) - Get all connections
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connections/README.md#get) - Get connection
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connections/README.md#update) - Update connection
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connections/README.md#delete) - Deletes a connection
 
-#### [vault.consumer_request_counts](docs/sdks/consumerrequestcounts/README.md)
+#### [vault.consumer_request_counts](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumerrequestcounts/README.md)
 
-* [list](docs/sdks/consumerrequestcounts/README.md#list) - Consumer request counts
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumerrequestcounts/README.md#list) - Consumer request counts
 
-#### [vault.consumers](docs/sdks/consumers/README.md)
+#### [vault.consumers](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumers/README.md)
 
-* [get](docs/sdks/consumers/README.md#get) - Get consumer
-* [update](docs/sdks/consumers/README.md#update) - Update consumer
-* [delete](docs/sdks/consumers/README.md#delete) - Delete consumer
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumers/README.md#get) - Get consumer
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumers/README.md#update) - Update consumer
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumers/README.md#delete) - Delete consumer
 
-#### [vault.custom_fields](docs/sdks/customfields/README.md)
+#### [vault.custom_fields](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customfields/README.md)
 
-* [list](docs/sdks/customfields/README.md#list) - Get resource custom fields
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customfields/README.md#list) - Get resource custom fields
 
-#### [vault.custom_mappings](docs/sdks/custommappingssdk/README.md)
+#### [vault.custom_mappings](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/custommappingssdk/README.md)
 
-* [list](docs/sdks/custommappingssdk/README.md#list) - List custom mappings
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/custommappingssdk/README.md#list) - List custom mappings
 
-#### [vault.logs](docs/sdks/logs/README.md)
+#### [vault.logs](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/logs/README.md)
 
-* [list](docs/sdks/logs/README.md#list) - Get all consumer request logs
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/logs/README.md#list) - Get all consumer request logs
 
 </details>
 <!-- End Available Resources and Operations [operations] -->

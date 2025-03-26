@@ -2,19 +2,21 @@
 
 from __future__ import annotations
 from .simpleformfieldoption import SimpleFormFieldOption, SimpleFormFieldOptionTypedDict
+from enum import Enum
 from openapi.types import BaseModel
-from openapi.utils import validate_const
-import pydantic
-from pydantic.functional_validators import AfterValidator
-from typing import List, Literal, Optional
-from typing_extensions import Annotated, NotRequired, TypedDict
+from typing import List, Optional
+from typing_extensions import NotRequired, TypedDict
+
+
+class FormFieldOptionGroupOptionType(str, Enum):
+    GROUP = "group"
 
 
 class FormFieldOptionGroupTypedDict(TypedDict):
     label: str
     options: List[SimpleFormFieldOptionTypedDict]
+    option_type: FormFieldOptionGroupOptionType
     id: NotRequired[str]
-    option_type: Literal["group"]
 
 
 class FormFieldOptionGroup(BaseModel):
@@ -22,9 +24,6 @@ class FormFieldOptionGroup(BaseModel):
 
     options: List[SimpleFormFieldOption]
 
-    id: Optional[str] = None
+    option_type: FormFieldOptionGroupOptionType
 
-    OPTION_TYPE: Annotated[
-        Annotated[Literal["group"], AfterValidator(validate_const("group"))],
-        pydantic.Field(alias="option_type"),
-    ] = "group"
+    id: Optional[str] = None

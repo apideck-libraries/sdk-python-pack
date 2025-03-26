@@ -19,9 +19,9 @@ This SDK pack is particularly useful in the following scenarios:
 
 1. Choose the Unify API you want to use:
    - [Accounting](./accounting/README.md)
-   - [ATS](./ats/README.md)
-   - [CRM](./crm/README.md)
-   - [Vault](./vault/README.md)
+   - [ATS](./ats/README.md) (Not available yet, contact support)
+   - [CRM](./crm/README.md) (Not available yet, contact support)
+   - [Vault](./vault/README.md) (Not available yet, contact support)
    - etc.
 
 2. Navigate to the corresponding directory and follow the specific README instructions.

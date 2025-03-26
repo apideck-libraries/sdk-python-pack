@@ -16,7 +16,7 @@ Get Tracking Category
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -69,8 +69,8 @@ Update Tracking Category
 ### Example Usage
 
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -80,7 +80,7 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tracking_categories.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", parent_id="12345", name="Department", code="100", status=apideck_unify.TrackingCategoryStatus.ACTIVE, row_version="1-12345", pass_through=[
+    res = apideck.accounting.tracking_categories.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", parent_id="12345", name="Department", code="100", status=apideck_accounting_unify.TrackingCategoryStatus.ACTIVE, row_version="1-12345", pass_through=[
         {
             "service_id": "<id>",
             "extend_paths": [
@@ -201,7 +201,7 @@ Delete Tracking Category
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 

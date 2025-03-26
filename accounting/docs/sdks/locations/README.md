@@ -16,7 +16,7 @@ Get Location
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -69,8 +69,8 @@ Update Location
 ### Example Usage
 
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -80,10 +80,10 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.locations.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", parent_id="12345", company_name="SpaceX", display_name="11 UT - South Jordan", status=apideck_unify.LocationStatus.ACTIVE, addresses=[
+    res = apideck.accounting.locations.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", parent_id="12345", company_name="SpaceX", display_name="11 UT - South Jordan", status=apideck_accounting_unify.LocationStatus.ACTIVE, addresses=[
         {
             "id": "123",
-            "type": apideck_unify.Type.PRIMARY,
+            "type": apideck_accounting_unify.Type.PRIMARY,
             "string": "25 Spring Street, Blackburn, VIC 3130",
             "name": "HQ US",
             "line1": "Main street",
@@ -109,7 +109,7 @@ with Apideck(
         },
         {
             "id": "123",
-            "type": apideck_unify.Type.PRIMARY,
+            "type": apideck_accounting_unify.Type.PRIMARY,
             "string": "25 Spring Street, Blackburn, VIC 3130",
             "name": "HQ US",
             "line1": "Main street",
@@ -135,7 +135,7 @@ with Apideck(
         },
         {
             "id": "123",
-            "type": apideck_unify.Type.PRIMARY,
+            "type": apideck_accounting_unify.Type.PRIMARY,
             "string": "25 Spring Street, Blackburn, VIC 3130",
             "name": "HQ US",
             "line1": "Main street",
@@ -267,7 +267,7 @@ Delete Location
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 

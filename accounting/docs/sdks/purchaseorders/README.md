@@ -16,7 +16,7 @@ Get Purchase Order
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -68,8 +68,8 @@ Update Purchase Order
 ### Example Usage
 
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import dateutil.parser
 import os
 
@@ -85,7 +85,7 @@ with Apideck(
         "display_name": "Windsurf Shop",
         "address": {
             "id": "123",
-            "type": apideck_unify.Type.PRIMARY,
+            "type": apideck_accounting_unify.Type.PRIMARY,
             "string": "25 Spring Street, Blackburn, VIC 3130",
             "name": "HQ US",
             "line1": "Main street",
@@ -109,14 +109,14 @@ with Apideck(
             "notes": "Address notes or delivery instructions.",
             "row_version": "1-12345",
         },
-    }, company_id="12345", status=apideck_unify.PurchaseOrderStatus.OPEN, issued_date=dateutil.parser.parse("2020-09-30").date(), delivery_date=dateutil.parser.parse("2020-09-30").date(), expected_arrival_date=dateutil.parser.parse("2020-09-30").date(), currency=apideck_unify.Currency.USD, currency_rate=0.69, sub_total=27500, total_tax=2500, total=27500, tax_inclusive=True, line_items=[
+    }, company_id="12345", status=apideck_accounting_unify.PurchaseOrderStatus.OPEN, issued_date=dateutil.parser.parse("2020-09-30").date(), delivery_date=dateutil.parser.parse("2020-09-30").date(), expected_arrival_date=dateutil.parser.parse("2020-09-30").date(), currency=apideck_accounting_unify.Currency.USD, currency_rate=0.69, sub_total=27500, total_tax=2500, total=27500, tax_inclusive=True, line_items=[
         {
             "id": "12345",
             "row_id": "12345",
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": apideck_unify.InvoiceLineItemType.SALES_ITEM,
+            "type": apideck_accounting_unify.InvoiceLineItemType.SALES_ITEM,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -175,7 +175,7 @@ with Apideck(
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": apideck_unify.InvoiceLineItemType.SALES_ITEM,
+            "type": apideck_accounting_unify.InvoiceLineItemType.SALES_ITEM,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -231,7 +231,7 @@ with Apideck(
             "code": "120-C",
             "line_number": 1,
             "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": apideck_unify.InvoiceLineItemType.SALES_ITEM,
+            "type": apideck_accounting_unify.InvoiceLineItemType.SALES_ITEM,
             "tax_amount": 27500,
             "total_amount": 27500,
             "quantity": 1,
@@ -273,7 +273,7 @@ with Apideck(
         },
     ], shipping_address={
         "id": "123",
-        "type": apideck_unify.Type.PRIMARY,
+        "type": apideck_accounting_unify.Type.PRIMARY,
         "string": "25 Spring Street, Blackburn, VIC 3130",
         "name": "HQ US",
         "line1": "Main street",
@@ -304,14 +304,14 @@ with Apideck(
         "bank_name": "Monzo",
         "account_number": "123465",
         "account_name": "SPACEX LLC",
-        "account_type": apideck_unify.AccountType.CREDIT_CARD,
+        "account_type": apideck_accounting_unify.AccountType.CREDIT_CARD,
         "iban": "CH2989144532982975332",
         "bic": "AUDSCHGGXXX",
         "routing_number": "012345678",
         "bsb_number": "062-001",
         "branch_identifier": "001",
         "bank_code": "BNH",
-        "currency": apideck_unify.Currency.USD,
+        "currency": apideck_accounting_unify.Currency.USD,
     }, accounting_by_row=False, due_date=dateutil.parser.parse("2020-10-30").date(), payment_method="cash", tax_code="1234", channel="email", memo="Thank you for the partnership and have a great day!", tracking_categories=[
         {
             "id": "123456",
@@ -460,7 +460,7 @@ Delete Purchase Order
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 

@@ -16,7 +16,7 @@ Get Subsidiary
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -69,8 +69,8 @@ Update Subsidiary
 ### Example Usage
 
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -80,7 +80,7 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.subsidiaries.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", parent_id="12345", name="SpaceX", status=apideck_unify.SubsidiaryStatus.ACTIVE, row_version="1-12345", pass_through=[
+    res = apideck.accounting.subsidiaries.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", parent_id="12345", name="SpaceX", status=apideck_accounting_unify.SubsidiaryStatus.ACTIVE, row_version="1-12345", pass_through=[
         {
             "service_id": "<id>",
             "extend_paths": [
@@ -199,7 +199,7 @@ Delete Subsidiary
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 

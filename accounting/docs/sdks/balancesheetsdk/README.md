@@ -14,8 +14,8 @@ Get BalanceSheet
 ### Example Usage
 
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -31,7 +31,7 @@ with Apideck(
         "start_date": "2021-01-01",
         "end_date": "2021-12-31",
         "period_count": 3,
-        "period_type": apideck_unify.PeriodType.MONTH,
+        "period_type": apideck_accounting_unify.PeriodType.MONTH,
     })
 
     assert res.get_balance_sheet_response is not None

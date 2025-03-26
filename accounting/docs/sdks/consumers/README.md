@@ -17,7 +17,7 @@ Consumer detail including their aggregated counts with the connections they have
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -66,7 +66,7 @@ Update consumer metadata such as name and email.
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -121,7 +121,7 @@ Delete consumer and all their connections, including credentials.
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 

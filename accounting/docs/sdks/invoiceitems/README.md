@@ -16,8 +16,8 @@ Get Invoice Item
 ### Example Usage
 
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -28,7 +28,7 @@ with Apideck(
 ) as apideck:
 
     res = apideck.accounting.invoice_items.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at", filter_={
-        "type": apideck_unify.InvoiceItemType.SERVICE,
+        "type": apideck_accounting_unify.InvoiceItemType.SERVICE,
     })
 
     assert res.get_invoice_item_response is not None
@@ -73,8 +73,8 @@ Update Invoice Item
 ### Example Usage
 
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import dateutil.parser
 import os
 
@@ -85,7 +85,7 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.invoice_items.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", name="Model Y", description="Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.", code="120-C", sold=True, purchased=True, tracked=True, taxable=True, inventory_date=dateutil.parser.parse("2020-10-30").date(), type_=apideck_unify.InvoiceItemTypeType.INVENTORY, sales_details={
+    res = apideck.accounting.invoice_items.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", name="Model Y", description="Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.", code="120-C", sold=True, purchased=True, tracked=True, taxable=True, inventory_date=dateutil.parser.parse("2020-10-30").date(), type_=apideck_accounting_unify.InvoiceItemTypeType.INVENTORY, sales_details={
         "unit_price": 27500.5,
         "unit_of_measure": "pc.",
         "tax_inclusive": True,
@@ -240,7 +240,7 @@ Delete Invoice Item
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 

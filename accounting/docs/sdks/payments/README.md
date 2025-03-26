@@ -16,7 +16,7 @@ Get Payment
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -69,8 +69,8 @@ Update Payment
 ### Example Usage
 
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import dateutil.parser
 import os
 
@@ -81,7 +81,7 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.payments.update(id="<id>", total_amount=49.99, transaction_date=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", currency=apideck_unify.Currency.USD, currency_rate=0.69, reference="123456", payment_method="cash", payment_method_reference="123456", payment_method_id="12345", account={
+    res = apideck.accounting.payments.update(id="<id>", total_amount=49.99, transaction_date=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", currency=apideck_accounting_unify.Currency.USD, currency_rate=0.69, reference="123456", payment_method="cash", payment_method_reference="123456", payment_method_id="12345", account={
         "id": "123456",
         "nominal_code": "N091",
         "code": "453",
@@ -89,7 +89,7 @@ with Apideck(
         "id": "12345",
         "display_name": "Windsurf Shop",
         "email": "boring@boring.com",
-    }, company_id="12345", reconciled=True, status=apideck_unify.PaymentStatus.AUTHORISED, type_=apideck_unify.PaymentType.ACCOUNTS_RECEIVABLE, allocations=[
+    }, company_id="12345", reconciled=True, status=apideck_accounting_unify.PaymentStatus.AUTHORISED, type_=apideck_accounting_unify.PaymentType.ACCOUNTS_RECEIVABLE, allocations=[
         {
             "id": "123456",
             "amount": 49.99,
@@ -261,7 +261,7 @@ Delete Payment
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 

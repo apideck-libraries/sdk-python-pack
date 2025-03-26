@@ -16,7 +16,7 @@ Get Journal Entry
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -69,8 +69,8 @@ Update Journal Entry
 ### Example Usage
 
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import dateutil.parser
 import os
 
@@ -81,9 +81,9 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.journal_entries.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", title="Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry", currency_rate=0.69, currency=apideck_unify.Currency.USD, company_id="12345", line_items=[
+    res = apideck.accounting.journal_entries.update(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", title="Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry", currency_rate=0.69, currency=apideck_accounting_unify.Currency.USD, company_id="12345", line_items=[
         {
-            "type": apideck_unify.JournalEntryLineItemType.DEBIT,
+            "type": apideck_accounting_unify.JournalEntryLineItemType.DEBIT,
             "ledger_account": {
                 "id": "123456",
                 "nominal_code": "N091",
@@ -117,7 +117,7 @@ with Apideck(
                 "display_name": "Windsurf Shop",
                 "address": {
                     "id": "123",
-                    "type": apideck_unify.Type.PRIMARY,
+                    "type": apideck_accounting_unify.Type.PRIMARY,
                     "string": "25 Spring Street, Blackburn, VIC 3130",
                     "name": "HQ US",
                     "line1": "Main street",
@@ -145,7 +145,7 @@ with Apideck(
             "line_number": 1,
         },
         {
-            "type": apideck_unify.JournalEntryLineItemType.DEBIT,
+            "type": apideck_accounting_unify.JournalEntryLineItemType.DEBIT,
             "ledger_account": {
                 "id": "123456",
                 "nominal_code": "N091",
@@ -179,7 +179,7 @@ with Apideck(
                 "display_name": "Windsurf Shop",
                 "address": {
                     "id": "123",
-                    "type": apideck_unify.Type.PRIMARY,
+                    "type": apideck_accounting_unify.Type.PRIMARY,
                     "string": "25 Spring Street, Blackburn, VIC 3130",
                     "name": "HQ US",
                     "line1": "Main street",
@@ -207,7 +207,7 @@ with Apideck(
             "line_number": 1,
         },
         {
-            "type": apideck_unify.JournalEntryLineItemType.DEBIT,
+            "type": apideck_accounting_unify.JournalEntryLineItemType.DEBIT,
             "ledger_account": {
                 "id": "123456",
                 "nominal_code": "N091",
@@ -245,7 +245,7 @@ with Apideck(
                 "display_name": "Windsurf Shop",
                 "address": {
                     "id": "123",
-                    "type": apideck_unify.Type.PRIMARY,
+                    "type": apideck_accounting_unify.Type.PRIMARY,
                     "string": "25 Spring Street, Blackburn, VIC 3130",
                     "name": "HQ US",
                     "line1": "Main street",
@@ -368,7 +368,7 @@ Delete Journal Entry
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 

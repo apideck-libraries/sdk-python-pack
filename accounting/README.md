@@ -1,9 +1,9 @@
-# openapi
+# apideck-accounting-unify
 
-Developer-friendly & type-safe Python SDK specifically catered to leverage *openapi* API.
+Developer-friendly & type-safe Python SDK specifically catered to leverage *apideck-accounting-unify* API.
 
 <div align="left">
-    <a href="https://www.speakeasy.com/?utm_source=openapi&utm_campaign=python"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
+    <a href="https://www.speakeasy.com/?utm_source=apideck-accounting-unify&utm_campaign=python"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
     <a href="https://opensource.org/licenses/MIT">
         <img src="https://img.shields.io/badge/License-MIT-blue.svg" style="width: 100px; height: 28px;" />
     </a>
@@ -25,7 +25,7 @@ For more information about the API: [Apideck Developer Docs](https://developers.
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [openapi](#openapi)
+* [apideck-accounting-unify](#apideck-accounting-unify)
   * [SDK Installation](#sdk-installation)
   * [IDE Support](#ide-support)
   * [SDK Example Usage](#sdk-example-usage)
@@ -47,10 +47,6 @@ For more information about the API: [Apideck Developer Docs](https://developers.
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-> [!TIP]
-> To finish publishing your SDK to PyPI you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
-
-
 > [!NOTE]
 > **Python version upgrade policy**
 >
@@ -63,7 +59,7 @@ The SDK can be installed with either *pip* or *poetry* package managers.
 *PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
 
 ```bash
-pip install git+<UNSET>.git
+pip install apideck-accounting-unify
 ```
 
 ### Poetry
@@ -71,7 +67,7 @@ pip install git+<UNSET>.git
 *Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
 
 ```bash
-poetry add git+<UNSET>.git
+poetry add apideck-accounting-unify
 ```
 
 ### Shell and script usage with `uv`
@@ -79,7 +75,7 @@ poetry add git+<UNSET>.git
 You can use this SDK in a Python shell with [uv](https://docs.astral.sh/uv/) and the `uvx` command that comes with it like so:
 
 ```shell
-uvx --from apideck-unify python
+uvx --from apideck-accounting-unify python
 ```
 
 It's also possible to write a standalone Python script without needing to set up a whole project like so:
@@ -89,11 +85,11 @@ It's also possible to write a standalone Python script without needing to set up
 # /// script
 # requires-python = ">=3.9"
 # dependencies = [
-#     "apideck-unify",
+#     "apideck-accounting-unify",
 # ]
 # ///
 
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 
 sdk = Apideck(
   # SDK arguments
@@ -123,7 +119,7 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 
 ```python
 # Synchronous Example
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -146,7 +142,7 @@ with Apideck(
 The same SDK client can also be used to make asychronous requests by importing asyncio.
 ```python
 # Asynchronous Example
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import asyncio
 import os
 
@@ -182,7 +178,7 @@ This SDK supports the following security scheme globally:
 
 To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -390,8 +386,8 @@ return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -401,7 +397,7 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.attachments.list(reference_type=apideck_unify.AttachmentReferenceType.INVOICE, reference_id="123456", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.attachments.list(reference_type=apideck_accounting_unify.AttachmentReferenceType.INVOICE, reference_id="123456", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
 
     while res is not None:
         # Handle items
@@ -418,8 +414,8 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from apideck_unify import Apideck
-from apideck_unify.utils import BackoffStrategy, RetryConfig
+from apideck_accounting_unify import Apideck
+from apideck_accounting_unify.utils import BackoffStrategy, RetryConfig
 import os
 
 
@@ -441,8 +437,8 @@ with Apideck(
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from apideck_unify import Apideck
-from apideck_unify.utils import BackoffStrategy, RetryConfig
+from apideck_accounting_unify import Apideck
+from apideck_accounting_unify.utils import BackoffStrategy, RetryConfig
 import os
 
 
@@ -491,7 +487,7 @@ When custom error responses are specified for an operation, the SDK may also rai
 ### Example
 
 ```python
-from apideck_unify import Apideck, models
+from apideck_accounting_unify import Apideck, models
 import os
 
 
@@ -538,7 +534,7 @@ with Apideck(
 
 The default server can be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -568,7 +564,7 @@ This allows you to wrap the client with your own custom logic, such as adding cu
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import httpx
 
 http_client = httpx.Client(headers={"x-custom-header": "someValue"})
@@ -577,8 +573,8 @@ s = Apideck(client=http_client)
 
 or you could wrap the client with your own custom logic:
 ```python
-from apideck_unify import Apideck
-from apideck_unify.httpclient import AsyncHttpClient
+from apideck_accounting_unify import Apideck
+from apideck_accounting_unify.httpclient import AsyncHttpClient
 import httpx
 
 class CustomClient(AsyncHttpClient):
@@ -648,7 +644,7 @@ The `Apideck` class implements the context manager protocol and registers a fina
 [context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 def main():
 
@@ -679,11 +675,11 @@ You can setup your SDK to emit debug logs for SDK requests and responses.
 
 You can pass your own logger class directly into your SDK.
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-s = Apideck(debug_logger=logging.getLogger("apideck_unify"))
+s = Apideck(debug_logger=logging.getLogger("apideck_accounting_unify"))
 ```
 
 You can also enable a default debug logger by setting an environment variable `APIDECK_DEBUG` to true.
@@ -704,4 +700,4 @@ looking for the latest version.
 While we value open-source contributions to this SDK, this library is generated programmatically. Any manual changes added to internal files will be overwritten on the next generation. 
 We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release. 
 
-### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=openapi&utm_campaign=python)
+### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=apideck-accounting-unify&utm_campaign=python)

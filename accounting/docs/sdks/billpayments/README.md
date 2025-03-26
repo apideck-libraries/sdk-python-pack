@@ -16,7 +16,7 @@ Get Bill Payment
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -69,8 +69,8 @@ Update Bill Payment
 ### Example Usage
 
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import dateutil.parser
 import os
 
@@ -81,7 +81,7 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.bill_payments.update(id="<id>", total_amount=49.99, transaction_date=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", currency=apideck_unify.Currency.USD, currency_rate=0.69, reference="123456", payment_method="cash", payment_method_reference="123456", payment_method_id="12345", account={
+    res = apideck.accounting.bill_payments.update(id="<id>", total_amount=49.99, transaction_date=dateutil.parser.isoparse("2021-05-01T12:00:00.000Z"), consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", currency=apideck_accounting_unify.Currency.USD, currency_rate=0.69, reference="123456", payment_method="cash", payment_method_reference="123456", payment_method_id="12345", account={
         "id": "123456",
         "nominal_code": "N091",
         "code": "453",
@@ -90,7 +90,7 @@ with Apideck(
         "display_name": "Windsurf Shop",
         "address": {
             "id": "123",
-            "type": apideck_unify.Type.PRIMARY,
+            "type": apideck_accounting_unify.Type.PRIMARY,
             "string": "25 Spring Street, Blackburn, VIC 3130",
             "name": "HQ US",
             "line1": "Main street",
@@ -114,22 +114,22 @@ with Apideck(
             "notes": "Address notes or delivery instructions.",
             "row_version": "1-12345",
         },
-    }, company_id="12345", reconciled=True, status=apideck_unify.PaymentStatus.AUTHORISED, type_=apideck_unify.BillPaymentType.ACCOUNTS_PAYABLE, allocations=[
+    }, company_id="12345", reconciled=True, status=apideck_accounting_unify.PaymentStatus.AUTHORISED, type_=apideck_accounting_unify.BillPaymentType.ACCOUNTS_PAYABLE, allocations=[
         {
             "id": "12345",
-            "type": apideck_unify.BillPaymentAllocationType.BILL,
+            "type": apideck_accounting_unify.BillPaymentAllocationType.BILL,
             "amount": 49.99,
             "allocation_id": "123456",
         },
         {
             "id": "12345",
-            "type": apideck_unify.BillPaymentAllocationType.BILL,
+            "type": apideck_accounting_unify.BillPaymentAllocationType.BILL,
             "amount": 49.99,
             "allocation_id": "123456",
         },
         {
             "id": "12345",
-            "type": apideck_unify.BillPaymentAllocationType.BILL,
+            "type": apideck_accounting_unify.BillPaymentAllocationType.BILL,
             "amount": 49.99,
             "allocation_id": "123456",
         },
@@ -286,7 +286,7 @@ Delete Bill Payment
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 

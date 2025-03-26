@@ -14,7 +14,7 @@ This endpoint returns a list of custom mappings for a connection.
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 

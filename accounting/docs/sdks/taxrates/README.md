@@ -17,7 +17,7 @@ Get Tax Rate. Note: Not all connectors return the actual rate/percentage value. 
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -70,8 +70,8 @@ Update Tax Rate
 ### Example Usage
 
 ```python
-import apideck_unify
-from apideck_unify import Apideck
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
 import os
 
 
@@ -100,7 +100,7 @@ with Apideck(
             "rate": 10,
             "compound": True,
         },
-    ], type_="NONE", report_tax_type="NONE", original_tax_rate_id="12345", status=apideck_unify.TaxRateStatus.ACTIVE, row_version="1-12345", pass_through=[
+    ], type_="NONE", report_tax_type="NONE", original_tax_rate_id="12345", status=apideck_accounting_unify.TaxRateStatus.ACTIVE, row_version="1-12345", pass_through=[
         {
             "service_id": "<id>",
             "extend_paths": [
@@ -223,7 +223,7 @@ Delete Tax Rate
 ### Example Usage
 
 ```python
-from apideck_unify import Apideck
+from apideck_accounting_unify import Apideck
 import os
 
 

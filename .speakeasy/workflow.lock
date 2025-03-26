@@ -2,7 +2,7 @@ speakeasyVersion: 1.523.2
 sources:
     accounting:
         sourceNamespace: apideck-accounting-only-oas
-        sourceRevisionDigest: sha256:90d075b4de4323fc8e1c8b2b2404ac8b48a366b7457fe2adff7a52199afd4c25
+        sourceRevisionDigest: sha256:da2fb1c25f6e49afaac1e59d0e15ba472fb9ed71cdb1fa415f62888b514325b4
         sourceBlobDigest: sha256:6d730e4fc04f1f82cc3401f99edab1f888d699a469e32a9ad951a53be8913b0e
         tags:
             - latest
@@ -18,10 +18,10 @@ targets:
     accounting-py:
         source: accounting
         sourceNamespace: apideck-accounting-only-oas
-        sourceRevisionDigest: sha256:90d075b4de4323fc8e1c8b2b2404ac8b48a366b7457fe2adff7a52199afd4c25
+        sourceRevisionDigest: sha256:da2fb1c25f6e49afaac1e59d0e15ba472fb9ed71cdb1fa415f62888b514325b4
         sourceBlobDigest: sha256:6d730e4fc04f1f82cc3401f99edab1f888d699a469e32a9ad951a53be8913b0e
         codeSamplesNamespace: apideck-accounting-only-oas-python-code-samples
-        codeSamplesRevisionDigest: sha256:f2ed0e1606ed28e17ae9a673a68b7b8b190caefab1784c501b0fe80b9d9bc31e
+        codeSamplesRevisionDigest: sha256:fce1be86a0a48ada39015f31219a0e617a341ec02e321503d1a7c351dd7c7f4f
     accounting-ts:
         source: accounting
         sourceNamespace: accounting
@@ -51,6 +51,9 @@ workflow:
             target: python
             source: accounting
             output: ./accounting
+            publish:
+                pypi:
+                    token: $pypi_token
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/apideck-k2o/apideck/apideck-accounting-only-oas-python-code-samples

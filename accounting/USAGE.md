@@ -11,12 +11,20 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at")
 
-    assert res.get_tax_rate_response is not None
+    while res is not None:
+        # Handle items
 
-    # Handle response
-    print(res.get_tax_rate_response)
+        res = res.next()
 ```
 
 </br>
@@ -36,12 +44,20 @@ async def main():
         app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
     ) as apideck:
 
-        res = await apideck.accounting.tax_rates.get_async(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+        res = await apideck.accounting.tax_rates.list_async(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+            "assets": True,
+            "equity": True,
+            "expenses": True,
+            "liabilities": True,
+            "revenue": True,
+        }, pass_through={
+            "search": "San Francisco",
+        }, fields="id,updated_at")
 
-        assert res.get_tax_rate_response is not None
+        while res is not None:
+            # Handle items
 
-        # Handle response
-        print(res.get_tax_rate_response)
+            res = res.next()
 
 asyncio.run(main())
 ```

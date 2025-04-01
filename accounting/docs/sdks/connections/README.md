@@ -9,6 +9,8 @@
 * [get](#get) - Get connection
 * [update](#update) - Update connection
 * [delete](#delete) - Deletes a connection
+* [imports](#imports) - Import connection
+* [token](#token) - Authorize Access Token
 
 ## list
 
@@ -428,6 +430,128 @@ with Apideck(
 ### Response
 
 **[models.VaultConnectionsDeleteResponse](../../models/vaultconnectionsdeleteresponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| models.BadRequestResponse      | 400                            | application/json               |
+| models.UnauthorizedResponse    | 401                            | application/json               |
+| models.PaymentRequiredResponse | 402                            | application/json               |
+| models.NotFoundResponse        | 404                            | application/json               |
+| models.UnprocessableResponse   | 422                            | application/json               |
+| models.APIError                | 4XX, 5XX                       | \*/\*                          |
+
+## imports
+
+Import an authorized connection.
+
+
+### Example Usage
+
+```python
+from apideck_accounting_unify import Apideck
+import os
+
+
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as apideck:
+
+    res = apideck.vault.connections.imports(service_id="pipedrive", unified_api="crm", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", credentials={
+        "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ",
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    }, settings={}, metadata={
+        "account": {
+            "name": "My Company",
+            "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+        },
+        "plan": "enterprise",
+    })
+
+    assert res.create_connection_response is not None
+
+    # Handle response
+    print(res.create_connection_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                                                                                                                                                         | Type                                                                                                                                                                                                                                                                                                                                                              | Required                                                                                                                                                                                                                                                                                                                                                          | Description                                                                                                                                                                                                                                                                                                                                                       | Example                                                                                                                                                                                                                                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `service_id`                                                                                                                                                                                                                                                                                                                                                      | *str*                                                                                                                                                                                                                                                                                                                                                             | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                | Service ID of the resource to return                                                                                                                                                                                                                                                                                                                              | pipedrive                                                                                                                                                                                                                                                                                                                                                         |
+| `unified_api`                                                                                                                                                                                                                                                                                                                                                     | *str*                                                                                                                                                                                                                                                                                                                                                             | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                | Unified API                                                                                                                                                                                                                                                                                                                                                       | crm                                                                                                                                                                                                                                                                                                                                                               |
+| `consumer_id`                                                                                                                                                                                                                                                                                                                                                     | *Optional[str]*                                                                                                                                                                                                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                | ID of the consumer which you want to get or push data from                                                                                                                                                                                                                                                                                                        | test-consumer                                                                                                                                                                                                                                                                                                                                                     |
+| `app_id`                                                                                                                                                                                                                                                                                                                                                          | *Optional[str]*                                                                                                                                                                                                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                | The ID of your Unify application                                                                                                                                                                                                                                                                                                                                  | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                                                                                                                                                                                                                                                                                                                           |
+| `credentials`                                                                                                                                                                                                                                                                                                                                                     | [Optional[models.Credentials]](../../models/credentials.md)                                                                                                                                                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                | N/A                                                                                                                                                                                                                                                                                                                                                               | {<br/>"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",<br/>"refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ"<br/>} |
+| `settings`                                                                                                                                                                                                                                                                                                                                                        | [OptionalNullable[models.Settings]](../../models/settings.md)                                                                                                                                                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                | Connection settings. Values will persist to `form_fields` with corresponding id                                                                                                                                                                                                                                                                                   | {<br/>"instance_url": "https://eu28.salesforce.com"<br/>}                                                                                                                                                                                                                                                                                                         |
+| `metadata`                                                                                                                                                                                                                                                                                                                                                        | Dict[str, *Any*]                                                                                                                                                                                                                                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                | Attach your own consumer specific metadata                                                                                                                                                                                                                                                                                                                        | {<br/>"account": {<br/>"name": "My Company",<br/>"id": "c01458a5-7276-41ce-bc19-639906b0450a"<br/>},<br/>"plan": "enterprise"<br/>}                                                                                                                                                                                                                               |
+| `retries`                                                                                                                                                                                                                                                                                                                                                         | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                                                                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                | Configuration to override the default retry behavior of the client.                                                                                                                                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                   |
+
+### Response
+
+**[models.VaultConnectionsImportResponse](../../models/vaultconnectionsimportresponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| models.BadRequestResponse      | 400                            | application/json               |
+| models.UnauthorizedResponse    | 401                            | application/json               |
+| models.PaymentRequiredResponse | 402                            | application/json               |
+| models.NotFoundResponse        | 404                            | application/json               |
+| models.UnprocessableResponse   | 422                            | application/json               |
+| models.APIError                | 4XX, 5XX                       | \*/\*                          |
+
+## token
+
+Triggers exchanging persisted connection credentials for an access token and store it in Vault. Currently supported for connections with the `client_credentials` or `password` OAuth grant type.
+
+Note:
+  - Do not include any credentials in the request body. This operation does not persist changes, but only triggers the exchange of persisted connection credentials for an access token.
+  - The access token will not be returned in the response. A 200 response code indicates the authorization was successful and that a valid access token was stored on the connection.
+  - The access token will be used for subsequent API requests.
+
+
+### Example Usage
+
+```python
+from apideck_accounting_unify import Apideck
+import os
+
+
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as apideck:
+
+    res = apideck.vault.connections.token(service_id="pipedrive", unified_api="crm", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX")
+
+    assert res.get_connection_response is not None
+
+    # Handle response
+    print(res.get_connection_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           | Example                                                                                               |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `service_id`                                                                                          | *str*                                                                                                 | :heavy_check_mark:                                                                                    | Service ID of the resource to return                                                                  | pipedrive                                                                                             |
+| `unified_api`                                                                                         | *str*                                                                                                 | :heavy_check_mark:                                                                                    | Unified API                                                                                           | crm                                                                                                   |
+| `consumer_id`                                                                                         | *Optional[str]*                                                                                       | :heavy_minus_sign:                                                                                    | ID of the consumer which you want to get or push data from                                            | test-consumer                                                                                         |
+| `app_id`                                                                                              | *Optional[str]*                                                                                       | :heavy_minus_sign:                                                                                    | The ID of your Unify application                                                                      | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                                                               |
+| `request_body`                                                                                        | [Optional[models.VaultConnectionsTokenRequestBody]](../../models/vaultconnectionstokenrequestbody.md) | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |                                                                                                       |
+| `retries`                                                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                      | :heavy_minus_sign:                                                                                    | Configuration to override the default retry behavior of the client.                                   |                                                                                                       |
+
+### Response
+
+**[models.VaultConnectionsTokenResponse](../../models/vaultconnectionstokenresponse.md)**
 
 ### Errors
 

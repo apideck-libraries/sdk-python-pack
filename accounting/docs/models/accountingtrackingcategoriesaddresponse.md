@@ -1,0 +1,10 @@
+# AccountingTrackingCategoriesAddResponse
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `http_meta`                                                                                    | [models.HTTPMetadata](../models/httpmetadata.md)                                               | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `create_tracking_category_response`                                                            | [Optional[models.CreateTrackingCategoryResponse]](../models/createtrackingcategoryresponse.md) | :heavy_minus_sign:                                                                             | Tracking category created                                                                      |
+| `unexpected_error_response`                                                                    | [Optional[models.UnexpectedErrorResponse]](../models/unexpectederrorresponse.md)               | :heavy_minus_sign:                                                                             | Unexpected error                                                                               |

@@ -124,12 +124,20 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at")
 
-    assert res.get_tax_rate_response is not None
+    while res is not None:
+        # Handle items
 
-    # Handle response
-    print(res.get_tax_rate_response)
+        res = res.next()
 ```
 
 </br>
@@ -149,12 +157,20 @@ async def main():
         app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
     ) as apideck:
 
-        res = await apideck.accounting.tax_rates.get_async(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+        res = await apideck.accounting.tax_rates.list_async(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+            "assets": True,
+            "equity": True,
+            "expenses": True,
+            "liabilities": True,
+            "revenue": True,
+        }, pass_through={
+            "search": "San Francisco",
+        }, fields="id,updated_at")
 
-        assert res.get_tax_rate_response is not None
+        while res is not None:
+            # Handle items
 
-        # Handle response
-        print(res.get_tax_rate_response)
+            res = res.next()
 
 asyncio.run(main())
 ```
@@ -183,12 +199,20 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at")
 
-    assert res.get_tax_rate_response is not None
+    while res is not None:
+        # Handle items
 
-    # Handle response
-    print(res.get_tax_rate_response)
+        res = res.next()
 
 ```
 <!-- End Authentication [security] -->
@@ -219,12 +243,16 @@ with Apideck(
 
 #### [accounting.bill_payments](docs/sdks/billpayments/README.md)
 
+* [list](docs/sdks/billpayments/README.md#list) - List Bill Payments
+* [create](docs/sdks/billpayments/README.md#create) - Create Bill Payment
 * [get](docs/sdks/billpayments/README.md#get) - Get Bill Payment
 * [update](docs/sdks/billpayments/README.md#update) - Update Bill Payment
 * [delete](docs/sdks/billpayments/README.md#delete) - Delete Bill Payment
 
 #### [accounting.bills](docs/sdks/bills/README.md)
 
+* [list](docs/sdks/bills/README.md#list) - List Bills
+* [create](docs/sdks/bills/README.md#create) - Create Bill
 * [get](docs/sdks/bills/README.md#get) - Get Bill
 * [update](docs/sdks/bills/README.md#update) - Update Bill
 * [delete](docs/sdks/bills/README.md#delete) - Delete Bill
@@ -235,60 +263,80 @@ with Apideck(
 
 #### [accounting.credit_notes](docs/sdks/creditnotes/README.md)
 
+* [list](docs/sdks/creditnotes/README.md#list) - List Credit Notes
+* [create](docs/sdks/creditnotes/README.md#create) - Create Credit Note
 * [get](docs/sdks/creditnotes/README.md#get) - Get Credit Note
 * [update](docs/sdks/creditnotes/README.md#update) - Update Credit Note
 * [delete](docs/sdks/creditnotes/README.md#delete) - Delete Credit Note
 
 #### [accounting.customers](docs/sdks/customers/README.md)
 
+* [list](docs/sdks/customers/README.md#list) - List Customers
+* [create](docs/sdks/customers/README.md#create) - Create Customer
 * [get](docs/sdks/customers/README.md#get) - Get Customer
 * [update](docs/sdks/customers/README.md#update) - Update Customer
 * [delete](docs/sdks/customers/README.md#delete) - Delete Customer
 
 #### [accounting.departments](docs/sdks/departments/README.md)
 
+* [list](docs/sdks/departments/README.md#list) - List Departments
+* [create](docs/sdks/departments/README.md#create) - Create Department
 * [get](docs/sdks/departments/README.md#get) - Get Department
 * [update](docs/sdks/departments/README.md#update) - Update Department
 * [delete](docs/sdks/departments/README.md#delete) - Delete Department
 
 #### [accounting.expenses](docs/sdks/expenses/README.md)
 
+* [list](docs/sdks/expenses/README.md#list) - List Expenses
+* [create](docs/sdks/expenses/README.md#create) - Create Expense
 * [get](docs/sdks/expenses/README.md#get) - Get Expense
 * [update](docs/sdks/expenses/README.md#update) - Update Expense
 * [delete](docs/sdks/expenses/README.md#delete) - Delete Expense
 
 #### [accounting.invoice_items](docs/sdks/invoiceitems/README.md)
 
+* [list](docs/sdks/invoiceitems/README.md#list) - List Invoice Items
+* [create](docs/sdks/invoiceitems/README.md#create) - Create Invoice Item
 * [get](docs/sdks/invoiceitems/README.md#get) - Get Invoice Item
 * [update](docs/sdks/invoiceitems/README.md#update) - Update Invoice Item
 * [delete](docs/sdks/invoiceitems/README.md#delete) - Delete Invoice Item
 
 #### [accounting.invoices](docs/sdks/invoices/README.md)
 
+* [list](docs/sdks/invoices/README.md#list) - List Invoices
+* [create](docs/sdks/invoices/README.md#create) - Create Invoice
 * [get](docs/sdks/invoices/README.md#get) - Get Invoice
 * [update](docs/sdks/invoices/README.md#update) - Update Invoice
 * [delete](docs/sdks/invoices/README.md#delete) - Delete Invoice
 
 #### [accounting.journal_entries](docs/sdks/journalentries/README.md)
 
+* [list](docs/sdks/journalentries/README.md#list) - List Journal Entries
+* [create](docs/sdks/journalentries/README.md#create) - Create Journal Entry
 * [get](docs/sdks/journalentries/README.md#get) - Get Journal Entry
 * [update](docs/sdks/journalentries/README.md#update) - Update Journal Entry
 * [delete](docs/sdks/journalentries/README.md#delete) - Delete Journal Entry
 
 #### [accounting.ledger_accounts](docs/sdks/ledgeraccounts/README.md)
 
+* [list](docs/sdks/ledgeraccounts/README.md#list) - List Ledger Accounts
+* [create](docs/sdks/ledgeraccounts/README.md#create) - Create Ledger Account
 * [get](docs/sdks/ledgeraccounts/README.md#get) - Get Ledger Account
 * [update](docs/sdks/ledgeraccounts/README.md#update) - Update Ledger Account
 * [delete](docs/sdks/ledgeraccounts/README.md#delete) - Delete Ledger Account
 
 #### [accounting.locations](docs/sdks/locations/README.md)
 
+* [list](docs/sdks/locations/README.md#list) - List Locations
+* [create](docs/sdks/locations/README.md#create) - Create Location
 * [get](docs/sdks/locations/README.md#get) - Get Location
 * [update](docs/sdks/locations/README.md#update) - Update Location
 * [delete](docs/sdks/locations/README.md#delete) - Delete Location
 
 #### [accounting.payments](docs/sdks/payments/README.md)
 
+* [list](docs/sdks/payments/README.md#list) - List Payments
+* [create](docs/sdks/payments/README.md#create) - Create Payment
 * [get](docs/sdks/payments/README.md#get) - Get Payment
 * [update](docs/sdks/payments/README.md#update) - Update Payment
 * [delete](docs/sdks/payments/README.md#delete) - Delete Payment
@@ -299,30 +347,40 @@ with Apideck(
 
 #### [accounting.purchase_orders](docs/sdks/purchaseorders/README.md)
 
+* [list](docs/sdks/purchaseorders/README.md#list) - List Purchase Orders
+* [create](docs/sdks/purchaseorders/README.md#create) - Create Purchase Order
 * [get](docs/sdks/purchaseorders/README.md#get) - Get Purchase Order
 * [update](docs/sdks/purchaseorders/README.md#update) - Update Purchase Order
 * [delete](docs/sdks/purchaseorders/README.md#delete) - Delete Purchase Order
 
 #### [accounting.subsidiaries](docs/sdks/subsidiaries/README.md)
 
+* [list](docs/sdks/subsidiaries/README.md#list) - List Subsidiaries
+* [create](docs/sdks/subsidiaries/README.md#create) - Create Subsidiary
 * [get](docs/sdks/subsidiaries/README.md#get) - Get Subsidiary
 * [update](docs/sdks/subsidiaries/README.md#update) - Update Subsidiary
 * [delete](docs/sdks/subsidiaries/README.md#delete) - Delete Subsidiary
 
 #### [accounting.suppliers](docs/sdks/suppliers/README.md)
 
+* [list](docs/sdks/suppliers/README.md#list) - List Suppliers
+* [create](docs/sdks/suppliers/README.md#create) - Create Supplier
 * [get](docs/sdks/suppliers/README.md#get) - Get Supplier
 * [update](docs/sdks/suppliers/README.md#update) - Update Supplier
 * [delete](docs/sdks/suppliers/README.md#delete) - Delete Supplier
 
 #### [accounting.tax_rates](docs/sdks/taxrates/README.md)
 
+* [list](docs/sdks/taxrates/README.md#list) - List Tax Rates
+* [create](docs/sdks/taxrates/README.md#create) - Create Tax Rate
 * [get](docs/sdks/taxrates/README.md#get) - Get Tax Rate
 * [update](docs/sdks/taxrates/README.md#update) - Update Tax Rate
 * [delete](docs/sdks/taxrates/README.md#delete) - Delete Tax Rate
 
 #### [accounting.tracking_categories](docs/sdks/trackingcategories/README.md)
 
+* [list](docs/sdks/trackingcategories/README.md#list) - List Tracking Categories
+* [create](docs/sdks/trackingcategories/README.md#create) - Create Tracking Category
 * [get](docs/sdks/trackingcategories/README.md#get) - Get Tracking Category
 * [update](docs/sdks/trackingcategories/README.md#update) - Update Tracking Category
 * [delete](docs/sdks/trackingcategories/README.md#delete) - Delete Tracking Category
@@ -346,6 +404,8 @@ with Apideck(
 * [get](docs/sdks/connections/README.md#get) - Get connection
 * [update](docs/sdks/connections/README.md#update) - Update connection
 * [delete](docs/sdks/connections/README.md#delete) - Deletes a connection
+* [imports](docs/sdks/connections/README.md#imports) - Import connection
+* [token](docs/sdks/connections/README.md#token) - Authorize Access Token
 
 #### [vault.consumer_request_counts](docs/sdks/consumerrequestcounts/README.md)
 
@@ -353,9 +413,15 @@ with Apideck(
 
 #### [vault.consumers](docs/sdks/consumers/README.md)
 
+* [create](docs/sdks/consumers/README.md#create) - Create consumer
+* [list](docs/sdks/consumers/README.md#list) - Get all consumers
 * [get](docs/sdks/consumers/README.md#get) - Get consumer
 * [update](docs/sdks/consumers/README.md#update) - Update consumer
 * [delete](docs/sdks/consumers/README.md#delete) - Delete consumer
+
+#### [vault.create_callback](docs/sdks/createcallback/README.md)
+
+* [state](docs/sdks/createcallback/README.md#state) - Create Callback State
 
 #### [vault.custom_fields](docs/sdks/customfields/README.md)
 
@@ -369,6 +435,14 @@ with Apideck(
 
 * [list](docs/sdks/logs/README.md#list) - Get all consumer request logs
 
+#### [vault.sessions](docs/sdks/sessions/README.md)
+
+* [create](docs/sdks/sessions/README.md#create) - Create Session
+
+#### [vault.validate_connection](docs/sdks/validateconnection/README.md)
+
+* [state](docs/sdks/validateconnection/README.md#state) - Validate Connection State
+
 </details>
 <!-- End Available Resources and Operations [operations] -->
 
@@ -381,7 +455,6 @@ return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
 ```python
-import apideck_accounting_unify
 from apideck_accounting_unify import Apideck
 import os
 
@@ -392,7 +465,15 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.attachments.list(reference_type=apideck_accounting_unify.AttachmentReferenceType.INVOICE, reference_id="123456", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at")
 
     while res is not None:
         # Handle items
@@ -420,13 +501,21 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at",
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at",
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-    assert res.get_tax_rate_response is not None
+    while res is not None:
+        # Handle items
 
-    # Handle response
-    print(res.get_tax_rate_response)
+        res = res.next()
 
 ```
 
@@ -444,12 +533,20 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at")
 
-    assert res.get_tax_rate_response is not None
+    while res is not None:
+        # Handle items
 
-    # Handle response
-    print(res.get_tax_rate_response)
+        res = res.next()
 
 ```
 <!-- End Retries [retries] -->
@@ -468,7 +565,7 @@ By default, an API error will raise a models.APIError exception, which has the f
 | `.raw_response` | *httpx.Response* | The raw HTTP response |
 | `.body`         | *str*            | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `get_async` method may raise the following exceptions:
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `list_async` method may raise the following exceptions:
 
 | Error Type                     | Status Code | Content Type     |
 | ------------------------------ | ----------- | ---------------- |
@@ -494,12 +591,20 @@ with Apideck(
     res = None
     try:
 
-        res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+        res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+            "assets": True,
+            "equity": True,
+            "expenses": True,
+            "liabilities": True,
+            "revenue": True,
+        }, pass_through={
+            "search": "San Francisco",
+        }, fields="id,updated_at")
 
-        assert res.get_tax_rate_response is not None
+        while res is not None:
+            # Handle items
 
-        # Handle response
-        print(res.get_tax_rate_response)
+            res = res.next()
 
     except models.BadRequestResponse as e:
         # handle e.data: models.BadRequestResponseData
@@ -540,12 +645,20 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at")
 
-    assert res.get_tax_rate_response is not None
+    while res is not None:
+        # Handle items
 
-    # Handle response
-    print(res.get_tax_rate_response)
+        res = res.next()
 
 ```
 <!-- End Server Selection [server] -->

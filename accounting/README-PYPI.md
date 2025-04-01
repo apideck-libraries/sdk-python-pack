@@ -124,12 +124,20 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at")
 
-    assert res.get_tax_rate_response is not None
+    while res is not None:
+        # Handle items
 
-    # Handle response
-    print(res.get_tax_rate_response)
+        res = res.next()
 ```
 
 </br>
@@ -149,12 +157,20 @@ async def main():
         app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
     ) as apideck:
 
-        res = await apideck.accounting.tax_rates.get_async(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+        res = await apideck.accounting.tax_rates.list_async(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+            "assets": True,
+            "equity": True,
+            "expenses": True,
+            "liabilities": True,
+            "revenue": True,
+        }, pass_through={
+            "search": "San Francisco",
+        }, fields="id,updated_at")
 
-        assert res.get_tax_rate_response is not None
+        while res is not None:
+            # Handle items
 
-        # Handle response
-        print(res.get_tax_rate_response)
+            res = res.next()
 
 asyncio.run(main())
 ```
@@ -183,12 +199,20 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at")
 
-    assert res.get_tax_rate_response is not None
+    while res is not None:
+        # Handle items
 
-    # Handle response
-    print(res.get_tax_rate_response)
+        res = res.next()
 
 ```
 <!-- End Authentication [security] -->
@@ -219,12 +243,16 @@ with Apideck(
 
 #### [accounting.bill_payments](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md#list) - List Bill Payments
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md#create) - Create Bill Payment
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md#get) - Get Bill Payment
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md#update) - Update Bill Payment
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md#delete) - Delete Bill Payment
 
 #### [accounting.bills](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bills/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bills/README.md#list) - List Bills
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bills/README.md#create) - Create Bill
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bills/README.md#get) - Get Bill
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bills/README.md#update) - Update Bill
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bills/README.md#delete) - Delete Bill
@@ -235,60 +263,80 @@ with Apideck(
 
 #### [accounting.credit_notes](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/creditnotes/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/creditnotes/README.md#list) - List Credit Notes
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/creditnotes/README.md#create) - Create Credit Note
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/creditnotes/README.md#get) - Get Credit Note
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/creditnotes/README.md#update) - Update Credit Note
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/creditnotes/README.md#delete) - Delete Credit Note
 
 #### [accounting.customers](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customers/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customers/README.md#list) - List Customers
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customers/README.md#create) - Create Customer
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customers/README.md#get) - Get Customer
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customers/README.md#update) - Update Customer
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customers/README.md#delete) - Delete Customer
 
 #### [accounting.departments](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/departments/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/departments/README.md#list) - List Departments
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/departments/README.md#create) - Create Department
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/departments/README.md#get) - Get Department
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/departments/README.md#update) - Update Department
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/departments/README.md#delete) - Delete Department
 
 #### [accounting.expenses](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/expenses/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/expenses/README.md#list) - List Expenses
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/expenses/README.md#create) - Create Expense
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/expenses/README.md#get) - Get Expense
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/expenses/README.md#update) - Update Expense
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/expenses/README.md#delete) - Delete Expense
 
 #### [accounting.invoice_items](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoiceitems/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoiceitems/README.md#list) - List Invoice Items
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoiceitems/README.md#create) - Create Invoice Item
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoiceitems/README.md#get) - Get Invoice Item
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoiceitems/README.md#update) - Update Invoice Item
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoiceitems/README.md#delete) - Delete Invoice Item
 
 #### [accounting.invoices](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoices/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoices/README.md#list) - List Invoices
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoices/README.md#create) - Create Invoice
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoices/README.md#get) - Get Invoice
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoices/README.md#update) - Update Invoice
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/invoices/README.md#delete) - Delete Invoice
 
 #### [accounting.journal_entries](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/journalentries/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/journalentries/README.md#list) - List Journal Entries
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/journalentries/README.md#create) - Create Journal Entry
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/journalentries/README.md#get) - Get Journal Entry
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/journalentries/README.md#update) - Update Journal Entry
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/journalentries/README.md#delete) - Delete Journal Entry
 
 #### [accounting.ledger_accounts](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ledgeraccounts/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ledgeraccounts/README.md#list) - List Ledger Accounts
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ledgeraccounts/README.md#create) - Create Ledger Account
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ledgeraccounts/README.md#get) - Get Ledger Account
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ledgeraccounts/README.md#update) - Update Ledger Account
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ledgeraccounts/README.md#delete) - Delete Ledger Account
 
 #### [accounting.locations](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/locations/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/locations/README.md#list) - List Locations
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/locations/README.md#create) - Create Location
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/locations/README.md#get) - Get Location
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/locations/README.md#update) - Update Location
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/locations/README.md#delete) - Delete Location
 
 #### [accounting.payments](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/payments/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/payments/README.md#list) - List Payments
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/payments/README.md#create) - Create Payment
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/payments/README.md#get) - Get Payment
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/payments/README.md#update) - Update Payment
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/payments/README.md#delete) - Delete Payment
@@ -299,30 +347,40 @@ with Apideck(
 
 #### [accounting.purchase_orders](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/purchaseorders/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/purchaseorders/README.md#list) - List Purchase Orders
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/purchaseorders/README.md#create) - Create Purchase Order
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/purchaseorders/README.md#get) - Get Purchase Order
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/purchaseorders/README.md#update) - Update Purchase Order
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/purchaseorders/README.md#delete) - Delete Purchase Order
 
 #### [accounting.subsidiaries](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/subsidiaries/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/subsidiaries/README.md#list) - List Subsidiaries
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/subsidiaries/README.md#create) - Create Subsidiary
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/subsidiaries/README.md#get) - Get Subsidiary
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/subsidiaries/README.md#update) - Update Subsidiary
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/subsidiaries/README.md#delete) - Delete Subsidiary
 
 #### [accounting.suppliers](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/suppliers/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/suppliers/README.md#list) - List Suppliers
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/suppliers/README.md#create) - Create Supplier
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/suppliers/README.md#get) - Get Supplier
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/suppliers/README.md#update) - Update Supplier
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/suppliers/README.md#delete) - Delete Supplier
 
 #### [accounting.tax_rates](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/taxrates/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/taxrates/README.md#list) - List Tax Rates
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/taxrates/README.md#create) - Create Tax Rate
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/taxrates/README.md#get) - Get Tax Rate
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/taxrates/README.md#update) - Update Tax Rate
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/taxrates/README.md#delete) - Delete Tax Rate
 
 #### [accounting.tracking_categories](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/trackingcategories/README.md)
 
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/trackingcategories/README.md#list) - List Tracking Categories
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/trackingcategories/README.md#create) - Create Tracking Category
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/trackingcategories/README.md#get) - Get Tracking Category
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/trackingcategories/README.md#update) - Update Tracking Category
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/trackingcategories/README.md#delete) - Delete Tracking Category
@@ -346,6 +404,8 @@ with Apideck(
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connections/README.md#get) - Get connection
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connections/README.md#update) - Update connection
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connections/README.md#delete) - Deletes a connection
+* [imports](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connections/README.md#imports) - Import connection
+* [token](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/connections/README.md#token) - Authorize Access Token
 
 #### [vault.consumer_request_counts](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumerrequestcounts/README.md)
 
@@ -353,9 +413,15 @@ with Apideck(
 
 #### [vault.consumers](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumers/README.md)
 
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumers/README.md#create) - Create consumer
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumers/README.md#list) - Get all consumers
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumers/README.md#get) - Get consumer
 * [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumers/README.md#update) - Update consumer
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/consumers/README.md#delete) - Delete consumer
+
+#### [vault.create_callback](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/createcallback/README.md)
+
+* [state](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/createcallback/README.md#state) - Create Callback State
 
 #### [vault.custom_fields](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customfields/README.md)
 
@@ -369,6 +435,14 @@ with Apideck(
 
 * [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/logs/README.md#list) - Get all consumer request logs
 
+#### [vault.sessions](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/sessions/README.md)
+
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/sessions/README.md#create) - Create Session
+
+#### [vault.validate_connection](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/validateconnection/README.md)
+
+* [state](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/validateconnection/README.md#state) - Validate Connection State
+
 </details>
 <!-- End Available Resources and Operations [operations] -->
 
@@ -381,7 +455,6 @@ return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
 ```python
-import apideck_accounting_unify
 from apideck_accounting_unify import Apideck
 import os
 
@@ -392,7 +465,15 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.attachments.list(reference_type=apideck_accounting_unify.AttachmentReferenceType.INVOICE, reference_id="123456", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at")
 
     while res is not None:
         # Handle items
@@ -420,13 +501,21 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at",
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at",
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-    assert res.get_tax_rate_response is not None
+    while res is not None:
+        # Handle items
 
-    # Handle response
-    print(res.get_tax_rate_response)
+        res = res.next()
 
 ```
 
@@ -444,12 +533,20 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at")
 
-    assert res.get_tax_rate_response is not None
+    while res is not None:
+        # Handle items
 
-    # Handle response
-    print(res.get_tax_rate_response)
+        res = res.next()
 
 ```
 <!-- End Retries [retries] -->
@@ -468,7 +565,7 @@ By default, an API error will raise a models.APIError exception, which has the f
 | `.raw_response` | *httpx.Response* | The raw HTTP response |
 | `.body`         | *str*            | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `get_async` method may raise the following exceptions:
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `list_async` method may raise the following exceptions:
 
 | Error Type                     | Status Code | Content Type     |
 | ------------------------------ | ----------- | ---------------- |
@@ -494,12 +591,20 @@ with Apideck(
     res = None
     try:
 
-        res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+        res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+            "assets": True,
+            "equity": True,
+            "expenses": True,
+            "liabilities": True,
+            "revenue": True,
+        }, pass_through={
+            "search": "San Francisco",
+        }, fields="id,updated_at")
 
-        assert res.get_tax_rate_response is not None
+        while res is not None:
+            # Handle items
 
-        # Handle response
-        print(res.get_tax_rate_response)
+            res = res.next()
 
     except models.BadRequestResponse as e:
         # handle e.data: models.BadRequestResponseData
@@ -540,12 +645,20 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.get(id="<id>", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", fields="id,updated_at")
+    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        "assets": True,
+        "equity": True,
+        "expenses": True,
+        "liabilities": True,
+        "revenue": True,
+    }, pass_through={
+        "search": "San Francisco",
+    }, fields="id,updated_at")
 
-    assert res.get_tax_rate_response is not None
+    while res is not None:
+        # Handle items
 
-    # Handle response
-    print(res.get_tax_rate_response)
+        res = res.next()
 
 ```
 <!-- End Server Selection [server] -->

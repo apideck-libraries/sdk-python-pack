@@ -14,7 +14,7 @@ from pydantic import model_serializer
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class InvoiceItemType(str, Enum):
+class InvoiceItemFilterInvoiceItemType(str, Enum):
     r"""The type of invoice item, indicating whether it is an inventory item, a service, or another type."""
 
     INVENTORY = "inventory"
@@ -23,14 +23,14 @@ class InvoiceItemType(str, Enum):
 
 
 class InvoiceItemFilterTypedDict(TypedDict):
-    type: NotRequired[Nullable[InvoiceItemType]]
+    type: NotRequired[Nullable[InvoiceItemFilterInvoiceItemType]]
     r"""The type of invoice item, indicating whether it is an inventory item, a service, or another type."""
 
 
 class InvoiceItemFilter(BaseModel):
-    type: Annotated[OptionalNullable[InvoiceItemType], FieldMetadata(query=True)] = (
-        UNSET
-    )
+    type: Annotated[
+        OptionalNullable[InvoiceItemFilterInvoiceItemType], FieldMetadata(query=True)
+    ] = UNSET
     r"""The type of invoice item, indicating whether it is an inventory item, a service, or another type."""
 
     @model_serializer(mode="wrap")

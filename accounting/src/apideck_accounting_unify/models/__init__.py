@@ -48,6 +48,22 @@ from .accounting_balancesheetoneop import (
     AccountingBalanceSheetOneResponse,
     AccountingBalanceSheetOneResponseTypedDict,
 )
+from .accounting_billpaymentsaddop import (
+    AccountingBillPaymentsAddGlobals,
+    AccountingBillPaymentsAddGlobalsTypedDict,
+    AccountingBillPaymentsAddRequest,
+    AccountingBillPaymentsAddRequestTypedDict,
+    AccountingBillPaymentsAddResponse,
+    AccountingBillPaymentsAddResponseTypedDict,
+)
+from .accounting_billpaymentsallop import (
+    AccountingBillPaymentsAllGlobals,
+    AccountingBillPaymentsAllGlobalsTypedDict,
+    AccountingBillPaymentsAllRequest,
+    AccountingBillPaymentsAllRequestTypedDict,
+    AccountingBillPaymentsAllResponse,
+    AccountingBillPaymentsAllResponseTypedDict,
+)
 from .accounting_billpaymentsdeleteop import (
     AccountingBillPaymentsDeleteGlobals,
     AccountingBillPaymentsDeleteGlobalsTypedDict,
@@ -71,6 +87,22 @@ from .accounting_billpaymentsupdateop import (
     AccountingBillPaymentsUpdateRequestTypedDict,
     AccountingBillPaymentsUpdateResponse,
     AccountingBillPaymentsUpdateResponseTypedDict,
+)
+from .accounting_billsaddop import (
+    AccountingBillsAddGlobals,
+    AccountingBillsAddGlobalsTypedDict,
+    AccountingBillsAddRequest,
+    AccountingBillsAddRequestTypedDict,
+    AccountingBillsAddResponse,
+    AccountingBillsAddResponseTypedDict,
+)
+from .accounting_billsallop import (
+    AccountingBillsAllGlobals,
+    AccountingBillsAllGlobalsTypedDict,
+    AccountingBillsAllRequest,
+    AccountingBillsAllRequestTypedDict,
+    AccountingBillsAllResponse,
+    AccountingBillsAllResponseTypedDict,
 )
 from .accounting_billsdeleteop import (
     AccountingBillsDeleteGlobals,
@@ -104,6 +136,22 @@ from .accounting_companyinfooneop import (
     AccountingCompanyInfoOneResponse,
     AccountingCompanyInfoOneResponseTypedDict,
 )
+from .accounting_creditnotesaddop import (
+    AccountingCreditNotesAddGlobals,
+    AccountingCreditNotesAddGlobalsTypedDict,
+    AccountingCreditNotesAddRequest,
+    AccountingCreditNotesAddRequestTypedDict,
+    AccountingCreditNotesAddResponse,
+    AccountingCreditNotesAddResponseTypedDict,
+)
+from .accounting_creditnotesallop import (
+    AccountingCreditNotesAllGlobals,
+    AccountingCreditNotesAllGlobalsTypedDict,
+    AccountingCreditNotesAllRequest,
+    AccountingCreditNotesAllRequestTypedDict,
+    AccountingCreditNotesAllResponse,
+    AccountingCreditNotesAllResponseTypedDict,
+)
 from .accounting_creditnotesdeleteop import (
     AccountingCreditNotesDeleteGlobals,
     AccountingCreditNotesDeleteGlobalsTypedDict,
@@ -127,6 +175,22 @@ from .accounting_creditnotesupdateop import (
     AccountingCreditNotesUpdateRequestTypedDict,
     AccountingCreditNotesUpdateResponse,
     AccountingCreditNotesUpdateResponseTypedDict,
+)
+from .accounting_customersaddop import (
+    AccountingCustomersAddGlobals,
+    AccountingCustomersAddGlobalsTypedDict,
+    AccountingCustomersAddRequest,
+    AccountingCustomersAddRequestTypedDict,
+    AccountingCustomersAddResponse,
+    AccountingCustomersAddResponseTypedDict,
+)
+from .accounting_customersallop import (
+    AccountingCustomersAllGlobals,
+    AccountingCustomersAllGlobalsTypedDict,
+    AccountingCustomersAllRequest,
+    AccountingCustomersAllRequestTypedDict,
+    AccountingCustomersAllResponse,
+    AccountingCustomersAllResponseTypedDict,
 )
 from .accounting_customersdeleteop import (
     AccountingCustomersDeleteGlobals,
@@ -152,6 +216,22 @@ from .accounting_customersupdateop import (
     AccountingCustomersUpdateResponse,
     AccountingCustomersUpdateResponseTypedDict,
 )
+from .accounting_departmentsaddop import (
+    AccountingDepartmentsAddGlobals,
+    AccountingDepartmentsAddGlobalsTypedDict,
+    AccountingDepartmentsAddRequest,
+    AccountingDepartmentsAddRequestTypedDict,
+    AccountingDepartmentsAddResponse,
+    AccountingDepartmentsAddResponseTypedDict,
+)
+from .accounting_departmentsallop import (
+    AccountingDepartmentsAllGlobals,
+    AccountingDepartmentsAllGlobalsTypedDict,
+    AccountingDepartmentsAllRequest,
+    AccountingDepartmentsAllRequestTypedDict,
+    AccountingDepartmentsAllResponse,
+    AccountingDepartmentsAllResponseTypedDict,
+)
 from .accounting_departmentsdeleteop import (
     AccountingDepartmentsDeleteGlobals,
     AccountingDepartmentsDeleteGlobalsTypedDict,
@@ -175,6 +255,22 @@ from .accounting_departmentsupdateop import (
     AccountingDepartmentsUpdateRequestTypedDict,
     AccountingDepartmentsUpdateResponse,
     AccountingDepartmentsUpdateResponseTypedDict,
+)
+from .accounting_expensesaddop import (
+    AccountingExpensesAddGlobals,
+    AccountingExpensesAddGlobalsTypedDict,
+    AccountingExpensesAddRequest,
+    AccountingExpensesAddRequestTypedDict,
+    AccountingExpensesAddResponse,
+    AccountingExpensesAddResponseTypedDict,
+)
+from .accounting_expensesallop import (
+    AccountingExpensesAllGlobals,
+    AccountingExpensesAllGlobalsTypedDict,
+    AccountingExpensesAllRequest,
+    AccountingExpensesAllRequestTypedDict,
+    AccountingExpensesAllResponse,
+    AccountingExpensesAllResponseTypedDict,
 )
 from .accounting_expensesdeleteop import (
     AccountingExpensesDeleteGlobals,
@@ -200,6 +296,22 @@ from .accounting_expensesupdateop import (
     AccountingExpensesUpdateResponse,
     AccountingExpensesUpdateResponseTypedDict,
 )
+from .accounting_invoiceitemsaddop import (
+    AccountingInvoiceItemsAddGlobals,
+    AccountingInvoiceItemsAddGlobalsTypedDict,
+    AccountingInvoiceItemsAddRequest,
+    AccountingInvoiceItemsAddRequestTypedDict,
+    AccountingInvoiceItemsAddResponse,
+    AccountingInvoiceItemsAddResponseTypedDict,
+)
+from .accounting_invoiceitemsallop import (
+    AccountingInvoiceItemsAllGlobals,
+    AccountingInvoiceItemsAllGlobalsTypedDict,
+    AccountingInvoiceItemsAllRequest,
+    AccountingInvoiceItemsAllRequestTypedDict,
+    AccountingInvoiceItemsAllResponse,
+    AccountingInvoiceItemsAllResponseTypedDict,
+)
 from .accounting_invoiceitemsdeleteop import (
     AccountingInvoiceItemsDeleteGlobals,
     AccountingInvoiceItemsDeleteGlobalsTypedDict,
@@ -223,6 +335,22 @@ from .accounting_invoiceitemsupdateop import (
     AccountingInvoiceItemsUpdateRequestTypedDict,
     AccountingInvoiceItemsUpdateResponse,
     AccountingInvoiceItemsUpdateResponseTypedDict,
+)
+from .accounting_invoicesaddop import (
+    AccountingInvoicesAddGlobals,
+    AccountingInvoicesAddGlobalsTypedDict,
+    AccountingInvoicesAddRequest,
+    AccountingInvoicesAddRequestTypedDict,
+    AccountingInvoicesAddResponse,
+    AccountingInvoicesAddResponseTypedDict,
+)
+from .accounting_invoicesallop import (
+    AccountingInvoicesAllGlobals,
+    AccountingInvoicesAllGlobalsTypedDict,
+    AccountingInvoicesAllRequest,
+    AccountingInvoicesAllRequestTypedDict,
+    AccountingInvoicesAllResponse,
+    AccountingInvoicesAllResponseTypedDict,
 )
 from .accounting_invoicesdeleteop import (
     AccountingInvoicesDeleteGlobals,
@@ -248,6 +376,22 @@ from .accounting_invoicesupdateop import (
     AccountingInvoicesUpdateResponse,
     AccountingInvoicesUpdateResponseTypedDict,
 )
+from .accounting_journalentriesaddop import (
+    AccountingJournalEntriesAddGlobals,
+    AccountingJournalEntriesAddGlobalsTypedDict,
+    AccountingJournalEntriesAddRequest,
+    AccountingJournalEntriesAddRequestTypedDict,
+    AccountingJournalEntriesAddResponse,
+    AccountingJournalEntriesAddResponseTypedDict,
+)
+from .accounting_journalentriesallop import (
+    AccountingJournalEntriesAllGlobals,
+    AccountingJournalEntriesAllGlobalsTypedDict,
+    AccountingJournalEntriesAllRequest,
+    AccountingJournalEntriesAllRequestTypedDict,
+    AccountingJournalEntriesAllResponse,
+    AccountingJournalEntriesAllResponseTypedDict,
+)
 from .accounting_journalentriesdeleteop import (
     AccountingJournalEntriesDeleteGlobals,
     AccountingJournalEntriesDeleteGlobalsTypedDict,
@@ -271,6 +415,22 @@ from .accounting_journalentriesupdateop import (
     AccountingJournalEntriesUpdateRequestTypedDict,
     AccountingJournalEntriesUpdateResponse,
     AccountingJournalEntriesUpdateResponseTypedDict,
+)
+from .accounting_ledgeraccountsaddop import (
+    AccountingLedgerAccountsAddGlobals,
+    AccountingLedgerAccountsAddGlobalsTypedDict,
+    AccountingLedgerAccountsAddRequest,
+    AccountingLedgerAccountsAddRequestTypedDict,
+    AccountingLedgerAccountsAddResponse,
+    AccountingLedgerAccountsAddResponseTypedDict,
+)
+from .accounting_ledgeraccountsallop import (
+    AccountingLedgerAccountsAllGlobals,
+    AccountingLedgerAccountsAllGlobalsTypedDict,
+    AccountingLedgerAccountsAllRequest,
+    AccountingLedgerAccountsAllRequestTypedDict,
+    AccountingLedgerAccountsAllResponse,
+    AccountingLedgerAccountsAllResponseTypedDict,
 )
 from .accounting_ledgeraccountsdeleteop import (
     AccountingLedgerAccountsDeleteGlobals,
@@ -296,6 +456,22 @@ from .accounting_ledgeraccountsupdateop import (
     AccountingLedgerAccountsUpdateResponse,
     AccountingLedgerAccountsUpdateResponseTypedDict,
 )
+from .accounting_locationsaddop import (
+    AccountingLocationsAddGlobals,
+    AccountingLocationsAddGlobalsTypedDict,
+    AccountingLocationsAddRequest,
+    AccountingLocationsAddRequestTypedDict,
+    AccountingLocationsAddResponse,
+    AccountingLocationsAddResponseTypedDict,
+)
+from .accounting_locationsallop import (
+    AccountingLocationsAllGlobals,
+    AccountingLocationsAllGlobalsTypedDict,
+    AccountingLocationsAllRequest,
+    AccountingLocationsAllRequestTypedDict,
+    AccountingLocationsAllResponse,
+    AccountingLocationsAllResponseTypedDict,
+)
 from .accounting_locationsdeleteop import (
     AccountingLocationsDeleteGlobals,
     AccountingLocationsDeleteGlobalsTypedDict,
@@ -319,6 +495,22 @@ from .accounting_locationsupdateop import (
     AccountingLocationsUpdateRequestTypedDict,
     AccountingLocationsUpdateResponse,
     AccountingLocationsUpdateResponseTypedDict,
+)
+from .accounting_paymentsaddop import (
+    AccountingPaymentsAddGlobals,
+    AccountingPaymentsAddGlobalsTypedDict,
+    AccountingPaymentsAddRequest,
+    AccountingPaymentsAddRequestTypedDict,
+    AccountingPaymentsAddResponse,
+    AccountingPaymentsAddResponseTypedDict,
+)
+from .accounting_paymentsallop import (
+    AccountingPaymentsAllGlobals,
+    AccountingPaymentsAllGlobalsTypedDict,
+    AccountingPaymentsAllRequest,
+    AccountingPaymentsAllRequestTypedDict,
+    AccountingPaymentsAllResponse,
+    AccountingPaymentsAllResponseTypedDict,
 )
 from .accounting_paymentsdeleteop import (
     AccountingPaymentsDeleteGlobals,
@@ -352,6 +544,22 @@ from .accounting_profitandlossoneop import (
     AccountingProfitAndLossOneResponse,
     AccountingProfitAndLossOneResponseTypedDict,
 )
+from .accounting_purchaseordersaddop import (
+    AccountingPurchaseOrdersAddGlobals,
+    AccountingPurchaseOrdersAddGlobalsTypedDict,
+    AccountingPurchaseOrdersAddRequest,
+    AccountingPurchaseOrdersAddRequestTypedDict,
+    AccountingPurchaseOrdersAddResponse,
+    AccountingPurchaseOrdersAddResponseTypedDict,
+)
+from .accounting_purchaseordersallop import (
+    AccountingPurchaseOrdersAllGlobals,
+    AccountingPurchaseOrdersAllGlobalsTypedDict,
+    AccountingPurchaseOrdersAllRequest,
+    AccountingPurchaseOrdersAllRequestTypedDict,
+    AccountingPurchaseOrdersAllResponse,
+    AccountingPurchaseOrdersAllResponseTypedDict,
+)
 from .accounting_purchaseordersdeleteop import (
     AccountingPurchaseOrdersDeleteGlobals,
     AccountingPurchaseOrdersDeleteGlobalsTypedDict,
@@ -375,6 +583,22 @@ from .accounting_purchaseordersupdateop import (
     AccountingPurchaseOrdersUpdateRequestTypedDict,
     AccountingPurchaseOrdersUpdateResponse,
     AccountingPurchaseOrdersUpdateResponseTypedDict,
+)
+from .accounting_subsidiariesaddop import (
+    AccountingSubsidiariesAddGlobals,
+    AccountingSubsidiariesAddGlobalsTypedDict,
+    AccountingSubsidiariesAddRequest,
+    AccountingSubsidiariesAddRequestTypedDict,
+    AccountingSubsidiariesAddResponse,
+    AccountingSubsidiariesAddResponseTypedDict,
+)
+from .accounting_subsidiariesallop import (
+    AccountingSubsidiariesAllGlobals,
+    AccountingSubsidiariesAllGlobalsTypedDict,
+    AccountingSubsidiariesAllRequest,
+    AccountingSubsidiariesAllRequestTypedDict,
+    AccountingSubsidiariesAllResponse,
+    AccountingSubsidiariesAllResponseTypedDict,
 )
 from .accounting_subsidiariesdeleteop import (
     AccountingSubsidiariesDeleteGlobals,
@@ -400,6 +624,22 @@ from .accounting_subsidiariesupdateop import (
     AccountingSubsidiariesUpdateResponse,
     AccountingSubsidiariesUpdateResponseTypedDict,
 )
+from .accounting_suppliersaddop import (
+    AccountingSuppliersAddGlobals,
+    AccountingSuppliersAddGlobalsTypedDict,
+    AccountingSuppliersAddRequest,
+    AccountingSuppliersAddRequestTypedDict,
+    AccountingSuppliersAddResponse,
+    AccountingSuppliersAddResponseTypedDict,
+)
+from .accounting_suppliersallop import (
+    AccountingSuppliersAllGlobals,
+    AccountingSuppliersAllGlobalsTypedDict,
+    AccountingSuppliersAllRequest,
+    AccountingSuppliersAllRequestTypedDict,
+    AccountingSuppliersAllResponse,
+    AccountingSuppliersAllResponseTypedDict,
+)
 from .accounting_suppliersdeleteop import (
     AccountingSuppliersDeleteGlobals,
     AccountingSuppliersDeleteGlobalsTypedDict,
@@ -424,6 +664,22 @@ from .accounting_suppliersupdateop import (
     AccountingSuppliersUpdateResponse,
     AccountingSuppliersUpdateResponseTypedDict,
 )
+from .accounting_taxratesaddop import (
+    AccountingTaxRatesAddGlobals,
+    AccountingTaxRatesAddGlobalsTypedDict,
+    AccountingTaxRatesAddRequest,
+    AccountingTaxRatesAddRequestTypedDict,
+    AccountingTaxRatesAddResponse,
+    AccountingTaxRatesAddResponseTypedDict,
+)
+from .accounting_taxratesallop import (
+    AccountingTaxRatesAllGlobals,
+    AccountingTaxRatesAllGlobalsTypedDict,
+    AccountingTaxRatesAllRequest,
+    AccountingTaxRatesAllRequestTypedDict,
+    AccountingTaxRatesAllResponse,
+    AccountingTaxRatesAllResponseTypedDict,
+)
 from .accounting_taxratesdeleteop import (
     AccountingTaxRatesDeleteGlobals,
     AccountingTaxRatesDeleteGlobalsTypedDict,
@@ -447,6 +703,22 @@ from .accounting_taxratesupdateop import (
     AccountingTaxRatesUpdateRequestTypedDict,
     AccountingTaxRatesUpdateResponse,
     AccountingTaxRatesUpdateResponseTypedDict,
+)
+from .accounting_trackingcategoriesaddop import (
+    AccountingTrackingCategoriesAddGlobals,
+    AccountingTrackingCategoriesAddGlobalsTypedDict,
+    AccountingTrackingCategoriesAddRequest,
+    AccountingTrackingCategoriesAddRequestTypedDict,
+    AccountingTrackingCategoriesAddResponse,
+    AccountingTrackingCategoriesAddResponseTypedDict,
+)
+from .accounting_trackingcategoriesallop import (
+    AccountingTrackingCategoriesAllGlobals,
+    AccountingTrackingCategoriesAllGlobalsTypedDict,
+    AccountingTrackingCategoriesAllRequest,
+    AccountingTrackingCategoriesAllRequestTypedDict,
+    AccountingTrackingCategoriesAllResponse,
+    AccountingTrackingCategoriesAllResponseTypedDict,
 )
 from .accounting_trackingcategoriesdeleteop import (
     AccountingTrackingCategoriesDeleteGlobals,
@@ -479,12 +751,20 @@ from .accountingdepartment import (
     AccountingDepartmentTypedDict,
     DepartmentStatus,
 )
+from .accountingdepartmentsfilter import (
+    AccountingDepartmentsFilter,
+    AccountingDepartmentsFilterTypedDict,
+)
 from .accountinglocation import (
     AccountingLocation,
     AccountingLocationInput,
     AccountingLocationInputTypedDict,
     AccountingLocationTypedDict,
     LocationStatus,
+)
+from .accountinglocationsfilter import (
+    AccountingLocationsFilter,
+    AccountingLocationsFilterTypedDict,
 )
 from .address import Address, AddressTypedDict, Type
 from .ageddebtors import AgedDebtors, AgedDebtorsTypedDict
@@ -552,6 +832,8 @@ from .billpayment import (
     BillPaymentType,
     BillPaymentTypedDict,
 )
+from .billsfilter import BillsFilter, BillsFilterTypedDict
+from .billssort import BillsSort, BillsSortTypedDict, By
 from .companyinfo import (
     CompanyInfo,
     CompanyInfoTypedDict,
@@ -578,8 +860,17 @@ from .connection import (
     Value5,
     Value5TypedDict,
 )
+from .connectionimportdata import (
+    ConnectionImportData,
+    ConnectionImportDataTypedDict,
+    Credentials,
+    CredentialsTypedDict,
+    Settings,
+    SettingsTypedDict,
+)
 from .connectionstate import ConnectionState
 from .consumer import Consumer, ConsumerTypedDict
+from .consumer_input import ConsumerInput, ConsumerInputTypedDict
 from .consumerconnection import ConsumerConnection, ConsumerConnectionTypedDict
 from .consumermetadata import ConsumerMetadata, ConsumerMetadataTypedDict
 from .consumerrequestcountsindaterangeresponse import (
@@ -587,6 +878,80 @@ from .consumerrequestcountsindaterangeresponse import (
     ConsumerRequestCountsInDateRangeResponseData,
     ConsumerRequestCountsInDateRangeResponseDataTypedDict,
     ConsumerRequestCountsInDateRangeResponseTypedDict,
+)
+from .createaccountingdepartmentresponse import (
+    CreateAccountingDepartmentResponse,
+    CreateAccountingDepartmentResponseTypedDict,
+)
+from .createaccountinglocationresponse import (
+    CreateAccountingLocationResponse,
+    CreateAccountingLocationResponseTypedDict,
+)
+from .createbillpaymentresponse import (
+    CreateBillPaymentResponse,
+    CreateBillPaymentResponseTypedDict,
+)
+from .createbillresponse import CreateBillResponse, CreateBillResponseTypedDict
+from .createcallbackstate import CreateCallbackState, CreateCallbackStateTypedDict
+from .createcallbackstateresponse import (
+    CreateCallbackStateResponse,
+    CreateCallbackStateResponseData,
+    CreateCallbackStateResponseDataTypedDict,
+    CreateCallbackStateResponseTypedDict,
+)
+from .createconnectionresponse import (
+    CreateConnectionResponse,
+    CreateConnectionResponseTypedDict,
+)
+from .createconsumerresponse import (
+    CreateConsumerResponse,
+    CreateConsumerResponseTypedDict,
+)
+from .createcreditnoteresponse import (
+    CreateCreditNoteResponse,
+    CreateCreditNoteResponseTypedDict,
+)
+from .createcustomerresponse import (
+    CreateCustomerResponse,
+    CreateCustomerResponseTypedDict,
+)
+from .createexpenseresponse import CreateExpenseResponse, CreateExpenseResponseTypedDict
+from .createinvoiceitemresponse import (
+    CreateInvoiceItemResponse,
+    CreateInvoiceItemResponseTypedDict,
+)
+from .createinvoiceresponse import CreateInvoiceResponse, CreateInvoiceResponseTypedDict
+from .createjournalentryresponse import (
+    CreateJournalEntryResponse,
+    CreateJournalEntryResponseTypedDict,
+)
+from .createledgeraccountresponse import (
+    CreateLedgerAccountResponse,
+    CreateLedgerAccountResponseTypedDict,
+)
+from .createpaymentresponse import CreatePaymentResponse, CreatePaymentResponseTypedDict
+from .createpurchaseorderresponse import (
+    CreatePurchaseOrderResponse,
+    CreatePurchaseOrderResponseTypedDict,
+)
+from .createsessionresponse import (
+    CreateSessionResponse,
+    CreateSessionResponseData,
+    CreateSessionResponseDataTypedDict,
+    CreateSessionResponseTypedDict,
+)
+from .createsubsidiaryresponse import (
+    CreateSubsidiaryResponse,
+    CreateSubsidiaryResponseTypedDict,
+)
+from .createsupplierresponse import (
+    CreateSupplierResponse,
+    CreateSupplierResponseTypedDict,
+)
+from .createtaxrateresponse import CreateTaxRateResponse, CreateTaxRateResponseTypedDict
+from .createtrackingcategoryresponse import (
+    CreateTrackingCategoryResponse,
+    CreateTrackingCategoryResponseTypedDict,
 )
 from .creditnote import (
     CreditNote,
@@ -596,6 +961,12 @@ from .creditnote import (
     CreditNoteType,
     CreditNoteTypedDict,
 )
+from .creditnotesfilter import CreditNotesFilter, CreditNotesFilterTypedDict
+from .creditnotessort import (
+    CreditNotesSort,
+    CreditNotesSortBy,
+    CreditNotesSortTypedDict,
+)
 from .currency import Currency
 from .customer import (
     Customer,
@@ -604,6 +975,12 @@ from .customer import (
     CustomerStatus,
     CustomerTypedDict,
 )
+from .customersfilter import (
+    CustomersFilter,
+    CustomersFilterStatus,
+    CustomersFilterTypedDict,
+)
+from .customerssort import CustomersSort, CustomersSortBy, CustomersSortTypedDict
 from .customfield import (
     CustomField,
     CustomFieldTypedDict,
@@ -636,9 +1013,9 @@ from .deletebillpaymentresponse import (
 )
 from .deletebillresponse import DeleteBillResponse, DeleteBillResponseTypedDict
 from .deleteconsumerresponse import (
-    Data,
-    DataTypedDict,
     DeleteConsumerResponse,
+    DeleteConsumerResponseData,
+    DeleteConsumerResponseDataTypedDict,
     DeleteConsumerResponseTypedDict,
 )
 from .deletecreditnoteresponse import (
@@ -711,9 +1088,17 @@ from .getaccountingdepartmentresponse import (
     GetAccountingDepartmentResponse,
     GetAccountingDepartmentResponseTypedDict,
 )
+from .getaccountingdepartmentsresponse import (
+    GetAccountingDepartmentsResponse,
+    GetAccountingDepartmentsResponseTypedDict,
+)
 from .getaccountinglocationresponse import (
     GetAccountingLocationResponse,
     GetAccountingLocationResponseTypedDict,
+)
+from .getaccountinglocationsresponse import (
+    GetAccountingLocationsResponse,
+    GetAccountingLocationsResponseTypedDict,
 )
 from .getageddebtorsresponse import (
     GetAgedDebtorsResponse,
@@ -732,7 +1117,12 @@ from .getbillpaymentresponse import (
     GetBillPaymentResponse,
     GetBillPaymentResponseTypedDict,
 )
+from .getbillpaymentsresponse import (
+    GetBillPaymentsResponse,
+    GetBillPaymentsResponseTypedDict,
+)
 from .getbillresponse import GetBillResponse, GetBillResponseTypedDict
+from .getbillsresponse import GetBillsResponse, GetBillsResponseTypedDict
 from .getcompanyinforesponse import (
     GetCompanyInfoResponse,
     GetCompanyInfoResponseTypedDict,
@@ -743,8 +1133,19 @@ from .getconnectionsresponse import (
     GetConnectionsResponseTypedDict,
 )
 from .getconsumerresponse import GetConsumerResponse, GetConsumerResponseTypedDict
+from .getconsumersresponse import (
+    Data,
+    DataTypedDict,
+    GetConsumersResponse,
+    GetConsumersResponseTypedDict,
+)
 from .getcreditnoteresponse import GetCreditNoteResponse, GetCreditNoteResponseTypedDict
+from .getcreditnotesresponse import (
+    GetCreditNotesResponse,
+    GetCreditNotesResponseTypedDict,
+)
 from .getcustomerresponse import GetCustomerResponse, GetCustomerResponseTypedDict
+from .getcustomersresponse import GetCustomersResponse, GetCustomersResponseTypedDict
 from .getcustomfieldsresponse import (
     GetCustomFieldsResponse,
     GetCustomFieldsResponseTypedDict,
@@ -754,11 +1155,21 @@ from .getcustommappingsresponse import (
     GetCustomMappingsResponseTypedDict,
 )
 from .getexpenseresponse import GetExpenseResponse, GetExpenseResponseTypedDict
+from .getexpensesresponse import GetExpensesResponse, GetExpensesResponseTypedDict
 from .getinvoiceitemresponse import (
     GetInvoiceItemResponse,
     GetInvoiceItemResponseTypedDict,
 )
+from .getinvoiceitemsresponse import (
+    GetInvoiceItemsResponse,
+    GetInvoiceItemsResponseTypedDict,
+)
 from .getinvoiceresponse import GetInvoiceResponse, GetInvoiceResponseTypedDict
+from .getinvoicesresponse import GetInvoicesResponse, GetInvoicesResponseTypedDict
+from .getjournalentriesresponse import (
+    GetJournalEntriesResponse,
+    GetJournalEntriesResponseTypedDict,
+)
 from .getjournalentryresponse import (
     GetJournalEntryResponse,
     GetJournalEntryResponseTypedDict,
@@ -767,8 +1178,13 @@ from .getledgeraccountresponse import (
     GetLedgerAccountResponse,
     GetLedgerAccountResponseTypedDict,
 )
+from .getledgeraccountsresponse import (
+    GetLedgerAccountsResponse,
+    GetLedgerAccountsResponseTypedDict,
+)
 from .getlogsresponse import GetLogsResponse, GetLogsResponseTypedDict
 from .getpaymentresponse import GetPaymentResponse, GetPaymentResponseTypedDict
+from .getpaymentsresponse import GetPaymentsResponse, GetPaymentsResponseTypedDict
 from .getprofitandlossresponse import (
     GetProfitAndLossResponse,
     GetProfitAndLossResponseTypedDict,
@@ -777,9 +1193,23 @@ from .getpurchaseorderresponse import (
     GetPurchaseOrderResponse,
     GetPurchaseOrderResponseTypedDict,
 )
+from .getpurchaseordersresponse import (
+    GetPurchaseOrdersResponse,
+    GetPurchaseOrdersResponseTypedDict,
+)
+from .getsubsidiariesresponse import (
+    GetSubsidiariesResponse,
+    GetSubsidiariesResponseTypedDict,
+)
 from .getsubsidiaryresponse import GetSubsidiaryResponse, GetSubsidiaryResponseTypedDict
 from .getsupplierresponse import GetSupplierResponse, GetSupplierResponseTypedDict
+from .getsuppliersresponse import GetSuppliersResponse, GetSuppliersResponseTypedDict
 from .gettaxrateresponse import GetTaxRateResponse, GetTaxRateResponseTypedDict
+from .gettaxratesresponse import GetTaxRatesResponse, GetTaxRatesResponseTypedDict
+from .gettrackingcategoriesresponse import (
+    GetTrackingCategoriesResponse,
+    GetTrackingCategoriesResponseTypedDict,
+)
 from .gettrackingcategoryresponse import (
     GetTrackingCategoryResponse,
     GetTrackingCategoryResponseTypedDict,
@@ -811,8 +1241,18 @@ from .invoiceitem import (
 )
 from .invoiceitemfilter import (
     InvoiceItemFilter,
+    InvoiceItemFilterInvoiceItemType,
     InvoiceItemFilterTypedDict,
+)
+from .invoiceitemsfilter import (
     InvoiceItemType,
+    InvoiceItemsFilter,
+    InvoiceItemsFilterTypedDict,
+)
+from .invoiceitemssort import (
+    InvoiceItemsSort,
+    InvoiceItemsSortBy,
+    InvoiceItemsSortTypedDict,
 )
 from .invoicelineitem import (
     InvoiceLineItem,
@@ -822,6 +1262,14 @@ from .invoicelineitem import (
     InvoiceLineItemTypedDict,
 )
 from .invoiceresponse import InvoiceResponse, InvoiceResponseTypedDict
+from .invoicesfilter import InvoicesFilter, InvoicesFilterTypedDict
+from .invoicessort import InvoicesSort, InvoicesSortBy, InvoicesSortTypedDict
+from .journalentriesfilter import JournalEntriesFilter, JournalEntriesFilterTypedDict
+from .journalentriessort import (
+    JournalEntriesSort,
+    JournalEntriesSortBy,
+    JournalEntriesSortTypedDict,
+)
 from .journalentry import JournalEntry, JournalEntryTypedDict
 from .journalentry_input import JournalEntryInput, JournalEntryInputTypedDict
 from .journalentrylineitem import (
@@ -847,6 +1295,12 @@ from .ledgeraccount import (
     ParentAccountTypedDict,
     SubAccounts,
     SubAccountsTypedDict,
+)
+from .ledgeraccountsfilter import LedgerAccountsFilter, LedgerAccountsFilterTypedDict
+from .ledgeraccountssort import (
+    LedgerAccountsSort,
+    LedgerAccountsSortBy,
+    LedgerAccountsSortTypedDict,
 )
 from .linkedcustomer import LinkedCustomer, LinkedCustomerTypedDict
 from .linkedcustomer_input import LinkedCustomerInput, LinkedCustomerInputTypedDict
@@ -903,6 +1357,8 @@ from .paymentrequiredresponse import (
     PaymentRequiredResponse,
     PaymentRequiredResponseData,
 )
+from .paymentsfilter import PaymentsFilter, PaymentsFilterTypedDict
+from .paymentssort import PaymentsSort, PaymentsSortBy, PaymentsSortTypedDict
 from .paymentstatus import PaymentStatus
 from .paymenttype import PaymentType
 from .phonenumber import PhoneNumber, PhoneNumberType, PhoneNumberTypedDict
@@ -935,11 +1391,26 @@ from .purchaseorder import (
     PurchaseOrderStatus,
     PurchaseOrderTypedDict,
 )
+from .purchaseordersfilter import PurchaseOrdersFilter, PurchaseOrdersFilterTypedDict
+from .purchaseorderssort import (
+    PurchaseOrdersSort,
+    PurchaseOrdersSortBy,
+    PurchaseOrdersSortTypedDict,
+)
 from .requestcountallocation import (
     RequestCountAllocation,
     RequestCountAllocationTypedDict,
 )
 from .security import Security, SecurityTypedDict
+from .session import (
+    AllowActions,
+    Session,
+    SessionSettings,
+    SessionSettingsTypedDict,
+    SessionTypedDict,
+    Theme,
+    ThemeTypedDict,
+)
 from .simpleformfieldoption import (
     Five,
     FiveTypedDict,
@@ -949,6 +1420,7 @@ from .simpleformfieldoption import (
     SimpleFormFieldOptionValue,
     SimpleFormFieldOptionValueTypedDict,
 )
+from .sortdirection import SortDirection
 from .subsidiary import (
     Subsidiary,
     SubsidiaryInput,
@@ -968,6 +1440,8 @@ from .supplier import (
     SupplierStatus,
     SupplierTypedDict,
 )
+from .suppliersfilter import SuppliersFilter, SuppliersFilterTypedDict
+from .supplierssort import SuppliersSort, SuppliersSortBy, SuppliersSortTypedDict
 from .taxrate import (
     Components,
     ComponentsTypedDict,
@@ -979,6 +1453,7 @@ from .taxrate import (
     TaxRateStatus,
     TaxRateTypedDict,
 )
+from .taxratesfilter import TaxRatesFilter, TaxRatesFilterTypedDict
 from .trackingcategory import (
     TrackingCategory,
     TrackingCategoryInput,
@@ -999,6 +1474,7 @@ from .unexpectederrorresponse import (
     UnexpectedErrorResponse,
     UnexpectedErrorResponseTypedDict,
 )
+from .unifiedapiid import UnifiedAPIID
 from .unifiedid import UnifiedID, UnifiedIDTypedDict
 from .unprocessableresponse import (
     UnprocessableResponse,
@@ -1067,6 +1543,12 @@ from .updatetrackingcategoryresponse import (
     UpdateTrackingCategoryResponse,
     UpdateTrackingCategoryResponseTypedDict,
 )
+from .validateconnectionstateresponse import (
+    ValidateConnectionStateResponse,
+    ValidateConnectionStateResponseData,
+    ValidateConnectionStateResponseDataTypedDict,
+    ValidateConnectionStateResponseTypedDict,
+)
 from .vault_connectioncustommappingsallop import (
     VaultConnectionCustomMappingsAllGlobals,
     VaultConnectionCustomMappingsAllGlobalsTypedDict,
@@ -1107,6 +1589,14 @@ from .vault_connectionsettingsupdateop import (
     VaultConnectionSettingsUpdateResponse,
     VaultConnectionSettingsUpdateResponseTypedDict,
 )
+from .vault_connectionsimportop import (
+    VaultConnectionsImportGlobals,
+    VaultConnectionsImportGlobalsTypedDict,
+    VaultConnectionsImportRequest,
+    VaultConnectionsImportRequestTypedDict,
+    VaultConnectionsImportResponse,
+    VaultConnectionsImportResponseTypedDict,
+)
 from .vault_connectionsoneop import (
     VaultConnectionsOneGlobals,
     VaultConnectionsOneGlobalsTypedDict,
@@ -1114,6 +1604,16 @@ from .vault_connectionsoneop import (
     VaultConnectionsOneRequestTypedDict,
     VaultConnectionsOneResponse,
     VaultConnectionsOneResponseTypedDict,
+)
+from .vault_connectionstokenop import (
+    VaultConnectionsTokenGlobals,
+    VaultConnectionsTokenGlobalsTypedDict,
+    VaultConnectionsTokenRequest,
+    VaultConnectionsTokenRequestBody,
+    VaultConnectionsTokenRequestBodyTypedDict,
+    VaultConnectionsTokenRequestTypedDict,
+    VaultConnectionsTokenResponse,
+    VaultConnectionsTokenResponseTypedDict,
 )
 from .vault_connectionsupdateop import (
     VaultConnectionsUpdateGlobals,
@@ -1130,6 +1630,22 @@ from .vault_consumerrequestcountsallop import (
     VaultConsumerRequestCountsAllRequestTypedDict,
     VaultConsumerRequestCountsAllResponse,
     VaultConsumerRequestCountsAllResponseTypedDict,
+)
+from .vault_consumersaddop import (
+    VaultConsumersAddGlobals,
+    VaultConsumersAddGlobalsTypedDict,
+    VaultConsumersAddRequest,
+    VaultConsumersAddRequestTypedDict,
+    VaultConsumersAddResponse,
+    VaultConsumersAddResponseTypedDict,
+)
+from .vault_consumersallop import (
+    VaultConsumersAllGlobals,
+    VaultConsumersAllGlobalsTypedDict,
+    VaultConsumersAllRequest,
+    VaultConsumersAllRequestTypedDict,
+    VaultConsumersAllResponse,
+    VaultConsumersAllResponseTypedDict,
 )
 from .vault_consumersdeleteop import (
     VaultConsumersDeleteGlobals,
@@ -1155,6 +1671,14 @@ from .vault_consumersupdateop import (
     VaultConsumersUpdateResponse,
     VaultConsumersUpdateResponseTypedDict,
 )
+from .vault_createcallbackstateop import (
+    VaultCreateCallbackStateGlobals,
+    VaultCreateCallbackStateGlobalsTypedDict,
+    VaultCreateCallbackStateRequest,
+    VaultCreateCallbackStateRequestTypedDict,
+    VaultCreateCallbackStateResponse,
+    VaultCreateCallbackStateResponseTypedDict,
+)
 from .vault_customfieldsallop import (
     VaultCustomFieldsAllGlobals,
     VaultCustomFieldsAllGlobalsTypedDict,
@@ -1178,6 +1702,24 @@ from .vault_logsallop import (
     VaultLogsAllRequestTypedDict,
     VaultLogsAllResponse,
     VaultLogsAllResponseTypedDict,
+)
+from .vault_sessionscreateop import (
+    VaultSessionsCreateGlobals,
+    VaultSessionsCreateGlobalsTypedDict,
+    VaultSessionsCreateRequest,
+    VaultSessionsCreateRequestTypedDict,
+    VaultSessionsCreateResponse,
+    VaultSessionsCreateResponseTypedDict,
+)
+from .vault_validateconnectionstateop import (
+    VaultValidateConnectionStateGlobals,
+    VaultValidateConnectionStateGlobalsTypedDict,
+    VaultValidateConnectionStateRequest,
+    VaultValidateConnectionStateRequestBody,
+    VaultValidateConnectionStateRequestBodyTypedDict,
+    VaultValidateConnectionStateRequestTypedDict,
+    VaultValidateConnectionStateResponse,
+    VaultValidateConnectionStateResponseTypedDict,
 )
 from .webhooksubscription import WebhookSubscription, WebhookSubscriptionTypedDict
 from .website import Website, WebsiteType, WebsiteTypedDict
@@ -1223,6 +1765,18 @@ __all__ = [
     "AccountingBalanceSheetOneRequestTypedDict",
     "AccountingBalanceSheetOneResponse",
     "AccountingBalanceSheetOneResponseTypedDict",
+    "AccountingBillPaymentsAddGlobals",
+    "AccountingBillPaymentsAddGlobalsTypedDict",
+    "AccountingBillPaymentsAddRequest",
+    "AccountingBillPaymentsAddRequestTypedDict",
+    "AccountingBillPaymentsAddResponse",
+    "AccountingBillPaymentsAddResponseTypedDict",
+    "AccountingBillPaymentsAllGlobals",
+    "AccountingBillPaymentsAllGlobalsTypedDict",
+    "AccountingBillPaymentsAllRequest",
+    "AccountingBillPaymentsAllRequestTypedDict",
+    "AccountingBillPaymentsAllResponse",
+    "AccountingBillPaymentsAllResponseTypedDict",
     "AccountingBillPaymentsDeleteGlobals",
     "AccountingBillPaymentsDeleteGlobalsTypedDict",
     "AccountingBillPaymentsDeleteRequest",
@@ -1241,6 +1795,18 @@ __all__ = [
     "AccountingBillPaymentsUpdateRequestTypedDict",
     "AccountingBillPaymentsUpdateResponse",
     "AccountingBillPaymentsUpdateResponseTypedDict",
+    "AccountingBillsAddGlobals",
+    "AccountingBillsAddGlobalsTypedDict",
+    "AccountingBillsAddRequest",
+    "AccountingBillsAddRequestTypedDict",
+    "AccountingBillsAddResponse",
+    "AccountingBillsAddResponseTypedDict",
+    "AccountingBillsAllGlobals",
+    "AccountingBillsAllGlobalsTypedDict",
+    "AccountingBillsAllRequest",
+    "AccountingBillsAllRequestTypedDict",
+    "AccountingBillsAllResponse",
+    "AccountingBillsAllResponseTypedDict",
     "AccountingBillsDeleteGlobals",
     "AccountingBillsDeleteGlobalsTypedDict",
     "AccountingBillsDeleteRequest",
@@ -1265,6 +1831,18 @@ __all__ = [
     "AccountingCompanyInfoOneRequestTypedDict",
     "AccountingCompanyInfoOneResponse",
     "AccountingCompanyInfoOneResponseTypedDict",
+    "AccountingCreditNotesAddGlobals",
+    "AccountingCreditNotesAddGlobalsTypedDict",
+    "AccountingCreditNotesAddRequest",
+    "AccountingCreditNotesAddRequestTypedDict",
+    "AccountingCreditNotesAddResponse",
+    "AccountingCreditNotesAddResponseTypedDict",
+    "AccountingCreditNotesAllGlobals",
+    "AccountingCreditNotesAllGlobalsTypedDict",
+    "AccountingCreditNotesAllRequest",
+    "AccountingCreditNotesAllRequestTypedDict",
+    "AccountingCreditNotesAllResponse",
+    "AccountingCreditNotesAllResponseTypedDict",
     "AccountingCreditNotesDeleteGlobals",
     "AccountingCreditNotesDeleteGlobalsTypedDict",
     "AccountingCreditNotesDeleteRequest",
@@ -1283,6 +1861,18 @@ __all__ = [
     "AccountingCreditNotesUpdateRequestTypedDict",
     "AccountingCreditNotesUpdateResponse",
     "AccountingCreditNotesUpdateResponseTypedDict",
+    "AccountingCustomersAddGlobals",
+    "AccountingCustomersAddGlobalsTypedDict",
+    "AccountingCustomersAddRequest",
+    "AccountingCustomersAddRequestTypedDict",
+    "AccountingCustomersAddResponse",
+    "AccountingCustomersAddResponseTypedDict",
+    "AccountingCustomersAllGlobals",
+    "AccountingCustomersAllGlobalsTypedDict",
+    "AccountingCustomersAllRequest",
+    "AccountingCustomersAllRequestTypedDict",
+    "AccountingCustomersAllResponse",
+    "AccountingCustomersAllResponseTypedDict",
     "AccountingCustomersDeleteGlobals",
     "AccountingCustomersDeleteGlobalsTypedDict",
     "AccountingCustomersDeleteRequest",
@@ -1305,12 +1895,26 @@ __all__ = [
     "AccountingDepartmentInput",
     "AccountingDepartmentInputTypedDict",
     "AccountingDepartmentTypedDict",
+    "AccountingDepartmentsAddGlobals",
+    "AccountingDepartmentsAddGlobalsTypedDict",
+    "AccountingDepartmentsAddRequest",
+    "AccountingDepartmentsAddRequestTypedDict",
+    "AccountingDepartmentsAddResponse",
+    "AccountingDepartmentsAddResponseTypedDict",
+    "AccountingDepartmentsAllGlobals",
+    "AccountingDepartmentsAllGlobalsTypedDict",
+    "AccountingDepartmentsAllRequest",
+    "AccountingDepartmentsAllRequestTypedDict",
+    "AccountingDepartmentsAllResponse",
+    "AccountingDepartmentsAllResponseTypedDict",
     "AccountingDepartmentsDeleteGlobals",
     "AccountingDepartmentsDeleteGlobalsTypedDict",
     "AccountingDepartmentsDeleteRequest",
     "AccountingDepartmentsDeleteRequestTypedDict",
     "AccountingDepartmentsDeleteResponse",
     "AccountingDepartmentsDeleteResponseTypedDict",
+    "AccountingDepartmentsFilter",
+    "AccountingDepartmentsFilterTypedDict",
     "AccountingDepartmentsOneGlobals",
     "AccountingDepartmentsOneGlobalsTypedDict",
     "AccountingDepartmentsOneRequest",
@@ -1323,6 +1927,18 @@ __all__ = [
     "AccountingDepartmentsUpdateRequestTypedDict",
     "AccountingDepartmentsUpdateResponse",
     "AccountingDepartmentsUpdateResponseTypedDict",
+    "AccountingExpensesAddGlobals",
+    "AccountingExpensesAddGlobalsTypedDict",
+    "AccountingExpensesAddRequest",
+    "AccountingExpensesAddRequestTypedDict",
+    "AccountingExpensesAddResponse",
+    "AccountingExpensesAddResponseTypedDict",
+    "AccountingExpensesAllGlobals",
+    "AccountingExpensesAllGlobalsTypedDict",
+    "AccountingExpensesAllRequest",
+    "AccountingExpensesAllRequestTypedDict",
+    "AccountingExpensesAllResponse",
+    "AccountingExpensesAllResponseTypedDict",
     "AccountingExpensesDeleteGlobals",
     "AccountingExpensesDeleteGlobalsTypedDict",
     "AccountingExpensesDeleteRequest",
@@ -1341,6 +1957,18 @@ __all__ = [
     "AccountingExpensesUpdateRequestTypedDict",
     "AccountingExpensesUpdateResponse",
     "AccountingExpensesUpdateResponseTypedDict",
+    "AccountingInvoiceItemsAddGlobals",
+    "AccountingInvoiceItemsAddGlobalsTypedDict",
+    "AccountingInvoiceItemsAddRequest",
+    "AccountingInvoiceItemsAddRequestTypedDict",
+    "AccountingInvoiceItemsAddResponse",
+    "AccountingInvoiceItemsAddResponseTypedDict",
+    "AccountingInvoiceItemsAllGlobals",
+    "AccountingInvoiceItemsAllGlobalsTypedDict",
+    "AccountingInvoiceItemsAllRequest",
+    "AccountingInvoiceItemsAllRequestTypedDict",
+    "AccountingInvoiceItemsAllResponse",
+    "AccountingInvoiceItemsAllResponseTypedDict",
     "AccountingInvoiceItemsDeleteGlobals",
     "AccountingInvoiceItemsDeleteGlobalsTypedDict",
     "AccountingInvoiceItemsDeleteRequest",
@@ -1359,6 +1987,18 @@ __all__ = [
     "AccountingInvoiceItemsUpdateRequestTypedDict",
     "AccountingInvoiceItemsUpdateResponse",
     "AccountingInvoiceItemsUpdateResponseTypedDict",
+    "AccountingInvoicesAddGlobals",
+    "AccountingInvoicesAddGlobalsTypedDict",
+    "AccountingInvoicesAddRequest",
+    "AccountingInvoicesAddRequestTypedDict",
+    "AccountingInvoicesAddResponse",
+    "AccountingInvoicesAddResponseTypedDict",
+    "AccountingInvoicesAllGlobals",
+    "AccountingInvoicesAllGlobalsTypedDict",
+    "AccountingInvoicesAllRequest",
+    "AccountingInvoicesAllRequestTypedDict",
+    "AccountingInvoicesAllResponse",
+    "AccountingInvoicesAllResponseTypedDict",
     "AccountingInvoicesDeleteGlobals",
     "AccountingInvoicesDeleteGlobalsTypedDict",
     "AccountingInvoicesDeleteRequest",
@@ -1377,6 +2017,18 @@ __all__ = [
     "AccountingInvoicesUpdateRequestTypedDict",
     "AccountingInvoicesUpdateResponse",
     "AccountingInvoicesUpdateResponseTypedDict",
+    "AccountingJournalEntriesAddGlobals",
+    "AccountingJournalEntriesAddGlobalsTypedDict",
+    "AccountingJournalEntriesAddRequest",
+    "AccountingJournalEntriesAddRequestTypedDict",
+    "AccountingJournalEntriesAddResponse",
+    "AccountingJournalEntriesAddResponseTypedDict",
+    "AccountingJournalEntriesAllGlobals",
+    "AccountingJournalEntriesAllGlobalsTypedDict",
+    "AccountingJournalEntriesAllRequest",
+    "AccountingJournalEntriesAllRequestTypedDict",
+    "AccountingJournalEntriesAllResponse",
+    "AccountingJournalEntriesAllResponseTypedDict",
     "AccountingJournalEntriesDeleteGlobals",
     "AccountingJournalEntriesDeleteGlobalsTypedDict",
     "AccountingJournalEntriesDeleteRequest",
@@ -1395,6 +2047,18 @@ __all__ = [
     "AccountingJournalEntriesUpdateRequestTypedDict",
     "AccountingJournalEntriesUpdateResponse",
     "AccountingJournalEntriesUpdateResponseTypedDict",
+    "AccountingLedgerAccountsAddGlobals",
+    "AccountingLedgerAccountsAddGlobalsTypedDict",
+    "AccountingLedgerAccountsAddRequest",
+    "AccountingLedgerAccountsAddRequestTypedDict",
+    "AccountingLedgerAccountsAddResponse",
+    "AccountingLedgerAccountsAddResponseTypedDict",
+    "AccountingLedgerAccountsAllGlobals",
+    "AccountingLedgerAccountsAllGlobalsTypedDict",
+    "AccountingLedgerAccountsAllRequest",
+    "AccountingLedgerAccountsAllRequestTypedDict",
+    "AccountingLedgerAccountsAllResponse",
+    "AccountingLedgerAccountsAllResponseTypedDict",
     "AccountingLedgerAccountsDeleteGlobals",
     "AccountingLedgerAccountsDeleteGlobalsTypedDict",
     "AccountingLedgerAccountsDeleteRequest",
@@ -1417,12 +2081,26 @@ __all__ = [
     "AccountingLocationInput",
     "AccountingLocationInputTypedDict",
     "AccountingLocationTypedDict",
+    "AccountingLocationsAddGlobals",
+    "AccountingLocationsAddGlobalsTypedDict",
+    "AccountingLocationsAddRequest",
+    "AccountingLocationsAddRequestTypedDict",
+    "AccountingLocationsAddResponse",
+    "AccountingLocationsAddResponseTypedDict",
+    "AccountingLocationsAllGlobals",
+    "AccountingLocationsAllGlobalsTypedDict",
+    "AccountingLocationsAllRequest",
+    "AccountingLocationsAllRequestTypedDict",
+    "AccountingLocationsAllResponse",
+    "AccountingLocationsAllResponseTypedDict",
     "AccountingLocationsDeleteGlobals",
     "AccountingLocationsDeleteGlobalsTypedDict",
     "AccountingLocationsDeleteRequest",
     "AccountingLocationsDeleteRequestTypedDict",
     "AccountingLocationsDeleteResponse",
     "AccountingLocationsDeleteResponseTypedDict",
+    "AccountingLocationsFilter",
+    "AccountingLocationsFilterTypedDict",
     "AccountingLocationsOneGlobals",
     "AccountingLocationsOneGlobalsTypedDict",
     "AccountingLocationsOneRequest",
@@ -1435,6 +2113,18 @@ __all__ = [
     "AccountingLocationsUpdateRequestTypedDict",
     "AccountingLocationsUpdateResponse",
     "AccountingLocationsUpdateResponseTypedDict",
+    "AccountingPaymentsAddGlobals",
+    "AccountingPaymentsAddGlobalsTypedDict",
+    "AccountingPaymentsAddRequest",
+    "AccountingPaymentsAddRequestTypedDict",
+    "AccountingPaymentsAddResponse",
+    "AccountingPaymentsAddResponseTypedDict",
+    "AccountingPaymentsAllGlobals",
+    "AccountingPaymentsAllGlobalsTypedDict",
+    "AccountingPaymentsAllRequest",
+    "AccountingPaymentsAllRequestTypedDict",
+    "AccountingPaymentsAllResponse",
+    "AccountingPaymentsAllResponseTypedDict",
     "AccountingPaymentsDeleteGlobals",
     "AccountingPaymentsDeleteGlobalsTypedDict",
     "AccountingPaymentsDeleteRequest",
@@ -1459,6 +2149,18 @@ __all__ = [
     "AccountingProfitAndLossOneRequestTypedDict",
     "AccountingProfitAndLossOneResponse",
     "AccountingProfitAndLossOneResponseTypedDict",
+    "AccountingPurchaseOrdersAddGlobals",
+    "AccountingPurchaseOrdersAddGlobalsTypedDict",
+    "AccountingPurchaseOrdersAddRequest",
+    "AccountingPurchaseOrdersAddRequestTypedDict",
+    "AccountingPurchaseOrdersAddResponse",
+    "AccountingPurchaseOrdersAddResponseTypedDict",
+    "AccountingPurchaseOrdersAllGlobals",
+    "AccountingPurchaseOrdersAllGlobalsTypedDict",
+    "AccountingPurchaseOrdersAllRequest",
+    "AccountingPurchaseOrdersAllRequestTypedDict",
+    "AccountingPurchaseOrdersAllResponse",
+    "AccountingPurchaseOrdersAllResponseTypedDict",
     "AccountingPurchaseOrdersDeleteGlobals",
     "AccountingPurchaseOrdersDeleteGlobalsTypedDict",
     "AccountingPurchaseOrdersDeleteRequest",
@@ -1477,6 +2179,18 @@ __all__ = [
     "AccountingPurchaseOrdersUpdateRequestTypedDict",
     "AccountingPurchaseOrdersUpdateResponse",
     "AccountingPurchaseOrdersUpdateResponseTypedDict",
+    "AccountingSubsidiariesAddGlobals",
+    "AccountingSubsidiariesAddGlobalsTypedDict",
+    "AccountingSubsidiariesAddRequest",
+    "AccountingSubsidiariesAddRequestTypedDict",
+    "AccountingSubsidiariesAddResponse",
+    "AccountingSubsidiariesAddResponseTypedDict",
+    "AccountingSubsidiariesAllGlobals",
+    "AccountingSubsidiariesAllGlobalsTypedDict",
+    "AccountingSubsidiariesAllRequest",
+    "AccountingSubsidiariesAllRequestTypedDict",
+    "AccountingSubsidiariesAllResponse",
+    "AccountingSubsidiariesAllResponseTypedDict",
     "AccountingSubsidiariesDeleteGlobals",
     "AccountingSubsidiariesDeleteGlobalsTypedDict",
     "AccountingSubsidiariesDeleteRequest",
@@ -1495,6 +2209,18 @@ __all__ = [
     "AccountingSubsidiariesUpdateRequestTypedDict",
     "AccountingSubsidiariesUpdateResponse",
     "AccountingSubsidiariesUpdateResponseTypedDict",
+    "AccountingSuppliersAddGlobals",
+    "AccountingSuppliersAddGlobalsTypedDict",
+    "AccountingSuppliersAddRequest",
+    "AccountingSuppliersAddRequestTypedDict",
+    "AccountingSuppliersAddResponse",
+    "AccountingSuppliersAddResponseTypedDict",
+    "AccountingSuppliersAllGlobals",
+    "AccountingSuppliersAllGlobalsTypedDict",
+    "AccountingSuppliersAllRequest",
+    "AccountingSuppliersAllRequestTypedDict",
+    "AccountingSuppliersAllResponse",
+    "AccountingSuppliersAllResponseTypedDict",
     "AccountingSuppliersDeleteGlobals",
     "AccountingSuppliersDeleteGlobalsTypedDict",
     "AccountingSuppliersDeleteRequest",
@@ -1513,6 +2239,18 @@ __all__ = [
     "AccountingSuppliersUpdateRequestTypedDict",
     "AccountingSuppliersUpdateResponse",
     "AccountingSuppliersUpdateResponseTypedDict",
+    "AccountingTaxRatesAddGlobals",
+    "AccountingTaxRatesAddGlobalsTypedDict",
+    "AccountingTaxRatesAddRequest",
+    "AccountingTaxRatesAddRequestTypedDict",
+    "AccountingTaxRatesAddResponse",
+    "AccountingTaxRatesAddResponseTypedDict",
+    "AccountingTaxRatesAllGlobals",
+    "AccountingTaxRatesAllGlobalsTypedDict",
+    "AccountingTaxRatesAllRequest",
+    "AccountingTaxRatesAllRequestTypedDict",
+    "AccountingTaxRatesAllResponse",
+    "AccountingTaxRatesAllResponseTypedDict",
     "AccountingTaxRatesDeleteGlobals",
     "AccountingTaxRatesDeleteGlobalsTypedDict",
     "AccountingTaxRatesDeleteRequest",
@@ -1531,6 +2269,18 @@ __all__ = [
     "AccountingTaxRatesUpdateRequestTypedDict",
     "AccountingTaxRatesUpdateResponse",
     "AccountingTaxRatesUpdateResponseTypedDict",
+    "AccountingTrackingCategoriesAddGlobals",
+    "AccountingTrackingCategoriesAddGlobalsTypedDict",
+    "AccountingTrackingCategoriesAddRequest",
+    "AccountingTrackingCategoriesAddRequestTypedDict",
+    "AccountingTrackingCategoriesAddResponse",
+    "AccountingTrackingCategoriesAddResponseTypedDict",
+    "AccountingTrackingCategoriesAllGlobals",
+    "AccountingTrackingCategoriesAllGlobalsTypedDict",
+    "AccountingTrackingCategoriesAllRequest",
+    "AccountingTrackingCategoriesAllRequestTypedDict",
+    "AccountingTrackingCategoriesAllResponse",
+    "AccountingTrackingCategoriesAllResponseTypedDict",
     "AccountingTrackingCategoriesDeleteGlobals",
     "AccountingTrackingCategoriesDeleteGlobalsTypedDict",
     "AccountingTrackingCategoriesDeleteRequest",
@@ -1562,6 +2312,7 @@ __all__ = [
     "AllocationTypedDict",
     "Allocations",
     "AllocationsTypedDict",
+    "AllowActions",
     "Attachment",
     "AttachmentReference",
     "AttachmentReferenceType",
@@ -1607,6 +2358,11 @@ __all__ = [
     "BillPaymentTypedDict",
     "BillStatus",
     "BillTypedDict",
+    "BillsFilter",
+    "BillsFilterTypedDict",
+    "BillsSort",
+    "BillsSortTypedDict",
+    "By",
     "Categories",
     "CategoriesTypedDict",
     "Classification",
@@ -1622,6 +2378,8 @@ __all__ = [
     "ConnectionConfigurationTypedDict",
     "ConnectionDefaults",
     "ConnectionDefaultsTypedDict",
+    "ConnectionImportData",
+    "ConnectionImportDataTypedDict",
     "ConnectionInput",
     "ConnectionInputTypedDict",
     "ConnectionState",
@@ -1631,6 +2389,8 @@ __all__ = [
     "Consumer",
     "ConsumerConnection",
     "ConsumerConnectionTypedDict",
+    "ConsumerInput",
+    "ConsumerInputTypedDict",
     "ConsumerMetadata",
     "ConsumerMetadataTypedDict",
     "ConsumerRequestCountsInDateRangeResponse",
@@ -1640,12 +2400,67 @@ __all__ = [
     "ConsumerTypedDict",
     "CostOfGoodsSold",
     "CostOfGoodsSoldTypedDict",
+    "CreateAccountingDepartmentResponse",
+    "CreateAccountingDepartmentResponseTypedDict",
+    "CreateAccountingLocationResponse",
+    "CreateAccountingLocationResponseTypedDict",
+    "CreateBillPaymentResponse",
+    "CreateBillPaymentResponseTypedDict",
+    "CreateBillResponse",
+    "CreateBillResponseTypedDict",
+    "CreateCallbackState",
+    "CreateCallbackStateResponse",
+    "CreateCallbackStateResponseData",
+    "CreateCallbackStateResponseDataTypedDict",
+    "CreateCallbackStateResponseTypedDict",
+    "CreateCallbackStateTypedDict",
+    "CreateConnectionResponse",
+    "CreateConnectionResponseTypedDict",
+    "CreateConsumerResponse",
+    "CreateConsumerResponseTypedDict",
+    "CreateCreditNoteResponse",
+    "CreateCreditNoteResponseTypedDict",
+    "CreateCustomerResponse",
+    "CreateCustomerResponseTypedDict",
+    "CreateExpenseResponse",
+    "CreateExpenseResponseTypedDict",
+    "CreateInvoiceItemResponse",
+    "CreateInvoiceItemResponseTypedDict",
+    "CreateInvoiceResponse",
+    "CreateInvoiceResponseTypedDict",
+    "CreateJournalEntryResponse",
+    "CreateJournalEntryResponseTypedDict",
+    "CreateLedgerAccountResponse",
+    "CreateLedgerAccountResponseTypedDict",
+    "CreatePaymentResponse",
+    "CreatePaymentResponseTypedDict",
+    "CreatePurchaseOrderResponse",
+    "CreatePurchaseOrderResponseTypedDict",
+    "CreateSessionResponse",
+    "CreateSessionResponseData",
+    "CreateSessionResponseDataTypedDict",
+    "CreateSessionResponseTypedDict",
+    "CreateSubsidiaryResponse",
+    "CreateSubsidiaryResponseTypedDict",
+    "CreateSupplierResponse",
+    "CreateSupplierResponseTypedDict",
+    "CreateTaxRateResponse",
+    "CreateTaxRateResponseTypedDict",
+    "CreateTrackingCategoryResponse",
+    "CreateTrackingCategoryResponseTypedDict",
+    "Credentials",
+    "CredentialsTypedDict",
     "CreditNote",
     "CreditNoteInput",
     "CreditNoteInputTypedDict",
     "CreditNoteStatus",
     "CreditNoteType",
     "CreditNoteTypedDict",
+    "CreditNotesFilter",
+    "CreditNotesFilterTypedDict",
+    "CreditNotesSort",
+    "CreditNotesSortBy",
+    "CreditNotesSortTypedDict",
     "Currency",
     "Cursors",
     "CursorsTypedDict",
@@ -1664,6 +2479,12 @@ __all__ = [
     "CustomerInputTypedDict",
     "CustomerStatus",
     "CustomerTypedDict",
+    "CustomersFilter",
+    "CustomersFilterStatus",
+    "CustomersFilterTypedDict",
+    "CustomersSort",
+    "CustomersSortBy",
+    "CustomersSortTypedDict",
     "Data",
     "DataTypedDict",
     "Defaults",
@@ -1679,6 +2500,8 @@ __all__ = [
     "DeleteBillResponse",
     "DeleteBillResponseTypedDict",
     "DeleteConsumerResponse",
+    "DeleteConsumerResponseData",
+    "DeleteConsumerResponseDataTypedDict",
     "DeleteConsumerResponseTypedDict",
     "DeleteCreditNoteResponse",
     "DeleteCreditNoteResponseTypedDict",
@@ -1744,8 +2567,12 @@ __all__ = [
     "FourTypedDict",
     "GetAccountingDepartmentResponse",
     "GetAccountingDepartmentResponseTypedDict",
+    "GetAccountingDepartmentsResponse",
+    "GetAccountingDepartmentsResponseTypedDict",
     "GetAccountingLocationResponse",
     "GetAccountingLocationResponseTypedDict",
+    "GetAccountingLocationsResponse",
+    "GetAccountingLocationsResponseTypedDict",
     "GetAgedDebtorsResponse",
     "GetAgedDebtorsResponseTypedDict",
     "GetAttachmentResponse",
@@ -1756,8 +2583,12 @@ __all__ = [
     "GetBalanceSheetResponseTypedDict",
     "GetBillPaymentResponse",
     "GetBillPaymentResponseTypedDict",
+    "GetBillPaymentsResponse",
+    "GetBillPaymentsResponseTypedDict",
     "GetBillResponse",
     "GetBillResponseTypedDict",
+    "GetBillsResponse",
+    "GetBillsResponseTypedDict",
     "GetCompanyInfoResponse",
     "GetCompanyInfoResponseTypedDict",
     "GetConnectionResponse",
@@ -1766,38 +2597,66 @@ __all__ = [
     "GetConnectionsResponseTypedDict",
     "GetConsumerResponse",
     "GetConsumerResponseTypedDict",
+    "GetConsumersResponse",
+    "GetConsumersResponseTypedDict",
     "GetCreditNoteResponse",
     "GetCreditNoteResponseTypedDict",
+    "GetCreditNotesResponse",
+    "GetCreditNotesResponseTypedDict",
     "GetCustomFieldsResponse",
     "GetCustomFieldsResponseTypedDict",
     "GetCustomMappingsResponse",
     "GetCustomMappingsResponseTypedDict",
     "GetCustomerResponse",
     "GetCustomerResponseTypedDict",
+    "GetCustomersResponse",
+    "GetCustomersResponseTypedDict",
     "GetExpenseResponse",
     "GetExpenseResponseTypedDict",
+    "GetExpensesResponse",
+    "GetExpensesResponseTypedDict",
     "GetInvoiceItemResponse",
     "GetInvoiceItemResponseTypedDict",
+    "GetInvoiceItemsResponse",
+    "GetInvoiceItemsResponseTypedDict",
     "GetInvoiceResponse",
     "GetInvoiceResponseTypedDict",
+    "GetInvoicesResponse",
+    "GetInvoicesResponseTypedDict",
+    "GetJournalEntriesResponse",
+    "GetJournalEntriesResponseTypedDict",
     "GetJournalEntryResponse",
     "GetJournalEntryResponseTypedDict",
     "GetLedgerAccountResponse",
     "GetLedgerAccountResponseTypedDict",
+    "GetLedgerAccountsResponse",
+    "GetLedgerAccountsResponseTypedDict",
     "GetLogsResponse",
     "GetLogsResponseTypedDict",
     "GetPaymentResponse",
     "GetPaymentResponseTypedDict",
+    "GetPaymentsResponse",
+    "GetPaymentsResponseTypedDict",
     "GetProfitAndLossResponse",
     "GetProfitAndLossResponseTypedDict",
     "GetPurchaseOrderResponse",
     "GetPurchaseOrderResponseTypedDict",
+    "GetPurchaseOrdersResponse",
+    "GetPurchaseOrdersResponseTypedDict",
+    "GetSubsidiariesResponse",
+    "GetSubsidiariesResponseTypedDict",
     "GetSubsidiaryResponse",
     "GetSubsidiaryResponseTypedDict",
     "GetSupplierResponse",
     "GetSupplierResponseTypedDict",
+    "GetSuppliersResponse",
+    "GetSuppliersResponseTypedDict",
     "GetTaxRateResponse",
     "GetTaxRateResponseTypedDict",
+    "GetTaxRatesResponse",
+    "GetTaxRatesResponseTypedDict",
+    "GetTrackingCategoriesResponse",
+    "GetTrackingCategoriesResponseTypedDict",
     "GetTrackingCategoryResponse",
     "GetTrackingCategoryResponseTypedDict",
     "HTTPMetadata",
@@ -1810,6 +2669,7 @@ __all__ = [
     "InvoiceInputTypedDict",
     "InvoiceItem",
     "InvoiceItemFilter",
+    "InvoiceItemFilterInvoiceItemType",
     "InvoiceItemFilterTypedDict",
     "InvoiceItemInput",
     "InvoiceItemInputTypedDict",
@@ -1820,6 +2680,11 @@ __all__ = [
     "InvoiceItemType",
     "InvoiceItemTypeType",
     "InvoiceItemTypedDict",
+    "InvoiceItemsFilter",
+    "InvoiceItemsFilterTypedDict",
+    "InvoiceItemsSort",
+    "InvoiceItemsSortBy",
+    "InvoiceItemsSortTypedDict",
     "InvoiceLineItem",
     "InvoiceLineItemInput",
     "InvoiceLineItemInputTypedDict",
@@ -1830,6 +2695,16 @@ __all__ = [
     "InvoiceStatus",
     "InvoiceType",
     "InvoiceTypedDict",
+    "InvoicesFilter",
+    "InvoicesFilterTypedDict",
+    "InvoicesSort",
+    "InvoicesSortBy",
+    "InvoicesSortTypedDict",
+    "JournalEntriesFilter",
+    "JournalEntriesFilterTypedDict",
+    "JournalEntriesSort",
+    "JournalEntriesSortBy",
+    "JournalEntriesSortTypedDict",
     "JournalEntry",
     "JournalEntryInput",
     "JournalEntryInputTypedDict",
@@ -1846,6 +2721,11 @@ __all__ = [
     "LedgerAccountSubsidiariesTypedDict",
     "LedgerAccountType",
     "LedgerAccountTypedDict",
+    "LedgerAccountsFilter",
+    "LedgerAccountsFilterTypedDict",
+    "LedgerAccountsSort",
+    "LedgerAccountsSortBy",
+    "LedgerAccountsSortTypedDict",
     "LinkedCustomer",
     "LinkedCustomerInput",
     "LinkedCustomerInputTypedDict",
@@ -1904,6 +2784,11 @@ __all__ = [
     "PaymentStatus",
     "PaymentType",
     "PaymentTypedDict",
+    "PaymentsFilter",
+    "PaymentsFilterTypedDict",
+    "PaymentsSort",
+    "PaymentsSortBy",
+    "PaymentsSortTypedDict",
     "PeriodType",
     "PhoneNumber",
     "PhoneNumberType",
@@ -1922,6 +2807,11 @@ __all__ = [
     "PurchaseOrderInputTypedDict",
     "PurchaseOrderStatus",
     "PurchaseOrderTypedDict",
+    "PurchaseOrdersFilter",
+    "PurchaseOrdersFilterTypedDict",
+    "PurchaseOrdersSort",
+    "PurchaseOrdersSortBy",
+    "PurchaseOrdersSortTypedDict",
     "Reports",
     "ReportsTypedDict",
     "RequestCountAllocation",
@@ -1932,12 +2822,19 @@ __all__ = [
     "SecurityTypedDict",
     "Service",
     "ServiceTypedDict",
+    "Session",
+    "SessionSettings",
+    "SessionSettingsTypedDict",
+    "SessionTypedDict",
+    "Settings",
+    "SettingsTypedDict",
     "SimpleFormFieldOption",
     "SimpleFormFieldOptionTypedDict",
     "SimpleFormFieldOptionValue",
     "SimpleFormFieldOptionValueTypedDict",
     "Six",
     "SixTypedDict",
+    "SortDirection",
     "Status",
     "SubAccounts",
     "SubAccountsTypedDict",
@@ -1957,13 +2854,22 @@ __all__ = [
     "SupplierInputTypedDict",
     "SupplierStatus",
     "SupplierTypedDict",
+    "SuppliersFilter",
+    "SuppliersFilterTypedDict",
+    "SuppliersSort",
+    "SuppliersSortBy",
+    "SuppliersSortTypedDict",
     "Target",
     "TaxRate",
     "TaxRateInput",
     "TaxRateInputTypedDict",
     "TaxRateStatus",
     "TaxRateTypedDict",
+    "TaxRatesFilter",
+    "TaxRatesFilterTypedDict",
     "TheStartMonthOfFiscalYear",
+    "Theme",
+    "ThemeTypedDict",
     "TrackingCategory",
     "TrackingCategoryInput",
     "TrackingCategoryInputTypedDict",
@@ -1981,6 +2887,7 @@ __all__ = [
     "UnexpectedErrorResponse",
     "UnexpectedErrorResponseTypedDict",
     "UnifiedAPI",
+    "UnifiedAPIID",
     "UnifiedID",
     "UnifiedIDTypedDict",
     "UnprocessableResponse",
@@ -2026,6 +2933,10 @@ __all__ = [
     "UpdateTaxRateResponseTypedDict",
     "UpdateTrackingCategoryResponse",
     "UpdateTrackingCategoryResponseTypedDict",
+    "ValidateConnectionStateResponse",
+    "ValidateConnectionStateResponseData",
+    "ValidateConnectionStateResponseDataTypedDict",
+    "ValidateConnectionStateResponseTypedDict",
     "Value",
     "Value5",
     "Value5TypedDict",
@@ -2060,12 +2971,26 @@ __all__ = [
     "VaultConnectionsDeleteRequestTypedDict",
     "VaultConnectionsDeleteResponse",
     "VaultConnectionsDeleteResponseTypedDict",
+    "VaultConnectionsImportGlobals",
+    "VaultConnectionsImportGlobalsTypedDict",
+    "VaultConnectionsImportRequest",
+    "VaultConnectionsImportRequestTypedDict",
+    "VaultConnectionsImportResponse",
+    "VaultConnectionsImportResponseTypedDict",
     "VaultConnectionsOneGlobals",
     "VaultConnectionsOneGlobalsTypedDict",
     "VaultConnectionsOneRequest",
     "VaultConnectionsOneRequestTypedDict",
     "VaultConnectionsOneResponse",
     "VaultConnectionsOneResponseTypedDict",
+    "VaultConnectionsTokenGlobals",
+    "VaultConnectionsTokenGlobalsTypedDict",
+    "VaultConnectionsTokenRequest",
+    "VaultConnectionsTokenRequestBody",
+    "VaultConnectionsTokenRequestBodyTypedDict",
+    "VaultConnectionsTokenRequestTypedDict",
+    "VaultConnectionsTokenResponse",
+    "VaultConnectionsTokenResponseTypedDict",
     "VaultConnectionsUpdateGlobals",
     "VaultConnectionsUpdateGlobalsTypedDict",
     "VaultConnectionsUpdateRequest",
@@ -2078,6 +3003,18 @@ __all__ = [
     "VaultConsumerRequestCountsAllRequestTypedDict",
     "VaultConsumerRequestCountsAllResponse",
     "VaultConsumerRequestCountsAllResponseTypedDict",
+    "VaultConsumersAddGlobals",
+    "VaultConsumersAddGlobalsTypedDict",
+    "VaultConsumersAddRequest",
+    "VaultConsumersAddRequestTypedDict",
+    "VaultConsumersAddResponse",
+    "VaultConsumersAddResponseTypedDict",
+    "VaultConsumersAllGlobals",
+    "VaultConsumersAllGlobalsTypedDict",
+    "VaultConsumersAllRequest",
+    "VaultConsumersAllRequestTypedDict",
+    "VaultConsumersAllResponse",
+    "VaultConsumersAllResponseTypedDict",
     "VaultConsumersDeleteGlobals",
     "VaultConsumersDeleteGlobalsTypedDict",
     "VaultConsumersDeleteRequest",
@@ -2096,6 +3033,12 @@ __all__ = [
     "VaultConsumersUpdateRequestTypedDict",
     "VaultConsumersUpdateResponse",
     "VaultConsumersUpdateResponseTypedDict",
+    "VaultCreateCallbackStateGlobals",
+    "VaultCreateCallbackStateGlobalsTypedDict",
+    "VaultCreateCallbackStateRequest",
+    "VaultCreateCallbackStateRequestTypedDict",
+    "VaultCreateCallbackStateResponse",
+    "VaultCreateCallbackStateResponseTypedDict",
     "VaultCustomFieldsAllGlobals",
     "VaultCustomFieldsAllGlobalsTypedDict",
     "VaultCustomFieldsAllRequest",
@@ -2114,6 +3057,20 @@ __all__ = [
     "VaultLogsAllRequestTypedDict",
     "VaultLogsAllResponse",
     "VaultLogsAllResponseTypedDict",
+    "VaultSessionsCreateGlobals",
+    "VaultSessionsCreateGlobalsTypedDict",
+    "VaultSessionsCreateRequest",
+    "VaultSessionsCreateRequestTypedDict",
+    "VaultSessionsCreateResponse",
+    "VaultSessionsCreateResponseTypedDict",
+    "VaultValidateConnectionStateGlobals",
+    "VaultValidateConnectionStateGlobalsTypedDict",
+    "VaultValidateConnectionStateRequest",
+    "VaultValidateConnectionStateRequestBody",
+    "VaultValidateConnectionStateRequestBodyTypedDict",
+    "VaultValidateConnectionStateRequestTypedDict",
+    "VaultValidateConnectionStateResponse",
+    "VaultValidateConnectionStateResponseTypedDict",
     "WebhookSubscription",
     "WebhookSubscriptionTypedDict",
     "Website",

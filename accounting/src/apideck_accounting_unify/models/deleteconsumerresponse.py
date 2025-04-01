@@ -14,12 +14,12 @@ from typing import Any, Dict, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class DataTypedDict(TypedDict):
+class DeleteConsumerResponseDataTypedDict(TypedDict):
     consumer_id: NotRequired[str]
     r"""Unique consumer identifier. You can freely choose a consumer ID yourself. Most of the time, this is an ID of your internal data model that represents a user or account in your system (for example account:12345). If the consumer doesn't exist yet, Vault will upsert a consumer based on your ID."""
 
 
-class Data(BaseModel):
+class DeleteConsumerResponseData(BaseModel):
     consumer_id: Optional[str] = None
     r"""Unique consumer identifier. You can freely choose a consumer ID yourself. Most of the time, this is an ID of your internal data model that represents a user or account in your system (for example account:12345). If the consumer doesn't exist yet, Vault will upsert a consumer based on your ID."""
 
@@ -31,7 +31,7 @@ class DeleteConsumerResponseTypedDict(TypedDict):
     r"""HTTP Response Status Code"""
     status: str
     r"""HTTP Response Status"""
-    data: DataTypedDict
+    data: DeleteConsumerResponseDataTypedDict
     raw: NotRequired[Nullable[Dict[str, Any]]]
     r"""Raw response from the integration when raw=true query param is provided"""
 
@@ -45,7 +45,7 @@ class DeleteConsumerResponse(BaseModel):
     status: str
     r"""HTTP Response Status"""
 
-    data: Data
+    data: DeleteConsumerResponseData
 
     raw: Annotated[OptionalNullable[Dict[str, Any]], pydantic.Field(alias="_raw")] = (
         UNSET

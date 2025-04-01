@@ -8,5 +8,3 @@ actions:
   # Remove entire paths that are not accounting or vault
   - target: $.paths.*.[?(@.["x-apideck-api"] != "accounting" && @.["x-apideck-api"] != "vault")]
     remove: true
-  - target: $.paths.[?(!@['get'] && !@['post'] && !@['put'] && !@['delete'] && !@['patch'])]
-    remove: true

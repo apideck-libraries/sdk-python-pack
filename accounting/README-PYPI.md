@@ -27,6 +27,7 @@ For more information about the API: [Apideck Developer Docs](https://developers.
   * [Authentication](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#authentication)
   * [Available Resources and Operations](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#available-resources-and-operations)
   * [Pagination](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#pagination)
+  * [File uploads](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#file-uploads)
   * [Retries](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#retries)
   * [Error Handling](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#error-handling)
   * [Server Selection](https://github.com/apideck-libraries/sdk-python-pack/blob/master/#server-selection)
@@ -226,6 +227,10 @@ with Apideck(
 ### [accounting](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/accounting/README.md)
 
 
+#### [accounting.aged_creditors](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/agedcreditorssdk/README.md)
+
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/agedcreditorssdk/README.md#get) - Get Aged Creditors
+
 #### [accounting.aged_debtors](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ageddebtorssdk/README.md)
 
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/ageddebtorssdk/README.md#get) - Get Aged Debtors
@@ -233,6 +238,7 @@ with Apideck(
 #### [accounting.attachments](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/attachments/README.md)
 
 * [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/attachments/README.md#list) - List Attachments
+* [upload](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/attachments/README.md#upload) - Upload attachment
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/attachments/README.md#get) - Get Attachment
 * [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/attachments/README.md#delete) - Delete Attachment
 * [download](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/attachments/README.md#download) - Download Attachment
@@ -483,6 +489,38 @@ with Apideck(
 ```
 <!-- End Pagination [pagination] -->
 
+<!-- Start File uploads [file-upload] -->
+## File uploads
+
+Certain SDK methods accept file objects as part of a request body or multi-part request. It is possible and typically recommended to upload files as a stream rather than reading the entire contents into memory. This avoids excessive memory consumption and potentially crashing with out-of-memory errors when working with very large files. The following example demonstrates how to attach a file stream to a request.
+
+> [!TIP]
+>
+> For endpoints that handle file uploads bytes arrays can also be used. However, using streams is recommended for large files.
+>
+
+```python
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
+import os
+
+
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as apideck:
+
+    res = apideck.accounting.attachments.upload(reference_type=apideck_accounting_unify.AttachmentReferenceType.INVOICE, reference_id="123456", request_body=open("example.file", "rb"), x_apideck_metadata="{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+
+    assert res.create_attachment_response is not None
+
+    # Handle response
+    print(res.create_attachment_response)
+
+```
+<!-- End File uploads [file-upload] -->
+
 <!-- Start Retries [retries] -->
 ## Retries
 
@@ -659,6 +697,30 @@ with Apideck(
         # Handle items
 
         res = res.next()
+
+```
+
+### Override Server URL Per-Operation
+
+The server URL can also be overridden on a per-operation basis, provided a server list was specified for the operation. For example:
+```python
+import apideck_accounting_unify
+from apideck_accounting_unify import Apideck
+import os
+
+
+with Apideck(
+    api_key=os.getenv("APIDECK_API_KEY", ""),
+    consumer_id="test-consumer",
+    app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+) as apideck:
+
+    res = apideck.accounting.attachments.upload(reference_type=apideck_accounting_unify.AttachmentReferenceType.INVOICE, reference_id="123456", request_body=open("example.file", "rb"), x_apideck_metadata="{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", server_url="https://upload.apideck.com")
+
+    assert res.create_attachment_response is not None
+
+    # Handle response
+    print(res.create_attachment_response)
 
 ```
 <!-- End Server Selection [server] -->

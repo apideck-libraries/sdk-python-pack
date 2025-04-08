@@ -761,7 +761,7 @@ from .accounting_trackingcategoriesupdateop import (
     AccountingTrackingCategoriesUpdateResponse,
     AccountingTrackingCategoriesUpdateResponseTypedDict,
 )
-from .accountingdepartment import (
+from .accountingdepartment_input import (
     AccountingDepartment,
     AccountingDepartmentInput,
     AccountingDepartmentInputTypedDict,
@@ -772,7 +772,7 @@ from .accountingdepartmentsfilter import (
     AccountingDepartmentsFilter,
     AccountingDepartmentsFilterTypedDict,
 )
-from .accountinglocation import (
+from .accountinglocation_input import (
     AccountingLocation,
     AccountingLocationInput,
     AccountingLocationInputTypedDict,
@@ -787,7 +787,7 @@ from .address import Address, AddressTypedDict, Type
 from .agedcreditors import AgedCreditors, AgedCreditorsTypedDict
 from .ageddebtors import AgedDebtors, AgedDebtorsTypedDict
 from .agedreportfilter import AgedReportFilter, AgedReportFilterTypedDict
-from .allocation import (
+from .allocation_input import (
     Allocation,
     AllocationInput,
     AllocationInputTypedDict,
@@ -990,7 +990,7 @@ from .creditnotessort import (
     CreditNotesSortTypedDict,
 )
 from .currency import Currency
-from .customer import (
+from .customer_input import (
     Customer,
     CustomerInput,
     CustomerInputTypedDict,
@@ -1089,7 +1089,7 @@ from .deprecatedlinkedtrackingcategory import (
     DeprecatedLinkedTrackingCategoryTypedDict,
 )
 from .email import Email, EmailType, EmailTypedDict
-from .expense import (
+from .expense_input import (
     Expense,
     ExpenseInput,
     ExpenseInputTypedDict,
@@ -1280,7 +1280,7 @@ from .invoiceitemssort import (
     InvoiceItemsSortBy,
     InvoiceItemsSortTypedDict,
 )
-from .invoicelineitem import (
+from .invoicelineitem_input import (
     InvoiceLineItem,
     InvoiceLineItemInput,
     InvoiceLineItemInputTypedDict,
@@ -1305,7 +1305,7 @@ from .journalentrylineitem import (
     JournalEntryLineItemType,
     JournalEntryLineItemTypedDict,
 )
-from .ledgeraccount import (
+from .ledgeraccount_input import (
     AccountStatus,
     Categories,
     CategoriesTypedDict,
@@ -1463,7 +1463,7 @@ from .subsidiaryreference_input import (
     SubsidiaryReferenceInput,
     SubsidiaryReferenceInputTypedDict,
 )
-from .supplier import (
+from .supplier_input import (
     Supplier,
     SupplierInput,
     SupplierInputTypedDict,
@@ -1484,7 +1484,7 @@ from .taxrate import (
     TaxRateTypedDict,
 )
 from .taxratesfilter import TaxRatesFilter, TaxRatesFilterTypedDict
-from .trackingcategory import (
+from .trackingcategory_input import (
     TrackingCategory,
     TrackingCategoryInput,
     TrackingCategoryInputTypedDict,

@@ -96,39 +96,32 @@ with Apideck(
                     "id": "ProductInterest",
                     "options": [
                         {
+                            "id": "1234",
                             "label": "General Channel",
                             "options": [
                                 {
                                     "label": "General Channel",
+                                    "value": 12.5,
                                     "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                                    "value": 123,
                                 },
                                 {
                                     "label": "General Channel",
-                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
                                     "value": [
                                         "team",
                                         "general",
                                     ],
+                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
                                 },
                             ],
                             "option_type": apideck_accounting_unify.FormFieldOptionGroupOptionType.GROUP,
-                            "id": "1234",
                         },
                         {
                             "label": "General Channel",
-                            "options": [
-                                {
-                                    "label": "General Channel",
-                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                                    "value": [
-                                        "team",
-                                        "general",
-                                    ],
-                                },
+                            "value": [
+                                "team",
+                                "general",
                             ],
-                            "option_type": apideck_accounting_unify.FormFieldOptionGroupOptionType.GROUP,
-                            "id": "1234",
+                            "option_type": apideck_accounting_unify.OptionType.SIMPLE,
                         },
                     ],
                     "value": 10.5,
@@ -138,11 +131,8 @@ with Apideck(
                     "options": [
                         {
                             "label": "General Channel",
+                            "value": "general",
                             "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                            "value": [
-                                "team",
-                                "general",
-                            ],
                         },
                     ],
                     "value": True,
@@ -157,8 +147,8 @@ with Apideck(
                     "options": [
                         {
                             "label": "General Channel",
+                            "value": True,
                             "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                            "value": 123,
                         },
                     ],
                     "value": True,
@@ -168,30 +158,20 @@ with Apideck(
                     "options": [
                         {
                             "label": "General Channel",
+                            "value": True,
                             "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                            "value": "general",
                         },
                         {
+                            "id": "1234",
                             "label": "General Channel",
                             "options": [
                                 {
                                     "label": "General Channel",
-                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                                    "value": 123,
-                                },
-                                {
-                                    "label": "General Channel",
-                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
                                     "value": 12.5,
-                                },
-                                {
-                                    "label": "General Channel",
                                     "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                                    "value": True,
                                 },
                             ],
                             "option_type": apideck_accounting_unify.FormFieldOptionGroupOptionType.GROUP,
-                            "id": "1234",
                         },
                     ],
                     "value": "GC5000 series",
@@ -201,15 +181,11 @@ with Apideck(
                     "options": [
                         {
                             "label": "General Channel",
-                            "options": [
-                                {
-                                    "label": "General Channel",
-                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                                    "value": "general",
-                                },
+                            "value": [
+                                "team",
+                                "general",
                             ],
-                            "option_type": apideck_accounting_unify.FormFieldOptionGroupOptionType.GROUP,
-                            "id": "1234",
+                            "option_type": apideck_accounting_unify.OptionType.SIMPLE,
                         },
                     ],
                     "value": [
@@ -227,31 +203,34 @@ with Apideck(
                     "id": "ProductInterest",
                     "options": [
                         {
+                            "id": "1234",
                             "label": "General Channel",
                             "options": [
                                 {
                                     "label": "General Channel",
-                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                                    "value": 12.5,
-                                },
-                                {
-                                    "label": "General Channel",
-                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                                    "value": 12.5,
-                                },
-                                {
-                                    "label": "General Channel",
-                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
                                     "value": "general",
+                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "value": "general",
+                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
+                                },
+                                {
+                                    "label": "General Channel",
+                                    "value": 123,
+                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
                                 },
                             ],
                             "option_type": apideck_accounting_unify.FormFieldOptionGroupOptionType.GROUP,
-                            "id": "1234",
                         },
                         {
+                            "id": "1234",
                             "label": "General Channel",
-                            "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                            "value": 123,
+                            "options": [
+
+                            ],
+                            "option_type": apideck_accounting_unify.FormFieldOptionGroupOptionType.GROUP,
                         },
                     ],
                     "value": True,
@@ -261,28 +240,8 @@ with Apideck(
                     "options": [
                         {
                             "label": "General Channel",
-                            "options": [
-                                {
-                                    "label": "General Channel",
-                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                                    "value": [
-                                        "team",
-                                        "general",
-                                    ],
-                                },
-                                {
-                                    "label": "General Channel",
-                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                                    "value": True,
-                                },
-                                {
-                                    "label": "General Channel",
-                                    "option_type": apideck_accounting_unify.OptionType.SIMPLE,
-                                    "value": 12.5,
-                                },
-                            ],
-                            "option_type": apideck_accounting_unify.FormFieldOptionGroupOptionType.GROUP,
-                            "id": "1234",
+                            "value": "general",
+                            "option_type": apideck_accounting_unify.OptionType.SIMPLE,
                         },
                     ],
                     "value": True,

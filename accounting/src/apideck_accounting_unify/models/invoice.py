@@ -10,7 +10,7 @@ from .deprecatedlinkedtrackingcategory import (
     DeprecatedLinkedTrackingCategory,
     DeprecatedLinkedTrackingCategoryTypedDict,
 )
-from .invoicelineitem import (
+from .invoicelineitem_input import (
     InvoiceLineItem,
     InvoiceLineItemInput,
     InvoiceLineItemInputTypedDict,

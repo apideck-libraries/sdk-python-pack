@@ -761,7 +761,7 @@ from .accounting_trackingcategoriesupdateop import (
     AccountingTrackingCategoriesUpdateResponse,
     AccountingTrackingCategoriesUpdateResponseTypedDict,
 )
-from .accountingdepartment_input import (
+from .accountingdepartment import (
     AccountingDepartment,
     AccountingDepartmentInput,
     AccountingDepartmentInputTypedDict,
@@ -772,7 +772,7 @@ from .accountingdepartmentsfilter import (
     AccountingDepartmentsFilter,
     AccountingDepartmentsFilterTypedDict,
 )
-from .accountinglocation_input import (
+from .accountinglocation import (
     AccountingLocation,
     AccountingLocationInput,
     AccountingLocationInputTypedDict,
@@ -830,7 +830,7 @@ from .balancesheetfilter import (
     PeriodType,
 )
 from .bankaccount import AccountType, BankAccount, BankAccountTypedDict
-from .bill import Bill, BillInput, BillInputTypedDict, BillStatus, BillTypedDict
+from .bill_input import Bill, BillInput, BillInputTypedDict, BillStatus, BillTypedDict
 from .billlineitem import (
     BillLineItem,
     BillLineItemInput,
@@ -858,7 +858,7 @@ from .companyinfo import (
     CompanyStatus,
     TheStartMonthOfFiscalYear,
 )
-from .connection import (
+from .connection_input import (
     Configuration,
     ConfigurationTypedDict,
     Connection,
@@ -1242,15 +1242,17 @@ from .gettrackingcategoryresponse import (
 )
 from .httpmetadata import HTTPMetadata, HTTPMetadataTypedDict
 from .integrationstate import IntegrationState
-from .invoice import (
+from .invoice_input import (
     Invoice,
     InvoiceInput,
     InvoiceInputTypedDict,
     InvoiceStatus,
     InvoiceType,
     InvoiceTypedDict,
+    PaymentAllocations,
+    PaymentAllocationsTypedDict,
 )
-from .invoiceitem import (
+from .invoiceitem_input import (
     InvoiceItem,
     InvoiceItemInput,
     InvoiceItemInputTypedDict,
@@ -1280,7 +1282,7 @@ from .invoiceitemssort import (
     InvoiceItemsSortBy,
     InvoiceItemsSortTypedDict,
 )
-from .invoicelineitem_input import (
+from .invoicelineitem import (
     InvoiceLineItem,
     InvoiceLineItemInput,
     InvoiceLineItemInputTypedDict,
@@ -1298,7 +1300,7 @@ from .journalentriessort import (
 )
 from .journalentry import JournalEntry, JournalEntryTypedDict
 from .journalentry_input import JournalEntryInput, JournalEntryInputTypedDict
-from .journalentrylineitem import (
+from .journalentrylineitem_input import (
     JournalEntryLineItem,
     JournalEntryLineItemInput,
     JournalEntryLineItemInputTypedDict,
@@ -1472,7 +1474,7 @@ from .supplier_input import (
 )
 from .suppliersfilter import SuppliersFilter, SuppliersFilterTypedDict
 from .supplierssort import SuppliersSort, SuppliersSortBy, SuppliersSortTypedDict
-from .taxrate import (
+from .taxrate_input import (
     Components,
     ComponentsTypedDict,
     SubsidiariesModel,
@@ -2828,6 +2830,8 @@ __all__ = [
     "PassThroughBody",
     "PassThroughBodyTypedDict",
     "Payment",
+    "PaymentAllocations",
+    "PaymentAllocationsTypedDict",
     "PaymentInput",
     "PaymentInputTypedDict",
     "PaymentRequiredResponse",

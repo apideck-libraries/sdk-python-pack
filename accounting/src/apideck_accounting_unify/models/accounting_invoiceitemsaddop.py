@@ -6,7 +6,7 @@ from .createinvoiceitemresponse import (
     CreateInvoiceItemResponseTypedDict,
 )
 from .httpmetadata import HTTPMetadata, HTTPMetadataTypedDict
-from .invoiceitem import InvoiceItemInput, InvoiceItemInputTypedDict
+from .invoiceitem_input import InvoiceItemInput, InvoiceItemInputTypedDict
 from .unexpectederrorresponse import (
     UnexpectedErrorResponse,
     UnexpectedErrorResponseTypedDict,

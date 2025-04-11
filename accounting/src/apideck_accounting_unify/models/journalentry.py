@@ -4,7 +4,10 @@ from __future__ import annotations
 from .currency import Currency
 from .customfield import CustomField, CustomFieldTypedDict
 from .custommappings import CustomMappings, CustomMappingsTypedDict
-from .journalentrylineitem import JournalEntryLineItem, JournalEntryLineItemTypedDict
+from .journalentrylineitem_input import (
+    JournalEntryLineItem,
+    JournalEntryLineItemTypedDict,
+)
 from .linkedtrackingcategory import (
     LinkedTrackingCategory,
     LinkedTrackingCategoryTypedDict,

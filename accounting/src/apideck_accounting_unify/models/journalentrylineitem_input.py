@@ -41,6 +41,140 @@ class JournalEntryLineItemType(str, Enum):
     CREDIT = "credit"
 
 
+class JournalEntryLineItemInputTypedDict(TypedDict):
+    type: JournalEntryLineItemType
+    r"""Debit entries are considered positive, and credit entries are considered negative."""
+    ledger_account: Nullable[LinkedLedgerAccountInputTypedDict]
+    description: NotRequired[Nullable[str]]
+    r"""User defined description"""
+    tax_amount: NotRequired[Nullable[float]]
+    r"""Tax amount"""
+    sub_total: NotRequired[Nullable[float]]
+    r"""Sub-total amount, normally before tax."""
+    total_amount: NotRequired[Nullable[float]]
+    r"""Debit entries are considered positive, and credit entries are considered negative."""
+    tax_rate: NotRequired[LinkedTaxRateInputTypedDict]
+    tracking_category: NotRequired[Nullable[DeprecatedLinkedTrackingCategoryTypedDict]]
+    tracking_categories: NotRequired[
+        Nullable[List[Nullable[LinkedTrackingCategoryTypedDict]]]
+    ]
+    r"""A list of linked tracking categories."""
+    customer: NotRequired[Nullable[LinkedCustomerInputTypedDict]]
+    r"""The customer this entity is linked to."""
+    supplier: NotRequired[Nullable[LinkedSupplierInputTypedDict]]
+    r"""The supplier this entity is linked to."""
+    department_id: NotRequired[Nullable[str]]
+    r"""The ID of the department"""
+    location_id: NotRequired[Nullable[str]]
+    r"""The ID of the location"""
+    line_number: NotRequired[Nullable[int]]
+    r"""Line number of the resource"""
+
+
+class JournalEntryLineItemInput(BaseModel):
+    type: JournalEntryLineItemType
+    r"""Debit entries are considered positive, and credit entries are considered negative."""
+
+    ledger_account: Nullable[LinkedLedgerAccountInput]
+
+    description: OptionalNullable[str] = UNSET
+    r"""User defined description"""
+
+    tax_amount: OptionalNullable[float] = UNSET
+    r"""Tax amount"""
+
+    sub_total: OptionalNullable[float] = UNSET
+    r"""Sub-total amount, normally before tax."""
+
+    total_amount: OptionalNullable[float] = UNSET
+    r"""Debit entries are considered positive, and credit entries are considered negative."""
+
+    tax_rate: Optional[LinkedTaxRateInput] = None
+
+    tracking_category: Annotated[
+        OptionalNullable[DeprecatedLinkedTrackingCategory],
+        pydantic.Field(
+            deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible."
+        ),
+    ] = UNSET
+
+    tracking_categories: OptionalNullable[List[Nullable[LinkedTrackingCategory]]] = (
+        UNSET
+    )
+    r"""A list of linked tracking categories."""
+
+    customer: OptionalNullable[LinkedCustomerInput] = UNSET
+    r"""The customer this entity is linked to."""
+
+    supplier: OptionalNullable[LinkedSupplierInput] = UNSET
+    r"""The supplier this entity is linked to."""
+
+    department_id: OptionalNullable[str] = UNSET
+    r"""The ID of the department"""
+
+    location_id: OptionalNullable[str] = UNSET
+    r"""The ID of the location"""
+
+    line_number: OptionalNullable[int] = UNSET
+    r"""Line number of the resource"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = [
+            "description",
+            "tax_amount",
+            "sub_total",
+            "total_amount",
+            "tax_rate",
+            "tracking_category",
+            "tracking_categories",
+            "customer",
+            "supplier",
+            "department_id",
+            "location_id",
+            "line_number",
+        ]
+        nullable_fields = [
+            "description",
+            "tax_amount",
+            "sub_total",
+            "total_amount",
+            "tracking_category",
+            "tracking_categories",
+            "ledger_account",
+            "customer",
+            "supplier",
+            "department_id",
+            "location_id",
+            "line_number",
+        ]
+        null_default_fields = []
+
+        serialized = handler(self)
+
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
+
+            if val is not None and val != UNSET_SENTINEL:
+                m[k] = val
+            elif val != UNSET_SENTINEL and (
+                not k in optional_fields or (optional_nullable and is_set)
+            ):
+                m[k] = val
+
+        return m
+
+
 class JournalEntryLineItemTypedDict(TypedDict):
     type: JournalEntryLineItemType
     r"""Debit entries are considered positive, and credit entries are considered negative."""
@@ -127,140 +261,6 @@ class JournalEntryLineItem(BaseModel):
     def serialize_model(self, handler):
         optional_fields = [
             "id",
-            "description",
-            "tax_amount",
-            "sub_total",
-            "total_amount",
-            "tax_rate",
-            "tracking_category",
-            "tracking_categories",
-            "customer",
-            "supplier",
-            "department_id",
-            "location_id",
-            "line_number",
-        ]
-        nullable_fields = [
-            "description",
-            "tax_amount",
-            "sub_total",
-            "total_amount",
-            "tracking_category",
-            "tracking_categories",
-            "ledger_account",
-            "customer",
-            "supplier",
-            "department_id",
-            "location_id",
-            "line_number",
-        ]
-        null_default_fields = []
-
-        serialized = handler(self)
-
-        m = {}
-
-        for n, f in type(self).model_fields.items():
-            k = f.alias or n
-            val = serialized.get(k)
-            serialized.pop(k, None)
-
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
-
-        return m
-
-
-class JournalEntryLineItemInputTypedDict(TypedDict):
-    type: JournalEntryLineItemType
-    r"""Debit entries are considered positive, and credit entries are considered negative."""
-    ledger_account: Nullable[LinkedLedgerAccountInputTypedDict]
-    description: NotRequired[Nullable[str]]
-    r"""User defined description"""
-    tax_amount: NotRequired[Nullable[float]]
-    r"""Tax amount"""
-    sub_total: NotRequired[Nullable[float]]
-    r"""Sub-total amount, normally before tax."""
-    total_amount: NotRequired[Nullable[float]]
-    r"""Debit entries are considered positive, and credit entries are considered negative."""
-    tax_rate: NotRequired[LinkedTaxRateInputTypedDict]
-    tracking_category: NotRequired[Nullable[DeprecatedLinkedTrackingCategoryTypedDict]]
-    tracking_categories: NotRequired[
-        Nullable[List[Nullable[LinkedTrackingCategoryTypedDict]]]
-    ]
-    r"""A list of linked tracking categories."""
-    customer: NotRequired[Nullable[LinkedCustomerInputTypedDict]]
-    r"""The customer this entity is linked to."""
-    supplier: NotRequired[Nullable[LinkedSupplierInputTypedDict]]
-    r"""The supplier this entity is linked to."""
-    department_id: NotRequired[Nullable[str]]
-    r"""The ID of the department"""
-    location_id: NotRequired[Nullable[str]]
-    r"""The ID of the location"""
-    line_number: NotRequired[Nullable[int]]
-    r"""Line number of the resource"""
-
-
-class JournalEntryLineItemInput(BaseModel):
-    type: JournalEntryLineItemType
-    r"""Debit entries are considered positive, and credit entries are considered negative."""
-
-    ledger_account: Nullable[LinkedLedgerAccountInput]
-
-    description: OptionalNullable[str] = UNSET
-    r"""User defined description"""
-
-    tax_amount: OptionalNullable[float] = UNSET
-    r"""Tax amount"""
-
-    sub_total: OptionalNullable[float] = UNSET
-    r"""Sub-total amount, normally before tax."""
-
-    total_amount: OptionalNullable[float] = UNSET
-    r"""Debit entries are considered positive, and credit entries are considered negative."""
-
-    tax_rate: Optional[LinkedTaxRateInput] = None
-
-    tracking_category: Annotated[
-        OptionalNullable[DeprecatedLinkedTrackingCategory],
-        pydantic.Field(
-            deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible."
-        ),
-    ] = UNSET
-
-    tracking_categories: OptionalNullable[List[Nullable[LinkedTrackingCategory]]] = (
-        UNSET
-    )
-    r"""A list of linked tracking categories."""
-
-    customer: OptionalNullable[LinkedCustomerInput] = UNSET
-    r"""The customer this entity is linked to."""
-
-    supplier: OptionalNullable[LinkedSupplierInput] = UNSET
-    r"""The supplier this entity is linked to."""
-
-    department_id: OptionalNullable[str] = UNSET
-    r"""The ID of the department"""
-
-    location_id: OptionalNullable[str] = UNSET
-    r"""The ID of the location"""
-
-    line_number: OptionalNullable[int] = UNSET
-    r"""Line number of the resource"""
-
-    @model_serializer(mode="wrap")
-    def serialize_model(self, handler):
-        optional_fields = [
             "description",
             "tax_amount",
             "sub_total",

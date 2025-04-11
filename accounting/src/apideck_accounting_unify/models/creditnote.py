@@ -11,7 +11,7 @@ from .allocation_input import (
 from .currency import Currency
 from .customfield import CustomField, CustomFieldTypedDict
 from .custommappings import CustomMappings, CustomMappingsTypedDict
-from .invoicelineitem_input import (
+from .invoicelineitem import (
     InvoiceLineItem,
     InvoiceLineItemInput,
     InvoiceLineItemInputTypedDict,

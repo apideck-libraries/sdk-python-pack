@@ -3,7 +3,7 @@
 from __future__ import annotations
 from .currency import Currency
 from .customfield import CustomField, CustomFieldTypedDict
-from .journalentrylineitem import (
+from .journalentrylineitem_input import (
     JournalEntryLineItemInput,
     JournalEntryLineItemInputTypedDict,
 )

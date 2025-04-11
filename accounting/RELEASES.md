@@ -39,3 +39,13 @@ Based on:
 - [python v0.11.1] accounting
 ### Releases
 - [PyPI v0.11.1] https://pypi.org/project/apideck-accounting-unify/0.11.1 - accounting
+
+## 2025-04-11 14:46:46
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.531.0 (2.568.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.12.1] accounting
+### Releases
+- [PyPI v0.12.1] https://pypi.org/project/apideck-accounting-unify/0.12.1 - accounting

@@ -761,7 +761,7 @@ from .accounting_trackingcategoriesupdateop import (
     AccountingTrackingCategoriesUpdateResponse,
     AccountingTrackingCategoriesUpdateResponseTypedDict,
 )
-from .accountingdepartment_input import (
+from .accountingdepartment import (
     AccountingDepartment,
     AccountingDepartmentInput,
     AccountingDepartmentInputTypedDict,
@@ -772,7 +772,7 @@ from .accountingdepartmentsfilter import (
     AccountingDepartmentsFilter,
     AccountingDepartmentsFilterTypedDict,
 )
-from .accountinglocation_input import (
+from .accountinglocation import (
     AccountingLocation,
     AccountingLocationInput,
     AccountingLocationInputTypedDict,
@@ -787,7 +787,7 @@ from .address import Address, AddressTypedDict, Type
 from .agedcreditors import AgedCreditors, AgedCreditorsTypedDict
 from .ageddebtors import AgedDebtors, AgedDebtorsTypedDict
 from .agedreportfilter import AgedReportFilter, AgedReportFilterTypedDict
-from .allocation_input import (
+from .allocation import (
     Allocation,
     AllocationInput,
     AllocationInputTypedDict,
@@ -990,7 +990,7 @@ from .creditnotessort import (
     CreditNotesSortTypedDict,
 )
 from .currency import Currency
-from .customer_input import (
+from .customer import (
     Customer,
     CustomerInput,
     CustomerInputTypedDict,
@@ -1089,7 +1089,7 @@ from .deprecatedlinkedtrackingcategory import (
     DeprecatedLinkedTrackingCategoryTypedDict,
 )
 from .email import Email, EmailType, EmailTypedDict
-from .expense_input import (
+from .expense import (
     Expense,
     ExpenseInput,
     ExpenseInputTypedDict,
@@ -1249,6 +1249,8 @@ from .invoice import (
     InvoiceStatus,
     InvoiceType,
     InvoiceTypedDict,
+    PaymentAllocations,
+    PaymentAllocationsTypedDict,
 )
 from .invoiceitem import (
     InvoiceItem,
@@ -1280,7 +1282,7 @@ from .invoiceitemssort import (
     InvoiceItemsSortBy,
     InvoiceItemsSortTypedDict,
 )
-from .invoicelineitem_input import (
+from .invoicelineitem import (
     InvoiceLineItem,
     InvoiceLineItemInput,
     InvoiceLineItemInputTypedDict,
@@ -1305,7 +1307,7 @@ from .journalentrylineitem import (
     JournalEntryLineItemType,
     JournalEntryLineItemTypedDict,
 )
-from .ledgeraccount_input import (
+from .ledgeraccount import (
     AccountStatus,
     Categories,
     CategoriesTypedDict,
@@ -1463,7 +1465,7 @@ from .subsidiaryreference_input import (
     SubsidiaryReferenceInput,
     SubsidiaryReferenceInputTypedDict,
 )
-from .supplier_input import (
+from .supplier import (
     Supplier,
     SupplierInput,
     SupplierInputTypedDict,
@@ -1484,7 +1486,7 @@ from .taxrate import (
     TaxRateTypedDict,
 )
 from .taxratesfilter import TaxRatesFilter, TaxRatesFilterTypedDict
-from .trackingcategory_input import (
+from .trackingcategory import (
     TrackingCategory,
     TrackingCategoryInput,
     TrackingCategoryInputTypedDict,
@@ -2828,6 +2830,8 @@ __all__ = [
     "PassThroughBody",
     "PassThroughBodyTypedDict",
     "Payment",
+    "PaymentAllocations",
+    "PaymentAllocationsTypedDict",
     "PaymentInput",
     "PaymentInputTypedDict",
     "PaymentRequiredResponse",

@@ -12,6 +12,7 @@ from .linkedledgeraccount_input import (
     LinkedLedgerAccountInput,
     LinkedLedgerAccountInputTypedDict,
 )
+from .linkedparentcustomer import LinkedParentCustomer, LinkedParentCustomerTypedDict
 from .linkedtaxrate import LinkedTaxRate, LinkedTaxRateTypedDict
 from .linkedtaxrate_input import LinkedTaxRateInput, LinkedTaxRateInputTypedDict
 from .passthroughbody import PassThroughBody, PassThroughBodyTypedDict
@@ -31,8 +32,8 @@ from typing import List, Optional
 from typing_extensions import NotRequired, TypedDict
 
 
-class SupplierStatus(str, Enum):
-    r"""Supplier status"""
+class CustomerStatus(str, Enum):
+    r"""Customer status"""
 
     ACTIVE = "active"
     INACTIVE = "inactive"
@@ -41,204 +42,7 @@ class SupplierStatus(str, Enum):
     UNKNOWN = "unknown"
 
 
-class SupplierInputTypedDict(TypedDict):
-    display_id: NotRequired[Nullable[str]]
-    r"""Display ID"""
-    display_name: NotRequired[Nullable[str]]
-    r"""Display name"""
-    company_name: NotRequired[Nullable[str]]
-    r"""The name of the company."""
-    company_id: NotRequired[Nullable[str]]
-    r"""The company or subsidiary id the transaction belongs to"""
-    title: NotRequired[Nullable[str]]
-    r"""The job title of the person."""
-    first_name: NotRequired[Nullable[str]]
-    r"""The first name of the person."""
-    middle_name: NotRequired[Nullable[str]]
-    r"""Middle name of the person."""
-    last_name: NotRequired[Nullable[str]]
-    r"""The last name of the person."""
-    suffix: NotRequired[Nullable[str]]
-    individual: NotRequired[Nullable[bool]]
-    r"""Is this an individual or business supplier"""
-    addresses: NotRequired[List[AddressTypedDict]]
-    phone_numbers: NotRequired[List[PhoneNumberTypedDict]]
-    emails: NotRequired[List[EmailTypedDict]]
-    websites: NotRequired[List[WebsiteTypedDict]]
-    bank_accounts: NotRequired[List[BankAccountTypedDict]]
-    notes: NotRequired[Nullable[str]]
-    r"""Some notes about this supplier"""
-    tax_rate: NotRequired[LinkedTaxRateInputTypedDict]
-    tax_number: NotRequired[Nullable[str]]
-    currency: NotRequired[Nullable[Currency]]
-    r"""Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)."""
-    account: NotRequired[Nullable[LinkedLedgerAccountInputTypedDict]]
-    status: NotRequired[Nullable[SupplierStatus]]
-    r"""Supplier status"""
-    payment_method: NotRequired[Nullable[str]]
-    r"""Payment method used for the transaction, such as cash, credit card, bank transfer, or check"""
-    channel: NotRequired[Nullable[str]]
-    r"""The channel through which the transaction is processed."""
-    custom_fields: NotRequired[List[CustomFieldTypedDict]]
-    row_version: NotRequired[Nullable[str]]
-    r"""A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object."""
-    pass_through: NotRequired[List[PassThroughBodyTypedDict]]
-    r"""The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources."""
-    subsidiary_id: NotRequired[str]
-    r"""The subsidiary the supplier belongs to."""
-
-
-class SupplierInput(BaseModel):
-    display_id: OptionalNullable[str] = UNSET
-    r"""Display ID"""
-
-    display_name: OptionalNullable[str] = UNSET
-    r"""Display name"""
-
-    company_name: OptionalNullable[str] = UNSET
-    r"""The name of the company."""
-
-    company_id: OptionalNullable[str] = UNSET
-    r"""The company or subsidiary id the transaction belongs to"""
-
-    title: OptionalNullable[str] = UNSET
-    r"""The job title of the person."""
-
-    first_name: OptionalNullable[str] = UNSET
-    r"""The first name of the person."""
-
-    middle_name: OptionalNullable[str] = UNSET
-    r"""Middle name of the person."""
-
-    last_name: OptionalNullable[str] = UNSET
-    r"""The last name of the person."""
-
-    suffix: OptionalNullable[str] = UNSET
-
-    individual: OptionalNullable[bool] = UNSET
-    r"""Is this an individual or business supplier"""
-
-    addresses: Optional[List[Address]] = None
-
-    phone_numbers: Optional[List[PhoneNumber]] = None
-
-    emails: Optional[List[Email]] = None
-
-    websites: Optional[List[Website]] = None
-
-    bank_accounts: Optional[List[BankAccount]] = None
-
-    notes: OptionalNullable[str] = UNSET
-    r"""Some notes about this supplier"""
-
-    tax_rate: Optional[LinkedTaxRateInput] = None
-
-    tax_number: OptionalNullable[str] = UNSET
-
-    currency: OptionalNullable[Currency] = UNSET
-    r"""Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)."""
-
-    account: OptionalNullable[LinkedLedgerAccountInput] = UNSET
-
-    status: OptionalNullable[SupplierStatus] = UNSET
-    r"""Supplier status"""
-
-    payment_method: OptionalNullable[str] = UNSET
-    r"""Payment method used for the transaction, such as cash, credit card, bank transfer, or check"""
-
-    channel: OptionalNullable[str] = UNSET
-    r"""The channel through which the transaction is processed."""
-
-    custom_fields: Optional[List[CustomField]] = None
-
-    row_version: OptionalNullable[str] = UNSET
-    r"""A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object."""
-
-    pass_through: Optional[List[PassThroughBody]] = None
-    r"""The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources."""
-
-    subsidiary_id: Optional[str] = None
-    r"""The subsidiary the supplier belongs to."""
-
-    @model_serializer(mode="wrap")
-    def serialize_model(self, handler):
-        optional_fields = [
-            "display_id",
-            "display_name",
-            "company_name",
-            "company_id",
-            "title",
-            "first_name",
-            "middle_name",
-            "last_name",
-            "suffix",
-            "individual",
-            "addresses",
-            "phone_numbers",
-            "emails",
-            "websites",
-            "bank_accounts",
-            "notes",
-            "tax_rate",
-            "tax_number",
-            "currency",
-            "account",
-            "status",
-            "payment_method",
-            "channel",
-            "custom_fields",
-            "row_version",
-            "pass_through",
-            "subsidiary_id",
-        ]
-        nullable_fields = [
-            "display_id",
-            "display_name",
-            "company_name",
-            "company_id",
-            "title",
-            "first_name",
-            "middle_name",
-            "last_name",
-            "suffix",
-            "individual",
-            "notes",
-            "tax_number",
-            "currency",
-            "account",
-            "status",
-            "payment_method",
-            "channel",
-            "row_version",
-        ]
-        null_default_fields = []
-
-        serialized = handler(self)
-
-        m = {}
-
-        for n, f in type(self).model_fields.items():
-            k = f.alias or n
-            val = serialized.get(k)
-            serialized.pop(k, None)
-
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
-
-        return m
-
-
-class SupplierTypedDict(TypedDict):
+class CustomerTypedDict(TypedDict):
     id: str
     r"""A unique identifier for an object."""
     downstream_id: NotRequired[Nullable[str]]
@@ -261,28 +65,32 @@ class SupplierTypedDict(TypedDict):
     r"""The last name of the person."""
     suffix: NotRequired[Nullable[str]]
     individual: NotRequired[Nullable[bool]]
-    r"""Is this an individual or business supplier"""
+    r"""Is this an individual or business customer"""
+    project: NotRequired[Nullable[bool]]
+    r"""If true, indicates this is a Project."""
     addresses: NotRequired[List[AddressTypedDict]]
     phone_numbers: NotRequired[List[PhoneNumberTypedDict]]
     emails: NotRequired[List[EmailTypedDict]]
     websites: NotRequired[List[WebsiteTypedDict]]
     bank_accounts: NotRequired[List[BankAccountTypedDict]]
     notes: NotRequired[Nullable[str]]
-    r"""Some notes about this supplier"""
+    r"""Some notes about this customer"""
     tax_rate: NotRequired[LinkedTaxRateTypedDict]
     tax_number: NotRequired[Nullable[str]]
     currency: NotRequired[Nullable[Currency]]
     r"""Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)."""
     account: NotRequired[Nullable[LinkedLedgerAccountTypedDict]]
-    status: NotRequired[Nullable[SupplierStatus]]
-    r"""Supplier status"""
+    parent: NotRequired[Nullable[LinkedParentCustomerTypedDict]]
+    r"""The parent customer this entity is linked to."""
+    status: NotRequired[Nullable[CustomerStatus]]
+    r"""Customer status"""
     payment_method: NotRequired[Nullable[str]]
     r"""Payment method used for the transaction, such as cash, credit card, bank transfer, or check"""
     channel: NotRequired[Nullable[str]]
     r"""The channel through which the transaction is processed."""
+    custom_fields: NotRequired[List[CustomFieldTypedDict]]
     custom_mappings: NotRequired[Nullable[CustomMappingsTypedDict]]
     r"""When custom mappings are configured on the resource, the result is included here."""
-    custom_fields: NotRequired[List[CustomFieldTypedDict]]
     updated_by: NotRequired[Nullable[str]]
     r"""The user who last updated the object."""
     created_by: NotRequired[Nullable[str]]
@@ -295,11 +103,9 @@ class SupplierTypedDict(TypedDict):
     r"""A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object."""
     pass_through: NotRequired[List[PassThroughBodyTypedDict]]
     r"""The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources."""
-    subsidiary_id: NotRequired[str]
-    r"""The subsidiary the supplier belongs to."""
 
 
-class Supplier(BaseModel):
+class Customer(BaseModel):
     id: str
     r"""A unique identifier for an object."""
 
@@ -333,7 +139,10 @@ class Supplier(BaseModel):
     suffix: OptionalNullable[str] = UNSET
 
     individual: OptionalNullable[bool] = UNSET
-    r"""Is this an individual or business supplier"""
+    r"""Is this an individual or business customer"""
+
+    project: OptionalNullable[bool] = UNSET
+    r"""If true, indicates this is a Project."""
 
     addresses: Optional[List[Address]] = None
 
@@ -346,7 +155,7 @@ class Supplier(BaseModel):
     bank_accounts: Optional[List[BankAccount]] = None
 
     notes: OptionalNullable[str] = UNSET
-    r"""Some notes about this supplier"""
+    r"""Some notes about this customer"""
 
     tax_rate: Optional[LinkedTaxRate] = None
 
@@ -357,8 +166,11 @@ class Supplier(BaseModel):
 
     account: OptionalNullable[LinkedLedgerAccount] = UNSET
 
-    status: OptionalNullable[SupplierStatus] = UNSET
-    r"""Supplier status"""
+    parent: OptionalNullable[LinkedParentCustomer] = UNSET
+    r"""The parent customer this entity is linked to."""
+
+    status: OptionalNullable[CustomerStatus] = UNSET
+    r"""Customer status"""
 
     payment_method: OptionalNullable[str] = UNSET
     r"""Payment method used for the transaction, such as cash, credit card, bank transfer, or check"""
@@ -366,10 +178,10 @@ class Supplier(BaseModel):
     channel: OptionalNullable[str] = UNSET
     r"""The channel through which the transaction is processed."""
 
+    custom_fields: Optional[List[CustomField]] = None
+
     custom_mappings: OptionalNullable[CustomMappings] = UNSET
     r"""When custom mappings are configured on the resource, the result is included here."""
-
-    custom_fields: Optional[List[CustomField]] = None
 
     updated_by: OptionalNullable[str] = UNSET
     r"""The user who last updated the object."""
@@ -389,9 +201,6 @@ class Supplier(BaseModel):
     pass_through: Optional[List[PassThroughBody]] = None
     r"""The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources."""
 
-    subsidiary_id: Optional[str] = None
-    r"""The subsidiary the supplier belongs to."""
-
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -406,6 +215,7 @@ class Supplier(BaseModel):
             "last_name",
             "suffix",
             "individual",
+            "project",
             "addresses",
             "phone_numbers",
             "emails",
@@ -416,18 +226,18 @@ class Supplier(BaseModel):
             "tax_number",
             "currency",
             "account",
+            "parent",
             "status",
             "payment_method",
             "channel",
-            "custom_mappings",
             "custom_fields",
+            "custom_mappings",
             "updated_by",
             "created_by",
             "updated_at",
             "created_at",
             "row_version",
             "pass_through",
-            "subsidiary_id",
         ]
         nullable_fields = [
             "downstream_id",
@@ -441,10 +251,12 @@ class Supplier(BaseModel):
             "last_name",
             "suffix",
             "individual",
+            "project",
             "notes",
             "tax_number",
             "currency",
             "account",
+            "parent",
             "status",
             "payment_method",
             "channel",
@@ -453,6 +265,211 @@ class Supplier(BaseModel):
             "created_by",
             "updated_at",
             "created_at",
+            "row_version",
+        ]
+        null_default_fields = []
+
+        serialized = handler(self)
+
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
+
+            if val is not None and val != UNSET_SENTINEL:
+                m[k] = val
+            elif val != UNSET_SENTINEL and (
+                not k in optional_fields or (optional_nullable and is_set)
+            ):
+                m[k] = val
+
+        return m
+
+
+class CustomerInputTypedDict(TypedDict):
+    display_id: NotRequired[Nullable[str]]
+    r"""Display ID"""
+    display_name: NotRequired[Nullable[str]]
+    r"""Display name"""
+    company_name: NotRequired[Nullable[str]]
+    r"""The name of the company."""
+    company_id: NotRequired[Nullable[str]]
+    r"""The company or subsidiary id the transaction belongs to"""
+    title: NotRequired[Nullable[str]]
+    r"""The job title of the person."""
+    first_name: NotRequired[Nullable[str]]
+    r"""The first name of the person."""
+    middle_name: NotRequired[Nullable[str]]
+    r"""Middle name of the person."""
+    last_name: NotRequired[Nullable[str]]
+    r"""The last name of the person."""
+    suffix: NotRequired[Nullable[str]]
+    individual: NotRequired[Nullable[bool]]
+    r"""Is this an individual or business customer"""
+    project: NotRequired[Nullable[bool]]
+    r"""If true, indicates this is a Project."""
+    addresses: NotRequired[List[AddressTypedDict]]
+    phone_numbers: NotRequired[List[PhoneNumberTypedDict]]
+    emails: NotRequired[List[EmailTypedDict]]
+    websites: NotRequired[List[WebsiteTypedDict]]
+    bank_accounts: NotRequired[List[BankAccountTypedDict]]
+    notes: NotRequired[Nullable[str]]
+    r"""Some notes about this customer"""
+    tax_rate: NotRequired[LinkedTaxRateInputTypedDict]
+    tax_number: NotRequired[Nullable[str]]
+    currency: NotRequired[Nullable[Currency]]
+    r"""Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)."""
+    account: NotRequired[Nullable[LinkedLedgerAccountInputTypedDict]]
+    parent: NotRequired[Nullable[LinkedParentCustomerTypedDict]]
+    r"""The parent customer this entity is linked to."""
+    status: NotRequired[Nullable[CustomerStatus]]
+    r"""Customer status"""
+    payment_method: NotRequired[Nullable[str]]
+    r"""Payment method used for the transaction, such as cash, credit card, bank transfer, or check"""
+    channel: NotRequired[Nullable[str]]
+    r"""The channel through which the transaction is processed."""
+    custom_fields: NotRequired[List[CustomFieldTypedDict]]
+    row_version: NotRequired[Nullable[str]]
+    r"""A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object."""
+    pass_through: NotRequired[List[PassThroughBodyTypedDict]]
+    r"""The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources."""
+
+
+class CustomerInput(BaseModel):
+    display_id: OptionalNullable[str] = UNSET
+    r"""Display ID"""
+
+    display_name: OptionalNullable[str] = UNSET
+    r"""Display name"""
+
+    company_name: OptionalNullable[str] = UNSET
+    r"""The name of the company."""
+
+    company_id: OptionalNullable[str] = UNSET
+    r"""The company or subsidiary id the transaction belongs to"""
+
+    title: OptionalNullable[str] = UNSET
+    r"""The job title of the person."""
+
+    first_name: OptionalNullable[str] = UNSET
+    r"""The first name of the person."""
+
+    middle_name: OptionalNullable[str] = UNSET
+    r"""Middle name of the person."""
+
+    last_name: OptionalNullable[str] = UNSET
+    r"""The last name of the person."""
+
+    suffix: OptionalNullable[str] = UNSET
+
+    individual: OptionalNullable[bool] = UNSET
+    r"""Is this an individual or business customer"""
+
+    project: OptionalNullable[bool] = UNSET
+    r"""If true, indicates this is a Project."""
+
+    addresses: Optional[List[Address]] = None
+
+    phone_numbers: Optional[List[PhoneNumber]] = None
+
+    emails: Optional[List[Email]] = None
+
+    websites: Optional[List[Website]] = None
+
+    bank_accounts: Optional[List[BankAccount]] = None
+
+    notes: OptionalNullable[str] = UNSET
+    r"""Some notes about this customer"""
+
+    tax_rate: Optional[LinkedTaxRateInput] = None
+
+    tax_number: OptionalNullable[str] = UNSET
+
+    currency: OptionalNullable[Currency] = UNSET
+    r"""Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)."""
+
+    account: OptionalNullable[LinkedLedgerAccountInput] = UNSET
+
+    parent: OptionalNullable[LinkedParentCustomer] = UNSET
+    r"""The parent customer this entity is linked to."""
+
+    status: OptionalNullable[CustomerStatus] = UNSET
+    r"""Customer status"""
+
+    payment_method: OptionalNullable[str] = UNSET
+    r"""Payment method used for the transaction, such as cash, credit card, bank transfer, or check"""
+
+    channel: OptionalNullable[str] = UNSET
+    r"""The channel through which the transaction is processed."""
+
+    custom_fields: Optional[List[CustomField]] = None
+
+    row_version: OptionalNullable[str] = UNSET
+    r"""A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object."""
+
+    pass_through: Optional[List[PassThroughBody]] = None
+    r"""The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources."""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = [
+            "display_id",
+            "display_name",
+            "company_name",
+            "company_id",
+            "title",
+            "first_name",
+            "middle_name",
+            "last_name",
+            "suffix",
+            "individual",
+            "project",
+            "addresses",
+            "phone_numbers",
+            "emails",
+            "websites",
+            "bank_accounts",
+            "notes",
+            "tax_rate",
+            "tax_number",
+            "currency",
+            "account",
+            "parent",
+            "status",
+            "payment_method",
+            "channel",
+            "custom_fields",
+            "row_version",
+            "pass_through",
+        ]
+        nullable_fields = [
+            "display_id",
+            "display_name",
+            "company_name",
+            "company_id",
+            "title",
+            "first_name",
+            "middle_name",
+            "last_name",
+            "suffix",
+            "individual",
+            "project",
+            "notes",
+            "tax_number",
+            "currency",
+            "account",
+            "parent",
+            "status",
+            "payment_method",
+            "channel",
             "row_version",
         ]
         null_default_fields = []

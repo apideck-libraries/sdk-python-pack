@@ -5,7 +5,7 @@ from .createcustomerresponse import (
     CreateCustomerResponse,
     CreateCustomerResponseTypedDict,
 )
-from .customer_input import CustomerInput, CustomerInputTypedDict
+from .customer import CustomerInput, CustomerInputTypedDict
 from .httpmetadata import HTTPMetadata, HTTPMetadataTypedDict
 from .unexpectederrorresponse import (
     UnexpectedErrorResponse,

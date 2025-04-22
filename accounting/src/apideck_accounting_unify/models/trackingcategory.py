@@ -3,11 +3,6 @@
 from __future__ import annotations
 from .custommappings import CustomMappings, CustomMappingsTypedDict
 from .passthroughbody import PassThroughBody, PassThroughBodyTypedDict
-from .subsidiaryreference import SubsidiaryReference, SubsidiaryReferenceTypedDict
-from .subsidiaryreference_input import (
-    SubsidiaryReferenceInput,
-    SubsidiaryReferenceInputTypedDict,
-)
 from apideck_accounting_unify.types import (
     BaseModel,
     Nullable,
@@ -22,56 +17,119 @@ from typing import List, Optional
 from typing_extensions import NotRequired, TypedDict
 
 
-class DepartmentStatus(str, Enum):
+class TrackingCategoryStatus(str, Enum):
     r"""Based on the status some functionality is enabled or disabled."""
 
     ACTIVE = "active"
     INACTIVE = "inactive"
 
 
-class AccountingDepartmentInputTypedDict(TypedDict):
+class TrackingCategorySubsidiariesTypedDict(TypedDict):
+    id: NotRequired[str]
+    r"""The ID of the subsidiary."""
+
+
+class TrackingCategorySubsidiaries(BaseModel):
+    id: Optional[str] = None
+    r"""The ID of the subsidiary."""
+
+
+class TrackingCategoryTypedDict(TypedDict):
+    id: NotRequired[str]
+    r"""A unique identifier for an object."""
     parent_id: NotRequired[Nullable[str]]
     r"""A unique identifier for an object."""
-    name: NotRequired[Nullable[str]]
-    r"""The name of the department."""
-    status: NotRequired[DepartmentStatus]
+    name: NotRequired[str]
+    r"""The name of the tracking category."""
+    code: NotRequired[Nullable[str]]
+    r"""The code of the tracking category."""
+    status: NotRequired[TrackingCategoryStatus]
     r"""Based on the status some functionality is enabled or disabled."""
-    subsidiaries: NotRequired[List[SubsidiaryReferenceInputTypedDict]]
+    custom_mappings: NotRequired[Nullable[CustomMappingsTypedDict]]
+    r"""When custom mappings are configured on the resource, the result is included here."""
     row_version: NotRequired[Nullable[str]]
     r"""A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object."""
+    updated_by: NotRequired[Nullable[str]]
+    r"""The user who last updated the object."""
+    created_by: NotRequired[Nullable[str]]
+    r"""The user who created the object."""
+    updated_at: NotRequired[Nullable[datetime]]
+    r"""The date and time when the object was last updated."""
+    created_at: NotRequired[Nullable[datetime]]
+    r"""The date and time when the object was created."""
     pass_through: NotRequired[List[PassThroughBodyTypedDict]]
     r"""The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources."""
+    subsidiaries: NotRequired[List[TrackingCategorySubsidiariesTypedDict]]
+    r"""The subsidiaries the account belongs to."""
 
 
-class AccountingDepartmentInput(BaseModel):
+class TrackingCategory(BaseModel):
+    id: Optional[str] = None
+    r"""A unique identifier for an object."""
+
     parent_id: OptionalNullable[str] = UNSET
     r"""A unique identifier for an object."""
 
-    name: OptionalNullable[str] = UNSET
-    r"""The name of the department."""
+    name: Optional[str] = None
+    r"""The name of the tracking category."""
 
-    status: Optional[DepartmentStatus] = None
+    code: OptionalNullable[str] = UNSET
+    r"""The code of the tracking category."""
+
+    status: Optional[TrackingCategoryStatus] = None
     r"""Based on the status some functionality is enabled or disabled."""
 
-    subsidiaries: Optional[List[SubsidiaryReferenceInput]] = None
+    custom_mappings: OptionalNullable[CustomMappings] = UNSET
+    r"""When custom mappings are configured on the resource, the result is included here."""
 
     row_version: OptionalNullable[str] = UNSET
     r"""A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object."""
 
+    updated_by: OptionalNullable[str] = UNSET
+    r"""The user who last updated the object."""
+
+    created_by: OptionalNullable[str] = UNSET
+    r"""The user who created the object."""
+
+    updated_at: OptionalNullable[datetime] = UNSET
+    r"""The date and time when the object was last updated."""
+
+    created_at: OptionalNullable[datetime] = UNSET
+    r"""The date and time when the object was created."""
+
     pass_through: Optional[List[PassThroughBody]] = None
     r"""The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources."""
+
+    subsidiaries: Optional[List[TrackingCategorySubsidiaries]] = None
+    r"""The subsidiaries the account belongs to."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
+            "id",
             "parent_id",
             "name",
+            "code",
             "status",
-            "subsidiaries",
+            "custom_mappings",
             "row_version",
+            "updated_by",
+            "created_by",
+            "updated_at",
+            "created_at",
             "pass_through",
+            "subsidiaries",
         ]
-        nullable_fields = ["parent_id", "name", "row_version"]
+        nullable_fields = [
+            "parent_id",
+            "code",
+            "custom_mappings",
+            "row_version",
+            "updated_by",
+            "created_by",
+            "updated_at",
+            "created_at",
+        ]
         null_default_fields = []
 
         serialized = handler(self)
@@ -99,94 +157,57 @@ class AccountingDepartmentInput(BaseModel):
         return m
 
 
-class AccountingDepartmentTypedDict(TypedDict):
-    id: NotRequired[str]
-    r"""A unique identifier for an object."""
+class TrackingCategoryInputTypedDict(TypedDict):
     parent_id: NotRequired[Nullable[str]]
     r"""A unique identifier for an object."""
-    name: NotRequired[Nullable[str]]
-    r"""The name of the department."""
-    status: NotRequired[DepartmentStatus]
+    name: NotRequired[str]
+    r"""The name of the tracking category."""
+    code: NotRequired[Nullable[str]]
+    r"""The code of the tracking category."""
+    status: NotRequired[TrackingCategoryStatus]
     r"""Based on the status some functionality is enabled or disabled."""
-    subsidiaries: NotRequired[List[SubsidiaryReferenceTypedDict]]
-    custom_mappings: NotRequired[Nullable[CustomMappingsTypedDict]]
-    r"""When custom mappings are configured on the resource, the result is included here."""
     row_version: NotRequired[Nullable[str]]
     r"""A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object."""
-    updated_by: NotRequired[Nullable[str]]
-    r"""The user who last updated the object."""
-    created_by: NotRequired[Nullable[str]]
-    r"""The user who created the object."""
-    updated_at: NotRequired[Nullable[datetime]]
-    r"""The date and time when the object was last updated."""
-    created_at: NotRequired[Nullable[datetime]]
-    r"""The date and time when the object was created."""
     pass_through: NotRequired[List[PassThroughBodyTypedDict]]
     r"""The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources."""
+    subsidiaries: NotRequired[List[TrackingCategorySubsidiariesTypedDict]]
+    r"""The subsidiaries the account belongs to."""
 
 
-class AccountingDepartment(BaseModel):
-    id: Optional[str] = None
-    r"""A unique identifier for an object."""
-
+class TrackingCategoryInput(BaseModel):
     parent_id: OptionalNullable[str] = UNSET
     r"""A unique identifier for an object."""
 
-    name: OptionalNullable[str] = UNSET
-    r"""The name of the department."""
+    name: Optional[str] = None
+    r"""The name of the tracking category."""
 
-    status: Optional[DepartmentStatus] = None
+    code: OptionalNullable[str] = UNSET
+    r"""The code of the tracking category."""
+
+    status: Optional[TrackingCategoryStatus] = None
     r"""Based on the status some functionality is enabled or disabled."""
-
-    subsidiaries: Optional[List[SubsidiaryReference]] = None
-
-    custom_mappings: OptionalNullable[CustomMappings] = UNSET
-    r"""When custom mappings are configured on the resource, the result is included here."""
 
     row_version: OptionalNullable[str] = UNSET
     r"""A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object."""
 
-    updated_by: OptionalNullable[str] = UNSET
-    r"""The user who last updated the object."""
-
-    created_by: OptionalNullable[str] = UNSET
-    r"""The user who created the object."""
-
-    updated_at: OptionalNullable[datetime] = UNSET
-    r"""The date and time when the object was last updated."""
-
-    created_at: OptionalNullable[datetime] = UNSET
-    r"""The date and time when the object was created."""
-
     pass_through: Optional[List[PassThroughBody]] = None
     r"""The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources."""
+
+    subsidiaries: Optional[List[TrackingCategorySubsidiaries]] = None
+    r"""The subsidiaries the account belongs to."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
-            "id",
             "parent_id",
             "name",
+            "code",
             "status",
-            "subsidiaries",
-            "custom_mappings",
             "row_version",
-            "updated_by",
-            "created_by",
-            "updated_at",
-            "created_at",
             "pass_through",
+            "subsidiaries",
         ]
-        nullable_fields = [
-            "parent_id",
-            "name",
-            "custom_mappings",
-            "row_version",
-            "updated_by",
-            "created_by",
-            "updated_at",
-            "created_at",
-        ]
+        nullable_fields = ["parent_id", "code", "row_version"]
         null_default_fields = []
 
         serialized = handler(self)

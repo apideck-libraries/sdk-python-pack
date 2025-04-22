@@ -20,7 +20,7 @@ List Invoices
 ```python
 import apideck_accounting_unify
 from apideck_accounting_unify import Apideck
-import dateutil.parser
+from apideck_accounting_unify.utils import parse_datetime
 import os
 
 
@@ -31,8 +31,8 @@ with Apideck(
 ) as apideck:
 
     res = apideck.accounting.invoices.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
-        "updated_since": dateutil.parser.isoparse("2020-09-30T07:43:32.000Z"),
-        "created_since": dateutil.parser.isoparse("2020-09-30T07:43:32.000Z"),
+        "updated_since": parse_datetime("2020-09-30T07:43:32.000Z"),
+        "created_since": parse_datetime("2020-09-30T07:43:32.000Z"),
         "number": "OIT00546",
     }, sort={
         "by": apideck_accounting_unify.InvoicesSortBy.UPDATED_AT,
@@ -87,7 +87,8 @@ Create Invoice
 ```python
 import apideck_accounting_unify
 from apideck_accounting_unify import Apideck
-import dateutil.parser
+from apideck_accounting_unify.utils import parse_datetime
+from datetime import date
 import os
 
 
@@ -101,7 +102,7 @@ with Apideck(
         "id": "12345",
         "display_name": "Windsurf Shop",
         "email": "boring@boring.com",
-    }, company_id="12345", invoice_date=dateutil.parser.parse("2020-09-30").date(), due_date=dateutil.parser.parse("2020-09-30").date(), terms="Net 30 days", po_number="90000117", reference="123456", status=apideck_accounting_unify.InvoiceStatus.DRAFT, invoice_sent=True, currency=apideck_accounting_unify.Currency.USD, currency_rate=0.69, tax_inclusive=True, sub_total=27500, total_tax=2500, tax_code="1234", discount_percentage=5.5, discount_amount=25, total=27500, balance=27500, deposit=0, customer_memo="Thank you for your business and have a great day!", tracking_categories=[
+    }, company_id="12345", invoice_date=date.fromisoformat("2020-09-30"), due_date=date.fromisoformat("2020-09-30"), terms="Net 30 days", po_number="90000117", reference="123456", status=apideck_accounting_unify.InvoiceStatus.DRAFT, invoice_sent=True, currency=apideck_accounting_unify.Currency.USD, currency_rate=0.69, tax_inclusive=True, sub_total=27500, total_tax=2500, tax_code="1234", discount_percentage=5.5, discount_amount=25, total=27500, balance=27500, deposit=0, customer_memo="Thank you for your business and have a great day!", tracking_categories=[
         {
             "id": "123456",
             "name": "New York",
@@ -277,7 +278,13 @@ with Apideck(
         "website": "https://elonmusk.com",
         "notes": "Address notes or delivery instructions.",
         "row_version": "1-12345",
-    }, template_id="123456", source_document_url="https://www.invoicesolution.com/invoice/123456", payment_method="cash", channel="email", language="EN", accounting_by_row=False, bank_account={
+    }, template_id="123456", source_document_url="https://www.invoicesolution.com/invoice/123456", payment_allocations=[
+        {
+            "id": "123456",
+            "allocated_amount": 1000,
+            "date_": parse_datetime("2020-09-30T07:43:32.000Z"),
+        },
+    ], payment_method="cash", channel="email", language="EN", accounting_by_row=False, bank_account={
         "bank_name": "Monzo",
         "account_number": "123465",
         "account_name": "SPACEX LLC",
@@ -380,6 +387,7 @@ with Apideck(
 | `shipping_address`                                                                                                                                               | [Optional[models.Address]](../../models/address.md)                                                                                                              | :heavy_minus_sign:                                                                                                                                               | N/A                                                                                                                                                              |                                                                                                                                                                  |
 | `template_id`                                                                                                                                                    | *OptionalNullable[str]*                                                                                                                                          | :heavy_minus_sign:                                                                                                                                               | Optional invoice template                                                                                                                                        | 123456                                                                                                                                                           |
 | `source_document_url`                                                                                                                                            | *OptionalNullable[str]*                                                                                                                                          | :heavy_minus_sign:                                                                                                                                               | URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.                                             | https://www.invoicesolution.com/invoice/123456                                                                                                                   |
+| `payment_allocations`                                                                                                                                            | List[[models.PaymentAllocations](../../models/paymentallocations.md)]                                                                                            | :heavy_minus_sign:                                                                                                                                               | IDs of payments made on the invoice                                                                                                                              |                                                                                                                                                                  |
 | `payment_method`                                                                                                                                                 | *OptionalNullable[str]*                                                                                                                                          | :heavy_minus_sign:                                                                                                                                               | Payment method used for the transaction, such as cash, credit card, bank transfer, or check                                                                      | cash                                                                                                                                                             |
 | `channel`                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                          | :heavy_minus_sign:                                                                                                                                               | The channel through which the transaction is processed.                                                                                                          | email                                                                                                                                                            |
 | `language`                                                                                                                                                       | *OptionalNullable[str]*                                                                                                                                          | :heavy_minus_sign:                                                                                                                                               | language code according to ISO 639-1. For the United States - EN                                                                                                 | EN                                                                                                                                                               |
@@ -468,7 +476,8 @@ Update Invoice
 ```python
 import apideck_accounting_unify
 from apideck_accounting_unify import Apideck
-import dateutil.parser
+from apideck_accounting_unify.utils import parse_datetime
+from datetime import date
 import os
 
 
@@ -482,7 +491,7 @@ with Apideck(
         "id": "12345",
         "display_name": "Windsurf Shop",
         "email": "boring@boring.com",
-    }, company_id="12345", invoice_date=dateutil.parser.parse("2020-09-30").date(), due_date=dateutil.parser.parse("2020-09-30").date(), terms="Net 30 days", po_number="90000117", reference="123456", status=apideck_accounting_unify.InvoiceStatus.DRAFT, invoice_sent=True, currency=apideck_accounting_unify.Currency.USD, currency_rate=0.69, tax_inclusive=True, sub_total=27500, total_tax=2500, tax_code="1234", discount_percentage=5.5, discount_amount=25, total=27500, balance=27500, deposit=0, customer_memo="Thank you for your business and have a great day!", tracking_categories=[
+    }, company_id="12345", invoice_date=date.fromisoformat("2020-09-30"), due_date=date.fromisoformat("2020-09-30"), terms="Net 30 days", po_number="90000117", reference="123456", status=apideck_accounting_unify.InvoiceStatus.DRAFT, invoice_sent=True, currency=apideck_accounting_unify.Currency.USD, currency_rate=0.69, tax_inclusive=True, sub_total=27500, total_tax=2500, tax_code="1234", discount_percentage=5.5, discount_amount=25, total=27500, balance=27500, deposit=0, customer_memo="Thank you for your business and have a great day!", tracking_categories=[
         {
             "id": "123456",
             "name": "New York",
@@ -668,7 +677,13 @@ with Apideck(
         "website": "https://elonmusk.com",
         "notes": "Address notes or delivery instructions.",
         "row_version": "1-12345",
-    }, template_id="123456", source_document_url="https://www.invoicesolution.com/invoice/123456", payment_method="cash", channel="email", language="EN", accounting_by_row=False, bank_account={
+    }, template_id="123456", source_document_url="https://www.invoicesolution.com/invoice/123456", payment_allocations=[
+        {
+            "id": "123456",
+            "allocated_amount": 1000,
+            "date_": parse_datetime("2020-09-30T07:43:32.000Z"),
+        },
+    ], payment_method="cash", channel="email", language="EN", accounting_by_row=False, bank_account={
         "bank_name": "Monzo",
         "account_number": "123465",
         "account_name": "SPACEX LLC",
@@ -765,6 +780,7 @@ with Apideck(
 | `shipping_address`                                                                                                                                               | [Optional[models.Address]](../../models/address.md)                                                                                                              | :heavy_minus_sign:                                                                                                                                               | N/A                                                                                                                                                              |                                                                                                                                                                  |
 | `template_id`                                                                                                                                                    | *OptionalNullable[str]*                                                                                                                                          | :heavy_minus_sign:                                                                                                                                               | Optional invoice template                                                                                                                                        | 123456                                                                                                                                                           |
 | `source_document_url`                                                                                                                                            | *OptionalNullable[str]*                                                                                                                                          | :heavy_minus_sign:                                                                                                                                               | URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.                                             | https://www.invoicesolution.com/invoice/123456                                                                                                                   |
+| `payment_allocations`                                                                                                                                            | List[[models.PaymentAllocations](../../models/paymentallocations.md)]                                                                                            | :heavy_minus_sign:                                                                                                                                               | IDs of payments made on the invoice                                                                                                                              |                                                                                                                                                                  |
 | `payment_method`                                                                                                                                                 | *OptionalNullable[str]*                                                                                                                                          | :heavy_minus_sign:                                                                                                                                               | Payment method used for the transaction, such as cash, credit card, bank transfer, or check                                                                      | cash                                                                                                                                                             |
 | `channel`                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                          | :heavy_minus_sign:                                                                                                                                               | The channel through which the transaction is processed.                                                                                                          | email                                                                                                                                                            |
 | `language`                                                                                                                                                       | *OptionalNullable[str]*                                                                                                                                          | :heavy_minus_sign:                                                                                                                                               | language code according to ISO 639-1. For the United States - EN                                                                                                 | EN                                                                                                                                                               |

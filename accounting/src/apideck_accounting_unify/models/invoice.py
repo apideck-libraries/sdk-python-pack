@@ -10,7 +10,7 @@ from .deprecatedlinkedtrackingcategory import (
     DeprecatedLinkedTrackingCategory,
     DeprecatedLinkedTrackingCategoryTypedDict,
 )
-from .invoicelineitem_input import (
+from .invoicelineitem import (
     InvoiceLineItem,
     InvoiceLineItemInput,
     InvoiceLineItemInputTypedDict,
@@ -65,6 +65,56 @@ class InvoiceStatus(str, Enum):
     VOID = "void"
     CREDIT = "credit"
     DELETED = "deleted"
+
+
+class PaymentAllocationsTypedDict(TypedDict):
+    id: NotRequired[str]
+    r"""ID of the payment"""
+    allocated_amount: NotRequired[Nullable[float]]
+    r"""Amount of the payment allocated to the invoice"""
+    date_: NotRequired[Nullable[datetime]]
+    r"""Date of the payment"""
+
+
+class PaymentAllocations(BaseModel):
+    id: Optional[str] = None
+    r"""ID of the payment"""
+
+    allocated_amount: OptionalNullable[float] = UNSET
+    r"""Amount of the payment allocated to the invoice"""
+
+    date_: Annotated[OptionalNullable[datetime], pydantic.Field(alias="date")] = UNSET
+    r"""Date of the payment"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = ["id", "allocated_amount", "date"]
+        nullable_fields = ["allocated_amount", "date"]
+        null_default_fields = []
+
+        serialized = handler(self)
+
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
+
+            if val is not None and val != UNSET_SENTINEL:
+                m[k] = val
+            elif val != UNSET_SENTINEL and (
+                not k in optional_fields or (optional_nullable and is_set)
+            ):
+                m[k] = val
+
+        return m
 
 
 class InvoiceTypedDict(TypedDict):
@@ -130,6 +180,8 @@ class InvoiceTypedDict(TypedDict):
     r"""Optional invoice template"""
     source_document_url: NotRequired[Nullable[str]]
     r"""URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero."""
+    payment_allocations: NotRequired[Nullable[List[PaymentAllocationsTypedDict]]]
+    r"""IDs of payments made on the invoice"""
     payment_method: NotRequired[Nullable[str]]
     r"""Payment method used for the transaction, such as cash, credit card, bank transfer, or check"""
     channel: NotRequired[Nullable[str]]
@@ -257,6 +309,9 @@ class Invoice(BaseModel):
     source_document_url: OptionalNullable[str] = UNSET
     r"""URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero."""
 
+    payment_allocations: OptionalNullable[List[PaymentAllocations]] = UNSET
+    r"""IDs of payments made on the invoice"""
+
     payment_method: OptionalNullable[str] = UNSET
     r"""Payment method used for the transaction, such as cash, credit card, bank transfer, or check"""
 
@@ -331,6 +386,7 @@ class Invoice(BaseModel):
             "shipping_address",
             "template_id",
             "source_document_url",
+            "payment_allocations",
             "payment_method",
             "channel",
             "language",
@@ -374,6 +430,7 @@ class Invoice(BaseModel):
             "tracking_categories",
             "template_id",
             "source_document_url",
+            "payment_allocations",
             "payment_method",
             "channel",
             "language",
@@ -472,6 +529,8 @@ class InvoiceInputTypedDict(TypedDict):
     r"""Optional invoice template"""
     source_document_url: NotRequired[Nullable[str]]
     r"""URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero."""
+    payment_allocations: NotRequired[Nullable[List[PaymentAllocationsTypedDict]]]
+    r"""IDs of payments made on the invoice"""
     payment_method: NotRequired[Nullable[str]]
     r"""Payment method used for the transaction, such as cash, credit card, bank transfer, or check"""
     channel: NotRequired[Nullable[str]]
@@ -583,6 +642,9 @@ class InvoiceInput(BaseModel):
     source_document_url: OptionalNullable[str] = UNSET
     r"""URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero."""
 
+    payment_allocations: OptionalNullable[List[PaymentAllocations]] = UNSET
+    r"""IDs of payments made on the invoice"""
+
     payment_method: OptionalNullable[str] = UNSET
     r"""Payment method used for the transaction, such as cash, credit card, bank transfer, or check"""
 
@@ -640,6 +702,7 @@ class InvoiceInput(BaseModel):
             "shipping_address",
             "template_id",
             "source_document_url",
+            "payment_allocations",
             "payment_method",
             "channel",
             "language",
@@ -677,6 +740,7 @@ class InvoiceInput(BaseModel):
             "tracking_categories",
             "template_id",
             "source_document_url",
+            "payment_allocations",
             "payment_method",
             "channel",
             "language",

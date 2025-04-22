@@ -283,9 +283,7 @@ with Apideck(
                         {
                             "id": "1234",
                             "label": "General Channel",
-                            "options": [
-
-                            ],
+                            "options": [],
                             "option_type": apideck_accounting_unify.FormFieldOptionGroupOptionType.GROUP,
                         },
                     ],

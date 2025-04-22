@@ -20,7 +20,7 @@ List Customers
 ```python
 import apideck_accounting_unify
 from apideck_accounting_unify import Apideck
-import dateutil.parser
+from apideck_accounting_unify.utils import parse_datetime
 import os
 
 
@@ -37,7 +37,7 @@ with Apideck(
         "last_name": "Musk",
         "email": "elon@musk.com",
         "status": apideck_accounting_unify.CustomersFilterStatus.ACTIVE,
-        "updated_since": dateutil.parser.isoparse("2020-09-30T07:43:32.000Z"),
+        "updated_since": parse_datetime("2020-09-30T07:43:32.000Z"),
         "supplier_id": "123",
     }, sort={
         "by": apideck_accounting_unify.CustomersSortBy.UPDATED_AT,

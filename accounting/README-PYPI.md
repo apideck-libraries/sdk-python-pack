@@ -247,6 +247,22 @@ with Apideck(
 
 * [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/balancesheetsdk/README.md#get) - Get BalanceSheet
 
+#### [accounting.bank_feed_accounts](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedaccounts/README.md)
+
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedaccounts/README.md#list) - List Bank Feed Accounts
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedaccounts/README.md#create) - Create Bank Feed Account
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedaccounts/README.md#get) - Get Bank Feed Account
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedaccounts/README.md#update) - Update Bank Feed Account
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedaccounts/README.md#delete) - Delete Bank Feed Account
+
+#### [accounting.bank_feed_statements](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedstatements/README.md)
+
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedstatements/README.md#list) - List Bank Feed Statements
+* [create](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedstatements/README.md#create) - Create Bank Feed Statement
+* [get](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedstatements/README.md#get) - Get Bank Feed Statement
+* [update](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedstatements/README.md#update) - Update Bank Feed Statement
+* [delete](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/bankfeedstatements/README.md#delete) - Delete Bank Feed Statement
+
 #### [accounting.bill_payments](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md)
 
 * [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/billpayments/README.md#list) - List Bill Payments

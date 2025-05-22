@@ -101,12 +101,6 @@ with Apideck(
             "rate": 10,
             "compound": True,
         },
-        {
-            "id": "10",
-            "name": "GST",
-            "rate": 10,
-            "compound": True,
-        },
     ], type_="NONE", report_tax_type="NONE", original_tax_rate_id="12345", status=apideck_accounting_unify.TaxRateStatus.ACTIVE, row_version="1-12345", pass_through=[
         {
             "service_id": "<id>",
@@ -119,6 +113,11 @@ with Apideck(
                         },
                     },
                 },
+            ],
+        },
+        {
+            "service_id": "<id>",
+            "extend_paths": [
                 {
                     "path": "$.nested.property",
                     "value": {
@@ -147,11 +146,7 @@ with Apideck(
             "id": "2389328923893298",
             "name": "employee_level",
             "description": "Employee Level",
-            "value": [
-                "<value>",
-                "<value>",
-                "<value>",
-            ],
+            "value": "Uses Salesforce and Marketo",
         },
     ])
 
@@ -315,6 +310,14 @@ with Apideck(
                         },
                     },
                 },
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
             ],
         },
         {
@@ -351,13 +354,13 @@ with Apideck(
             "id": "2389328923893298",
             "name": "employee_level",
             "description": "Employee Level",
-            "value": True,
+            "value": "Uses Salesforce and Marketo",
         },
         {
             "id": "2389328923893298",
             "name": "employee_level",
             "description": "Employee Level",
-            "value": {},
+            "value": "Uses Salesforce and Marketo",
         },
     ])
 

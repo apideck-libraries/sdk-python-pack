@@ -94,6 +94,10 @@ with Apideck(
                     "id": "123456",
                     "name": "New York",
                 },
+                {
+                    "id": "123456",
+                    "name": "New York",
+                },
             ],
             "account_id": "123456",
             "customer_id": "12345",
@@ -107,11 +111,18 @@ with Apideck(
             "description": "Travel US.",
             "total_amount": 275,
             "billable": True,
+            "line_number": 1,
         },
     ], consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", number="OIT00546", customer_id="12345", supplier_id="12345", company_id="12345", department_id="12345", payment_type=apideck_accounting_unify.ExpensePaymentType.CASH, currency=apideck_accounting_unify.Currency.USD, currency_rate=0.69, type_=apideck_accounting_unify.ExpenseType.EXPENSE, memo="For travel expenses incurred on 2024-05-15", tax_rate={
         "id": "123456",
         "rate": 10,
     }, total_amount=275, custom_fields=[
+        {
+            "id": "2389328923893298",
+            "name": "employee_level",
+            "description": "Employee Level",
+            "value": "Uses Salesforce and Marketo",
+        },
         {
             "id": "2389328923893298",
             "name": "employee_level",
@@ -165,11 +176,14 @@ with Apideck(
                         },
                     },
                 },
-            ],
-        },
-        {
-            "service_id": "<id>",
-            "extend_paths": [
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
                 {
                     "path": "$.nested.property",
                     "value": {
@@ -314,26 +328,6 @@ with Apideck(
                     "id": "123456",
                     "name": "New York",
                 },
-            ],
-            "account_id": "123456",
-            "customer_id": "12345",
-            "department_id": "12345",
-            "location_id": "12345",
-            "subsidiary_id": "12345",
-            "tax_rate": {
-                "id": "123456",
-                "rate": 10,
-            },
-            "description": "Travel US.",
-            "total_amount": 275,
-            "billable": True,
-        },
-        {
-            "tracking_categories": [
-                {
-                    "id": "123456",
-                    "name": "New York",
-                },
                 {
                     "id": "123456",
                     "name": "New York",
@@ -351,34 +345,7 @@ with Apideck(
             "description": "Travel US.",
             "total_amount": 275,
             "billable": True,
-        },
-        {
-            "tracking_categories": [
-                {
-                    "id": "123456",
-                    "name": "New York",
-                },
-                {
-                    "id": "123456",
-                    "name": "New York",
-                },
-                {
-                    "id": "123456",
-                    "name": "New York",
-                },
-            ],
-            "account_id": "123456",
-            "customer_id": "12345",
-            "department_id": "12345",
-            "location_id": "12345",
-            "subsidiary_id": "12345",
-            "tax_rate": {
-                "id": "123456",
-                "rate": 10,
-            },
-            "description": "Travel US.",
-            "total_amount": 275,
-            "billable": True,
+            "line_number": 1,
         },
     ], consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", number="OIT00546", customer_id="12345", supplier_id="12345", company_id="12345", department_id="12345", payment_type=apideck_accounting_unify.ExpensePaymentType.CASH, currency=apideck_accounting_unify.Currency.USD, currency_rate=0.69, type_=apideck_accounting_unify.ExpenseType.EXPENSE, memo="For travel expenses incurred on 2024-05-15", tax_rate={
         "id": "123456",
@@ -388,26 +355,12 @@ with Apideck(
             "id": "2389328923893298",
             "name": "employee_level",
             "description": "Employee Level",
-            "value": True,
-        },
-        {
-            "id": "2389328923893298",
-            "name": "employee_level",
-            "description": "Employee Level",
-            "value": {},
+            "value": "Uses Salesforce and Marketo",
         },
     ], row_version="1-12345", pass_through=[
         {
             "service_id": "<id>",
             "extend_paths": [
-                {
-                    "path": "$.nested.property",
-                    "value": {
-                        "TaxClassificationRef": {
-                            "value": "EUC-99990201-V1-00020000",
-                        },
-                    },
-                },
                 {
                     "path": "$.nested.property",
                     "value": {

@@ -5,7 +5,6 @@ from .address import Address, AddressTypedDict
 from .bankaccount import BankAccount, BankAccountTypedDict
 from .currency import Currency
 from .customfield import CustomField, CustomFieldTypedDict
-from .custommappings import CustomMappings, CustomMappingsTypedDict
 from .invoicelineitem import (
     InvoiceLineItem,
     InvoiceLineItemInput,
@@ -34,7 +33,7 @@ from apideck_accounting_unify.types import (
 from datetime import date, datetime
 from enum import Enum
 from pydantic import model_serializer
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 from typing_extensions import NotRequired, TypedDict
 
 
@@ -58,6 +57,8 @@ class PurchaseOrderTypedDict(TypedDict):
     r"""Optional purchase order reference."""
     supplier: NotRequired[Nullable[LinkedSupplierTypedDict]]
     r"""The supplier this entity is linked to."""
+    subsidiary_id: NotRequired[Nullable[str]]
+    r"""The ID of the subsidiary"""
     company_id: NotRequired[Nullable[str]]
     r"""The company or subsidiary id the transaction belongs to"""
     status: NotRequired[Nullable[PurchaseOrderStatus]]
@@ -103,7 +104,7 @@ class PurchaseOrderTypedDict(TypedDict):
         Nullable[List[Nullable[LinkedTrackingCategoryTypedDict]]]
     ]
     r"""A list of linked tracking categories."""
-    custom_mappings: NotRequired[Nullable[CustomMappingsTypedDict]]
+    custom_mappings: NotRequired[Nullable[Dict[str, Any]]]
     r"""When custom mappings are configured on the resource, the result is included here."""
     custom_fields: NotRequired[List[CustomFieldTypedDict]]
     row_version: NotRequired[Nullable[str]]
@@ -135,6 +136,9 @@ class PurchaseOrder(BaseModel):
 
     supplier: OptionalNullable[LinkedSupplier] = UNSET
     r"""The supplier this entity is linked to."""
+
+    subsidiary_id: OptionalNullable[str] = UNSET
+    r"""The ID of the subsidiary"""
 
     company_id: OptionalNullable[str] = UNSET
     r"""The company or subsidiary id the transaction belongs to"""
@@ -205,7 +209,7 @@ class PurchaseOrder(BaseModel):
     )
     r"""A list of linked tracking categories."""
 
-    custom_mappings: OptionalNullable[CustomMappings] = UNSET
+    custom_mappings: OptionalNullable[Dict[str, Any]] = UNSET
     r"""When custom mappings are configured on the resource, the result is included here."""
 
     custom_fields: Optional[List[CustomField]] = None
@@ -236,6 +240,7 @@ class PurchaseOrder(BaseModel):
             "po_number",
             "reference",
             "supplier",
+            "subsidiary_id",
             "company_id",
             "status",
             "issued_date",
@@ -274,6 +279,7 @@ class PurchaseOrder(BaseModel):
             "po_number",
             "reference",
             "supplier",
+            "subsidiary_id",
             "company_id",
             "status",
             "issued_date",
@@ -336,6 +342,8 @@ class PurchaseOrderInputTypedDict(TypedDict):
     r"""Optional purchase order reference."""
     supplier: NotRequired[Nullable[LinkedSupplierInputTypedDict]]
     r"""The supplier this entity is linked to."""
+    subsidiary_id: NotRequired[Nullable[str]]
+    r"""The ID of the subsidiary"""
     company_id: NotRequired[Nullable[str]]
     r"""The company or subsidiary id the transaction belongs to"""
     status: NotRequired[Nullable[PurchaseOrderStatus]]
@@ -397,6 +405,9 @@ class PurchaseOrderInput(BaseModel):
 
     supplier: OptionalNullable[LinkedSupplierInput] = UNSET
     r"""The supplier this entity is linked to."""
+
+    subsidiary_id: OptionalNullable[str] = UNSET
+    r"""The ID of the subsidiary"""
 
     company_id: OptionalNullable[str] = UNSET
     r"""The company or subsidiary id the transaction belongs to"""
@@ -481,6 +492,7 @@ class PurchaseOrderInput(BaseModel):
             "po_number",
             "reference",
             "supplier",
+            "subsidiary_id",
             "company_id",
             "status",
             "issued_date",
@@ -513,6 +525,7 @@ class PurchaseOrderInput(BaseModel):
             "po_number",
             "reference",
             "supplier",
+            "subsidiary_id",
             "company_id",
             "status",
             "issued_date",

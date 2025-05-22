@@ -1123,7 +1123,6 @@ from .customfield import (
 from .customfieldfinder import CustomFieldFinder, CustomFieldFinderTypedDict
 from .custommapping import CustomMapping, CustomMappingTypedDict
 from .custommapping_input import CustomMappingInput, CustomMappingInputTypedDict
-from .custommappings import CustomMappings, CustomMappingsTypedDict
 from .deleteaccountingdepartmentresponse import (
     DeleteAccountingDepartmentResponse,
     DeleteAccountingDepartmentResponseTypedDict,
@@ -2735,8 +2734,6 @@ __all__ = [
     "CustomMappingInput",
     "CustomMappingInputTypedDict",
     "CustomMappingTypedDict",
-    "CustomMappings",
-    "CustomMappingsTypedDict",
     "Customer",
     "CustomerInput",
     "CustomerInputTypedDict",

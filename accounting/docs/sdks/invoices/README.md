@@ -107,10 +107,6 @@ with Apideck(
             "id": "123456",
             "name": "New York",
         },
-        {
-            "id": "123456",
-            "name": "New York",
-        },
     ], line_items=[
         {
             "id": "12345",
@@ -142,82 +138,14 @@ with Apideck(
                     "id": "123456",
                     "name": "New York",
                 },
-                {
-                    "id": "123456",
-                    "name": "New York",
-                },
             ],
-            "ledger_account": {
-                "id": "123456",
-                "nominal_code": "N091",
-                "code": "453",
-            },
+            "ledger_account": None,
             "custom_fields": [
                 {
                     "id": "2389328923893298",
                     "name": "employee_level",
                     "description": "Employee Level",
                     "value": "Uses Salesforce and Marketo",
-                },
-            ],
-            "row_version": "1-12345",
-        },
-        {
-            "id": "12345",
-            "row_id": "12345",
-            "code": "120-C",
-            "line_number": 1,
-            "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": apideck_accounting_unify.InvoiceLineItemType.SALES_ITEM,
-            "tax_amount": 27500,
-            "total_amount": 27500,
-            "quantity": 1,
-            "unit_price": 27500.5,
-            "unit_of_measure": "pc.",
-            "discount_percentage": 0.01,
-            "discount_amount": 19.99,
-            "location_id": "12345",
-            "department_id": "12345",
-            "item": {
-                "id": "12344",
-                "code": "120-C",
-                "name": "Model Y",
-            },
-            "tax_rate": {
-                "id": "123456",
-                "rate": 10,
-            },
-            "tracking_categories": [
-                {
-                    "id": "123456",
-                    "name": "New York",
-                },
-                {
-                    "id": "123456",
-                    "name": "New York",
-                },
-                {
-                    "id": "123456",
-                    "name": "New York",
-                },
-            ],
-            "ledger_account": {
-                "id": "123456",
-                "nominal_code": "N091",
-                "code": "453",
-            },
-            "custom_fields": [
-                {
-                    "id": "2389328923893298",
-                    "name": "employee_level",
-                    "description": "Employee Level",
-                    "value": "Uses Salesforce and Marketo",
-                },
-                {
-                    "id": "2389328923893298",
-                    "name": "employee_level",
-                    "description": "Employee Level",
-                    "value": 10,
                 },
                 {
                     "id": "2389328923893298",
@@ -305,31 +233,32 @@ with Apideck(
             "id": "2389328923893298",
             "name": "employee_level",
             "description": "Employee Level",
-            "value": [
-                "<value>",
-                "<value>",
-            ],
+            "value": "Uses Salesforce and Marketo",
         },
         {
             "id": "2389328923893298",
             "name": "employee_level",
             "description": "Employee Level",
-            "value": [
-                "<value>",
-                "<value>",
-                "<value>",
-            ],
+            "value": "Uses Salesforce and Marketo",
         },
         {
             "id": "2389328923893298",
             "name": "employee_level",
             "description": "Employee Level",
-            "value": True,
+            "value": "Uses Salesforce and Marketo",
         },
     ], row_version="1-12345", pass_through=[
         {
             "service_id": "<id>",
             "extend_paths": [
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
                 {
                     "path": "$.nested.property",
                     "value": {
@@ -496,14 +425,6 @@ with Apideck(
             "id": "123456",
             "name": "New York",
         },
-        {
-            "id": "123456",
-            "name": "New York",
-        },
-        {
-            "id": "123456",
-            "name": "New York",
-        },
     ], line_items=[
         {
             "id": "12345",
@@ -539,6 +460,10 @@ with Apideck(
                     "id": "123456",
                     "name": "New York",
                 },
+                {
+                    "id": "123456",
+                    "name": "New York",
+                },
             ],
             "ledger_account": {
                 "id": "123456",
@@ -546,12 +471,6 @@ with Apideck(
                 "code": "453",
             },
             "custom_fields": [
-                {
-                    "id": "2389328923893298",
-                    "name": "employee_level",
-                    "description": "Employee Level",
-                    "value": {},
-                },
                 {
                     "id": "2389328923893298",
                     "name": "employee_level",
@@ -562,67 +481,15 @@ with Apideck(
                     "id": "2389328923893298",
                     "name": "employee_level",
                     "description": "Employee Level",
-                    "value": {},
-                },
-            ],
-            "row_version": "1-12345",
-        },
-        {
-            "id": "12345",
-            "row_id": "12345",
-            "code": "120-C",
-            "line_number": 1,
-            "description": "Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
-            "type": apideck_accounting_unify.InvoiceLineItemType.SALES_ITEM,
-            "tax_amount": 27500,
-            "total_amount": 27500,
-            "quantity": 1,
-            "unit_price": 27500.5,
-            "unit_of_measure": "pc.",
-            "discount_percentage": 0.01,
-            "discount_amount": 19.99,
-            "location_id": "12345",
-            "department_id": "12345",
-            "item": {
-                "id": "12344",
-                "code": "120-C",
-                "name": "Model Y",
-            },
-            "tax_rate": {
-                "id": "123456",
-                "rate": 10,
-            },
-            "tracking_categories": [
-                {
-                    "id": "123456",
-                    "name": "New York",
-                },
-                {
-                    "id": "123456",
-                    "name": "New York",
-                },
-                {
-                    "id": "123456",
-                    "name": "New York",
-                },
-            ],
-            "ledger_account": {
-                "id": "123456",
-                "nominal_code": "N091",
-                "code": "453",
-            },
-            "custom_fields": [
-                {
-                    "id": "2389328923893298",
-                    "name": "employee_level",
-                    "description": "Employee Level",
-                    "value": 10,
+                    "value": [
+                        {},
+                    ],
                 },
                 {
                     "id": "2389328923893298",
                     "name": "employee_level",
                     "description": "Employee Level",
-                    "value": 10,
+                    "value": "Uses Salesforce and Marketo",
                 },
             ],
             "row_version": "1-12345",
@@ -683,6 +550,11 @@ with Apideck(
             "allocated_amount": 1000,
             "date_": parse_datetime("2020-09-30T07:43:32.000Z"),
         },
+        {
+            "id": "123456",
+            "allocated_amount": 1000,
+            "date_": parse_datetime("2020-09-30T07:43:32.000Z"),
+        },
     ], payment_method="cash", channel="email", language="EN", accounting_by_row=False, bank_account={
         "bank_name": "Monzo",
         "account_number": "123465",
@@ -704,16 +576,78 @@ with Apideck(
             "id": "2389328923893298",
             "name": "employee_level",
             "description": "Employee Level",
-            "value": [
-                "<value>",
-                "<value>",
-                "<value>",
-            ],
+            "value": 10,
         },
     ], row_version="1-12345", pass_through=[
         {
             "service_id": "<id>",
             "extend_paths": [
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
+            ],
+        },
+        {
+            "service_id": "<id>",
+            "extend_paths": [
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
+            ],
+        },
+        {
+            "service_id": "<id>",
+            "extend_paths": [
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
                 {
                     "path": "$.nested.property",
                     "value": {

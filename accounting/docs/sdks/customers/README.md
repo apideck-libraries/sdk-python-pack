@@ -128,41 +128,7 @@ with Apideck(
             "notes": "Address notes or delivery instructions.",
             "row_version": "1-12345",
         },
-        {
-            "id": "123",
-            "type": apideck_accounting_unify.Type.PRIMARY,
-            "string": "25 Spring Street, Blackburn, VIC 3130",
-            "name": "HQ US",
-            "line1": "Main street",
-            "line2": "apt #",
-            "line3": "Suite #",
-            "line4": "delivery instructions",
-            "street_number": "25",
-            "city": "San Francisco",
-            "state": "CA",
-            "postal_code": "94104",
-            "country": "US",
-            "latitude": "40.759211",
-            "longitude": "-73.984638",
-            "county": "Santa Clara",
-            "contact_name": "Elon Musk",
-            "salutation": "Mr",
-            "phone_number": "111-111-1111",
-            "fax": "122-111-1111",
-            "email": "elon@musk.com",
-            "website": "https://elonmusk.com",
-            "notes": "Address notes or delivery instructions.",
-            "row_version": "1-12345",
-        },
     ], phone_numbers=[
-        {
-            "id": "12345",
-            "country_code": "1",
-            "area_code": "323",
-            "number": "111-111-1111",
-            "extension": "105",
-            "type": apideck_accounting_unify.PhoneNumberType.PRIMARY,
-        },
         {
             "id": "12345",
             "country_code": "1",
@@ -177,18 +143,36 @@ with Apideck(
             "email": "elon@musk.com",
             "type": apideck_accounting_unify.EmailType.PRIMARY,
         },
-        {
-            "id": "123",
-            "email": "elon@musk.com",
-            "type": apideck_accounting_unify.EmailType.PRIMARY,
-        },
     ], websites=[
         {
             "id": "12345",
             "url": "http://example.com",
             "type": apideck_accounting_unify.WebsiteType.PRIMARY,
         },
+        {
+            "id": "12345",
+            "url": "http://example.com",
+            "type": apideck_accounting_unify.WebsiteType.PRIMARY,
+        },
+        {
+            "id": "12345",
+            "url": "http://example.com",
+            "type": apideck_accounting_unify.WebsiteType.PRIMARY,
+        },
     ], bank_accounts=[
+        {
+            "bank_name": "Monzo",
+            "account_number": "123465",
+            "account_name": "SPACEX LLC",
+            "account_type": apideck_accounting_unify.AccountType.CREDIT_CARD,
+            "iban": "CH2989144532982975332",
+            "bic": "AUDSCHGGXXX",
+            "routing_number": "012345678",
+            "bsb_number": "062-001",
+            "branch_identifier": "001",
+            "bank_code": "BNH",
+            "currency": apideck_accounting_unify.Currency.USD,
+        },
         {
             "bank_name": "Monzo",
             "account_number": "123465",
@@ -217,13 +201,13 @@ with Apideck(
             "id": "2389328923893298",
             "name": "employee_level",
             "description": "Employee Level",
-            "value": {},
+            "value": "Uses Salesforce and Marketo",
         },
         {
             "id": "2389328923893298",
             "name": "employee_level",
             "description": "Employee Level",
-            "value": 10,
+            "value": "Uses Salesforce and Marketo",
         },
         {
             "id": "2389328923893298",
@@ -235,64 +219,6 @@ with Apideck(
         {
             "service_id": "<id>",
             "extend_paths": [
-                {
-                    "path": "$.nested.property",
-                    "value": {
-                        "TaxClassificationRef": {
-                            "value": "EUC-99990201-V1-00020000",
-                        },
-                    },
-                },
-                {
-                    "path": "$.nested.property",
-                    "value": {
-                        "TaxClassificationRef": {
-                            "value": "EUC-99990201-V1-00020000",
-                        },
-                    },
-                },
-                {
-                    "path": "$.nested.property",
-                    "value": {
-                        "TaxClassificationRef": {
-                            "value": "EUC-99990201-V1-00020000",
-                        },
-                    },
-                },
-            ],
-        },
-        {
-            "service_id": "<id>",
-            "extend_paths": [
-                {
-                    "path": "$.nested.property",
-                    "value": {
-                        "TaxClassificationRef": {
-                            "value": "EUC-99990201-V1-00020000",
-                        },
-                    },
-                },
-                {
-                    "path": "$.nested.property",
-                    "value": {
-                        "TaxClassificationRef": {
-                            "value": "EUC-99990201-V1-00020000",
-                        },
-                    },
-                },
-            ],
-        },
-        {
-            "service_id": "<id>",
-            "extend_paths": [
-                {
-                    "path": "$.nested.property",
-                    "value": {
-                        "TaxClassificationRef": {
-                            "value": "EUC-99990201-V1-00020000",
-                        },
-                    },
-                },
                 {
                     "path": "$.nested.property",
                     "value": {
@@ -471,58 +397,6 @@ with Apideck(
             "notes": "Address notes or delivery instructions.",
             "row_version": "1-12345",
         },
-        {
-            "id": "123",
-            "type": apideck_accounting_unify.Type.PRIMARY,
-            "string": "25 Spring Street, Blackburn, VIC 3130",
-            "name": "HQ US",
-            "line1": "Main street",
-            "line2": "apt #",
-            "line3": "Suite #",
-            "line4": "delivery instructions",
-            "street_number": "25",
-            "city": "San Francisco",
-            "state": "CA",
-            "postal_code": "94104",
-            "country": "US",
-            "latitude": "40.759211",
-            "longitude": "-73.984638",
-            "county": "Santa Clara",
-            "contact_name": "Elon Musk",
-            "salutation": "Mr",
-            "phone_number": "111-111-1111",
-            "fax": "122-111-1111",
-            "email": "elon@musk.com",
-            "website": "https://elonmusk.com",
-            "notes": "Address notes or delivery instructions.",
-            "row_version": "1-12345",
-        },
-        {
-            "id": "123",
-            "type": apideck_accounting_unify.Type.PRIMARY,
-            "string": "25 Spring Street, Blackburn, VIC 3130",
-            "name": "HQ US",
-            "line1": "Main street",
-            "line2": "apt #",
-            "line3": "Suite #",
-            "line4": "delivery instructions",
-            "street_number": "25",
-            "city": "San Francisco",
-            "state": "CA",
-            "postal_code": "94104",
-            "country": "US",
-            "latitude": "40.759211",
-            "longitude": "-73.984638",
-            "county": "Santa Clara",
-            "contact_name": "Elon Musk",
-            "salutation": "Mr",
-            "phone_number": "111-111-1111",
-            "fax": "122-111-1111",
-            "email": "elon@musk.com",
-            "website": "https://elonmusk.com",
-            "notes": "Address notes or delivery instructions.",
-            "row_version": "1-12345",
-        },
     ], phone_numbers=[
         {
             "id": "12345",
@@ -541,11 +415,6 @@ with Apideck(
             "type": apideck_accounting_unify.PhoneNumberType.PRIMARY,
         },
     ], emails=[
-        {
-            "id": "123",
-            "email": "elon@musk.com",
-            "type": apideck_accounting_unify.EmailType.PRIMARY,
-        },
         {
             "id": "123",
             "email": "elon@musk.com",
@@ -594,6 +463,19 @@ with Apideck(
             "bank_code": "BNH",
             "currency": apideck_accounting_unify.Currency.USD,
         },
+        {
+            "bank_name": "Monzo",
+            "account_number": "123465",
+            "account_name": "SPACEX LLC",
+            "account_type": apideck_accounting_unify.AccountType.CREDIT_CARD,
+            "iban": "CH2989144532982975332",
+            "bic": "AUDSCHGGXXX",
+            "routing_number": "012345678",
+            "bsb_number": "062-001",
+            "branch_identifier": "001",
+            "bank_code": "BNH",
+            "currency": apideck_accounting_unify.Currency.USD,
+        },
     ], notes="Some notes about this customer", tax_rate={
         "id": "123456",
         "rate": 10,
@@ -609,20 +491,28 @@ with Apideck(
             "id": "2389328923893298",
             "name": "employee_level",
             "description": "Employee Level",
-            "value": {},
-        },
-        {
-            "id": "2389328923893298",
-            "name": "employee_level",
-            "description": "Employee Level",
-            "value": [
-                {},
-            ],
+            "value": "Uses Salesforce and Marketo",
         },
     ], row_version="1-12345", pass_through=[
         {
             "service_id": "<id>",
             "extend_paths": [
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
+                {
+                    "path": "$.nested.property",
+                    "value": {
+                        "TaxClassificationRef": {
+                            "value": "EUC-99990201-V1-00020000",
+                        },
+                    },
+                },
                 {
                     "path": "$.nested.property",
                     "value": {

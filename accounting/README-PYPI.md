@@ -449,9 +449,9 @@ with Apideck(
 
 * [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/customfields/README.md#list) - Get resource custom fields
 
-#### [vault.custom_mappings](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/custommappingssdk/README.md)
+#### [vault.custom_mappings](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/custommappings/README.md)
 
-* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/custommappingssdk/README.md#list) - List custom mappings
+* [list](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/custommappings/README.md#list) - List custom mappings
 
 #### [vault.logs](https://github.com/apideck-libraries/sdk-python-pack/blob/master/docs/sdks/logs/README.md)
 

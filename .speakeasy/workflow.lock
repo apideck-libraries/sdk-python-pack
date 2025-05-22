@@ -1,13 +1,13 @@
-speakeasyVersion: 1.545.0
+speakeasyVersion: 1.548.4
 sources:
     accounting:
         sourceNamespace: apideck-accounting-only-oas
-        sourceRevisionDigest: sha256:36d94ab873cddb45ae85869e93f44bf28f0c0f3171c35571fe9579327ff3d7e4
-        sourceBlobDigest: sha256:e597b94de9c3ebabe8ede8eff2e032af026fc89e7a591cb7997ca0c6ca31fc22
+        sourceRevisionDigest: sha256:9219307046c32aa474a28ab827a725703c83b3852b7f5d79aa2156544c104cb5
+        sourceBlobDigest: sha256:ae4f43cc5a5d7370a036d74356c761eb977126b548877d7b9f1e4e3c50ee7a55
         tags:
             - latest
-            - speakeasy-sdk-regen-1746230695
-            - 10.16.5
+            - speakeasy-sdk-regen-1747353922
+            - 10.16.7
     lending:
         sourceNamespace: lending
         sourceRevisionDigest: sha256:178885971cf1c04155e742359cad4b10d0eba3a8d7de8e7a64d2e33a0678995d
@@ -19,10 +19,10 @@ targets:
     accounting-py:
         source: accounting
         sourceNamespace: apideck-accounting-only-oas
-        sourceRevisionDigest: sha256:36d94ab873cddb45ae85869e93f44bf28f0c0f3171c35571fe9579327ff3d7e4
-        sourceBlobDigest: sha256:e597b94de9c3ebabe8ede8eff2e032af026fc89e7a591cb7997ca0c6ca31fc22
+        sourceRevisionDigest: sha256:9219307046c32aa474a28ab827a725703c83b3852b7f5d79aa2156544c104cb5
+        sourceBlobDigest: sha256:ae4f43cc5a5d7370a036d74356c761eb977126b548877d7b9f1e4e3c50ee7a55
         codeSamplesNamespace: apideck-accounting-only-oas-python-code-samples
-        codeSamplesRevisionDigest: sha256:7a8c131993ef0d201936bf68b0c571192a59f914bfbc218c29d74344dee37513
+        codeSamplesRevisionDigest: sha256:de8cbdb37a091410efe8fc8de0e6a752cca315510f40d77fce980fcf17dc7c2b
     accounting-ts:
         source: accounting
         sourceNamespace: accounting

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 7d6df67c-ae69-48d7-917a-ebe77fda919e
 management:
-  docChecksum: b905bba09afb5b28d51beb0618341b24
-  docVersion: 10.16.7
-  speakeasyVersion: 1.548.4
-  generationVersion: 2.605.6
-  releaseVersion: 0.14.1
-  configChecksum: 61a70c5a662c8bcae056ee52cac05d6a
+  docChecksum: a8b80922c0290f9e9eee2f0dd3131ae2
+  docVersion: 10.16.8
+  speakeasyVersion: 1.551.0
+  generationVersion: 2.610.0
+  releaseVersion: 0.15.0
+  configChecksum: 3c676c3cb70a2235a6d4698052a4e04e
   repoURL: https://github.com/apideck-libraries/sdk-python-pack.git
   repoSubDirectory: accounting
   installationURL: https://github.com/apideck-libraries/sdk-python-pack.git#subdirectory=accounting
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 3.0.0
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.5
-    core: 5.18.1
+    core: 5.19.0
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.2
     downloadStreams: 1.0.1

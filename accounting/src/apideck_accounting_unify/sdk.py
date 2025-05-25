@@ -7,13 +7,16 @@ from .utils.logger import Logger, get_default_logger
 from .utils.retries import RetryConfig
 from apideck_accounting_unify import models, utils
 from apideck_accounting_unify._hooks import SDKHooks
-from apideck_accounting_unify.accounting import Accounting
 from apideck_accounting_unify.models import internal
 from apideck_accounting_unify.types import OptionalNullable, UNSET
-from apideck_accounting_unify.vault import Vault
 import httpx
-from typing import Any, Callable, Dict, Optional, Union, cast
+import importlib
+from typing import Any, Callable, Dict, Optional, TYPE_CHECKING, Union, cast
 import weakref
+
+if TYPE_CHECKING:
+    from apideck_accounting_unify.accounting import Accounting
+    from apideck_accounting_unify.vault import Vault
 
 
 class Apideck(BaseSDK):
@@ -21,8 +24,12 @@ class Apideck(BaseSDK):
     https://developers.apideck.com - Apideck Developer Docs
     """
 
-    accounting: Accounting
-    vault: Vault
+    accounting: "Accounting"
+    vault: "Vault"
+    _sub_sdk_map = {
+        "accounting": ("apideck_accounting_unify.accounting", "Accounting"),
+        "vault": ("apideck_accounting_unify.vault", "Vault"),
+    }
 
     def __init__(
         self,
@@ -129,11 +136,32 @@ class Apideck(BaseSDK):
             self.sdk_configuration.async_client_supplied,
         )
 
-        self._init_sdks()
+    def __getattr__(self, name: str):
+        if name in self._sub_sdk_map:
+            module_path, class_name = self._sub_sdk_map[name]
+            try:
+                module = importlib.import_module(module_path)
+                klass = getattr(module, class_name)
+                instance = klass(self.sdk_configuration)
+                setattr(self, name, instance)
+                return instance
+            except ImportError as e:
+                raise AttributeError(
+                    f"Failed to import module {module_path} for attribute {name}: {e}"
+                ) from e
+            except AttributeError as e:
+                raise AttributeError(
+                    f"Failed to find class {class_name} in module {module_path} for attribute {name}: {e}"
+                ) from e
 
-    def _init_sdks(self):
-        self.accounting = Accounting(self.sdk_configuration)
-        self.vault = Vault(self.sdk_configuration)
+        raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+
+    def __dir__(self):
+        default_attrs = list(super().__dir__())
+        lazy_attrs = list(self._sub_sdk_map.keys())
+        return sorted(list(set(default_attrs + lazy_attrs)))
 
     def __enter__(self):
         return self

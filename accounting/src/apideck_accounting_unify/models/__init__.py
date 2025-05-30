@@ -1480,8 +1480,13 @@ if TYPE_CHECKING:
         JournalEntriesSortBy,
         JournalEntriesSortTypedDict,
     )
-    from .journalentry import JournalEntry, JournalEntryTypedDict
-    from .journalentry_input import JournalEntryInput, JournalEntryInputTypedDict
+    from .journalentry import (
+        JournalEntry,
+        JournalEntryInput,
+        JournalEntryInputTypedDict,
+        JournalEntryStatus,
+        JournalEntryTypedDict,
+    )
     from .journalentrylineitem import (
         JournalEntryLineItem,
         JournalEntryLineItemInput,
@@ -3063,6 +3068,7 @@ __all__ = [
     "JournalEntryLineItemInputTypedDict",
     "JournalEntryLineItemType",
     "JournalEntryLineItemTypedDict",
+    "JournalEntryStatus",
     "JournalEntryTypedDict",
     "LedgerAccount",
     "LedgerAccountInput",
@@ -4530,9 +4536,10 @@ _dynamic_imports: dict[str, str] = {
     "JournalEntriesSortBy": ".journalentriessort",
     "JournalEntriesSortTypedDict": ".journalentriessort",
     "JournalEntry": ".journalentry",
+    "JournalEntryInput": ".journalentry",
+    "JournalEntryInputTypedDict": ".journalentry",
+    "JournalEntryStatus": ".journalentry",
     "JournalEntryTypedDict": ".journalentry",
-    "JournalEntryInput": ".journalentry_input",
-    "JournalEntryInputTypedDict": ".journalentry_input",
     "JournalEntryLineItem": ".journalentrylineitem",
     "JournalEntryLineItemInput": ".journalentrylineitem",
     "JournalEntryLineItemInputTypedDict": ".journalentrylineitem",

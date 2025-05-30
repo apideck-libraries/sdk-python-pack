@@ -3,11 +3,11 @@
 import importlib.metadata
 
 __title__: str = "apideck-accounting-unify"
-__version__: str = "0.15.0"
-__openapi_doc_version__: str = "10.16.8"
-__gen_version__: str = "2.610.0"
+__version__: str = "0.16.0"
+__openapi_doc_version__: str = "10.17.2"
+__gen_version__: str = "2.616.1"
 __user_agent__: str = (
-    "speakeasy-sdk/python 0.15.0 2.610.0 10.16.8 apideck-accounting-unify"
+    "speakeasy-sdk/python 0.16.0 2.616.1 10.17.2 apideck-accounting-unify"
 )
 
 try:

@@ -99,3 +99,13 @@ Based on:
 - [python v0.16.0] accounting
 ### Releases
 - [PyPI v0.16.0] https://pypi.org/project/apideck-accounting-unify/0.16.0 - accounting
+
+## 2025-06-03 00:05:06
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.555.0 (2.618.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.16.1] accounting
+### Releases
+- [PyPI v0.16.1] https://pypi.org/project/apideck-accounting-unify/0.16.1 - accounting

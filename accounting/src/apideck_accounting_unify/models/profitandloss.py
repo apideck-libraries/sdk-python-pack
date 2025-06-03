@@ -89,8 +89,6 @@ class Income(BaseModel):
 class CostOfGoodsSoldTypedDict(TypedDict):
     r"""The cost of goods sold accounts"""
 
-    total: Nullable[float]
-    r"""The aggregated total of all accounts within this category."""
     records: Any
     id: NotRequired[str]
     r"""A unique identifier for an object."""
@@ -100,13 +98,12 @@ class CostOfGoodsSoldTypedDict(TypedDict):
     r"""The name of the account."""
     type: NotRequired[Nullable[ProfitAndLossType]]
     r"""The type of profit and loss"""
+    total: NotRequired[Nullable[float]]
+    r"""The aggregated total of all accounts within this category."""
 
 
 class CostOfGoodsSold(BaseModel):
     r"""The cost of goods sold accounts"""
-
-    total: Nullable[float]
-    r"""The aggregated total of all accounts within this category."""
 
     records: Any
 
@@ -122,9 +119,12 @@ class CostOfGoodsSold(BaseModel):
     type: OptionalNullable[ProfitAndLossType] = UNSET
     r"""The type of profit and loss"""
 
+    total: OptionalNullable[float] = UNSET
+    r"""The aggregated total of all accounts within this category."""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["id", "code", "title", "type"]
+        optional_fields = ["id", "code", "title", "type", "total"]
         nullable_fields = ["type", "total"]
         null_default_fields = []
 

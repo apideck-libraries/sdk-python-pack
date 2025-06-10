@@ -120,12 +120,12 @@ import os
 
 
 with Apideck(
-    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    api_key=os.getenv("APIDECK_API_KEY", ""),
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+    res = apideck.accounting.tax_rates.list(raw=False, service_id="salesforce", limit=20, filter_={
         "assets": True,
         "equity": True,
         "expenses": True,
@@ -153,12 +153,12 @@ import os
 async def main():
 
     async with Apideck(
-        api_key=os.getenv("APIDECK_API_KEY", ""),
         consumer_id="test-consumer",
         app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+        api_key=os.getenv("APIDECK_API_KEY", ""),
     ) as apideck:
 
-        res = await apideck.accounting.tax_rates.list_async(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        res = await apideck.accounting.tax_rates.list_async(raw=False, service_id="salesforce", limit=20, filter_={
             "assets": True,
             "equity": True,
             "expenses": True,
@@ -200,7 +200,7 @@ with Apideck(
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+    res = apideck.accounting.tax_rates.list(raw=False, service_id="salesforce", limit=20, filter_={
         "assets": True,
         "equity": True,
         "expenses": True,
@@ -482,12 +482,12 @@ import os
 
 
 with Apideck(
-    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    api_key=os.getenv("APIDECK_API_KEY", ""),
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+    res = apideck.accounting.tax_rates.list(raw=False, service_id="salesforce", limit=20, filter_={
         "assets": True,
         "equity": True,
         "expenses": True,
@@ -522,12 +522,12 @@ import os
 
 
 with Apideck(
-    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    api_key=os.getenv("APIDECK_API_KEY", ""),
 ) as apideck:
 
-    res = apideck.accounting.attachments.upload(reference_type=apideck_accounting_unify.AttachmentReferenceType.INVOICE, reference_id="123456", request_body=open("example.file", "rb"), x_apideck_metadata="{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce")
+    res = apideck.accounting.attachments.upload(reference_type=apideck_accounting_unify.AttachmentReferenceType.INVOICE, reference_id="123456", request_body=open("example.file", "rb"), raw=False, x_apideck_metadata="{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}", service_id="salesforce")
 
     assert res.create_attachment_response is not None
 
@@ -550,12 +550,12 @@ import os
 
 
 with Apideck(
-    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    api_key=os.getenv("APIDECK_API_KEY", ""),
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+    res = apideck.accounting.tax_rates.list(raw=False, service_id="salesforce", limit=20, filter_={
         "assets": True,
         "equity": True,
         "expenses": True,
@@ -582,12 +582,12 @@ import os
 
 with Apideck(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
-    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    api_key=os.getenv("APIDECK_API_KEY", ""),
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+    res = apideck.accounting.tax_rates.list(raw=False, service_id="salesforce", limit=20, filter_={
         "assets": True,
         "equity": True,
         "expenses": True,
@@ -638,14 +638,14 @@ import os
 
 
 with Apideck(
-    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    api_key=os.getenv("APIDECK_API_KEY", ""),
 ) as apideck:
     res = None
     try:
 
-        res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+        res = apideck.accounting.tax_rates.list(raw=False, service_id="salesforce", limit=20, filter_={
             "assets": True,
             "equity": True,
             "expenses": True,
@@ -694,12 +694,12 @@ import os
 
 with Apideck(
     server_url="https://unify.apideck.com",
-    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    api_key=os.getenv("APIDECK_API_KEY", ""),
 ) as apideck:
 
-    res = apideck.accounting.tax_rates.list(consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", filter_={
+    res = apideck.accounting.tax_rates.list(raw=False, service_id="salesforce", limit=20, filter_={
         "assets": True,
         "equity": True,
         "expenses": True,
@@ -726,12 +726,12 @@ import os
 
 
 with Apideck(
-    api_key=os.getenv("APIDECK_API_KEY", ""),
     consumer_id="test-consumer",
     app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+    api_key=os.getenv("APIDECK_API_KEY", ""),
 ) as apideck:
 
-    res = apideck.accounting.attachments.upload(reference_type=apideck_accounting_unify.AttachmentReferenceType.INVOICE, reference_id="123456", request_body=open("example.file", "rb"), x_apideck_metadata="{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}", consumer_id="test-consumer", app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", service_id="salesforce", server_url="https://upload.apideck.com")
+    res = apideck.accounting.attachments.upload(reference_type=apideck_accounting_unify.AttachmentReferenceType.INVOICE, reference_id="123456", request_body=open("example.file", "rb"), raw=False, x_apideck_metadata="{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}", service_id="salesforce", server_url="https://upload.apideck.com")
 
     assert res.create_attachment_response is not None
 
@@ -835,9 +835,9 @@ import os
 def main():
 
     with Apideck(
-        api_key=os.getenv("APIDECK_API_KEY", ""),
         consumer_id="test-consumer",
         app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+        api_key=os.getenv("APIDECK_API_KEY", ""),
     ) as apideck:
         # Rest of application here...
 
@@ -846,9 +846,9 @@ def main():
 async def amain():
 
     async with Apideck(
-        api_key=os.getenv("APIDECK_API_KEY", ""),
         consumer_id="test-consumer",
         app_id="dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+        api_key=os.getenv("APIDECK_API_KEY", ""),
     ) as apideck:
         # Rest of application here...
 ```
